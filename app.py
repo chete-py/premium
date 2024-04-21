@@ -9,6 +9,7 @@ excess_protector = st.selectbox("Choose excess protector rate", ["Inclusive", "0
 pvt = st.selectbox("Choose pvt rate", ["Inclusive", "0.25%", "0.5%", "Excluded"])
 loss_of_use = st.selectbox("Choose number of days", ["N/A", "10 days", "15 days"])
 policy_fee = st.selectbox("Choose cover", ["Renewal", "New Business",])
+notes = st.text_input("Include Important Note eg. Cover does not include Excess Protector")
                                                     
 
 car_hire = 0
@@ -111,8 +112,8 @@ if st.button("Calculate"):
     <body>
     <table>
         <tr>
-            <th colspan="2">{reg} - MOTOR PRIVATE COMPREHENSIVE</th1>
-            <th colspan="2">{underwriter} </th1>
+            <th colspan="2">{reg} - MOTOR PRIVATE COMPREHENSIVE</th>
+            <th colspan="2">{underwriter} </th>
             
         </tr>
         <tr >
@@ -168,6 +169,11 @@ if st.button("Calculate"):
             <td></td>
             <td></td>
             <td class = 'bold' style="color:#152637">{formatted_total} /-</td>
+        </tr>
+        <tr>
+           
+            <th colspan="4">{notes} </th>
+            
         </tr>
     </table>
     </body>
