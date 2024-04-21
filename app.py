@@ -94,8 +94,9 @@ if st.button("Calculate"):
     }}
 
     .gross_premium {{
-        border-top: 2px solid black;
-        border-bottom: 2px solid black;
+        border-top: 1px solid black;
+        border-bottom: 2px double black;
+        
     }}
 
     </style>
@@ -141,13 +142,13 @@ if st.button("Calculate"):
             <td>Gross Premium</td>
             <td></td> 
             <td></td>
-            <td>{formatted_gross_premium}</td> 
+            <td class='gross_premium'>{formatted_gross_premium}</td> 
         </tr>
         <tr>
             <td>Levies</td>
             <td></td>
             <td>0.45%</td>
-            <td class='gross_premium'>{formatted_levies}</td> <!-- Updated formatting for better readability -->
+            <td >{formatted_levies}</td> <!-- Updated formatting for better readability -->
         </tr>
         <tr>
             <td>Policy Fee</td>
