@@ -43,7 +43,9 @@ if st.button("Calculate"):
     if policy_fee == "New Business":
         fee += 40
 
-    levies = ( premium + car_hire )* 0.0045
+    gross_premium = ( premium + car_hire )
+
+    levies = gross_premium * 0.0045
 
     total = ( premium + car_hire + fee + levies + ex_pr + pvt_value )
 
@@ -58,6 +60,7 @@ if st.button("Calculate"):
     formatted_ex_pr = format_with_commas(ex_pr)
     formatted_pvt = format_with_commas(pvt_value)
     formatted_car_hire = format_with_commas(car_hire)
+    formatted_gross_premium = format_with_commas(gross_premium)
     formatted_levies = format_with_commas(levies)
     formatted_total = format_with_commas(total)
 
@@ -128,6 +131,12 @@ if st.button("Calculate"):
             <td></td>
             <td>{loss_of_use}</td>
             <td>{formatted_car_hire}</td>
+        </tr>
+        <tr>
+            <td>Gross Premium</td>
+            <td></td> 
+            <td></td>
+            <td>{formatted_gross_premium}</td> 
         </tr>
         <tr>
             <td>Levies</td>
