@@ -164,15 +164,15 @@ if st.button("Calculate"):
             <td></td>
             <td>{fee}</td>
         </tr>
-        <tr style="border-top: 2px solid black; border-bottom: 2px solid black;">
+        <tr style=" border-top: 2px double black;  border-bottom: 2px double black;">
             <td class= 'bold' style="color:#152637">Total Premium Payable</td>
             <td></td>
             <td></td>
             <td class = 'bold' style="color:#152637">{formatted_total} /-</td>
         </tr>
-        <tr>
+        <tr style= "color:#073980" >
            
-            <th colspan="4">{notes} </th>
+            <th colspan="4" style='color:red'>{notes} </th>
             
         </tr>
     </table>
