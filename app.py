@@ -118,25 +118,25 @@ if st.button("Calculate"):
         <tr>
             <td>Basic Premium</td>
             <td>{formatted_value}</td> <!-- Updated formatting for better readability -->
-            <td>{rate}%</td>
+            <td style="color:red">{rate}%</td>
             <td>{formatted_premium}</td> <!-- Updated formatting for better readability -->
         </tr>
         <tr>
             <td>Excess Protector - Own Damage</td>
             <td></td>
-            <td>{excess_protector}</td>
+            <td style="color:red" >{excess_protector}</td>
             <td>{formatted_ex_pr}</td>
         </tr>
         <tr>
             <td>Political/Terrorism Risks/RSCC</td>
             <td></td>
-            <td>{pvt}</td>
+            <td style="color:red">{pvt}</td>
             <td>{formatted_pvt}</td>
         </tr>
         <tr>
             <td>Loss of Use/Courtesy Car</td>
             <td></td>
-            <td>{loss_of_use}</td>
+            <td style="color:red" >{loss_of_use}</td>
             <td>{formatted_car_hire}</td>
         </tr>
         <tr>
@@ -148,7 +148,7 @@ if st.button("Calculate"):
         <tr>
             <td>Levies</td>
             <td></td>
-            <td>0.45%</td>
+            <td style="color:red">0.45%</td>
             <td >{formatted_levies}</td> <!-- Updated formatting for better readability -->
         </tr>
         <tr>
