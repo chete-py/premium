@@ -5,8 +5,8 @@ reg = st.text_input('Enter Registration')
 underwriter = st.selectbox("Choose Underwriter", ["APA INSURANCE", "FIDELITY INSURANCE", "CANNON GENERAL INSURANCE", "GA INSURANCE", "MAYFAIR INSURANCE", "ICEA LION INSURANCE", "JUBILEE ALLIANZ"])
 value = int(st.number_input('Sum Insured'))
 rate = st.number_input('Rate as a number eg 4 0r 3.5')
-excess_protector = st.selectbox("Choose excess protector rate", ["Inclusive", "0.25%"])
-pvt = st.selectbox("Choose pvt rate", ["Inclusive", "0.25%"])
+excess_protector = st.selectbox("Choose excess protector rate", ["Inclusive", "0.25%", "0.5%", "Excluded"])
+pvt = st.selectbox("Choose pvt rate", ["Inclusive", "0.25%", "0.5%", "Excluded"])
 loss_of_use = st.selectbox("Choose number of days", ["N/A", "10 days", "15 days"])
 policy_fee = st.selectbox("Choose cover", ["Renewal", "New Business",])
                                                     
@@ -19,16 +19,22 @@ pvt_value = 0
 if st.button("Calculate"):
     premium = value * (rate/100)
 
-    if pvt == 'Inclusive':
+    if pvt == 'Inclusive' or 'Excluded':
         pvt_value += 0
     if pvt == '0.25%':
         pvtworking = (0.25/100) * value
         pvt_value += pvtworking
+    if pvt == '0.5%':
+        pvtworking = (0.5/100) * value
+        pvt_value += pvtworking
 
-    if excess_protector == 'Inclusive':
+    if excess_protector == 'Inclusive' or 'Exluded':
         ex_pr += 0
     if excess_protector == '0.25%':
         working = (0.25/100) * value
+        ex_pr += working
+    if excess_protector == '0.5%':
+        working = (0.5/100) * value
         ex_pr += working
 
     
