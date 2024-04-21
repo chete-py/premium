@@ -105,6 +105,10 @@ if st.button("Calculate"):
         border-bottom: 2px double black;        
     }}
 
+    .footer-row th {{
+        background-color: #073980;
+    }}
+
     
     
     </style>
@@ -170,7 +174,7 @@ if st.button("Calculate"):
             <td></td>
             <td class = 'bold' style="color:#152637">{formatted_total} /-</td>
         </tr>
-        <tr style= "background-color:#073980" >
+        <tr class='footer-row'>
            
             <th colspan="4" style='color:red'>{notes} </th>
             
