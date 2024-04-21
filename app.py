@@ -94,7 +94,7 @@ if st.button("Calculate"):
     }}
 
     .gross_premium {{
-        border-top: 1px solid black;
+        border-top: 2px solid black;
         border-bottom: 2px double black;        
     }}
 
