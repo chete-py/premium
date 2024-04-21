@@ -95,10 +95,16 @@ if st.button("Calculate"):
 
     .gross_premium {{
         border-top: 1px solid black;
-        border-bottom: 2px double black;
-        
+        border-bottom: 2px double black;        
     }}
 
+    .total_pemium {{
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;        
+    }}
+
+
+    
     </style>
     </head>
     <body>
@@ -156,7 +162,7 @@ if st.button("Calculate"):
             <td></td>
             <td>{fee}</td>
         </tr>
-        <tr ">
+        <tr class='total_premium'>
             <td class= 'bold' style="color:#152637">Total Premium Payable</td>
             <td></td>
             <td></td>
