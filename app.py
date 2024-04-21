@@ -20,13 +20,13 @@ if st.button("Calculate"):
     premium = value * (rate/100)
 
     if pvt == 'Inclusive':
-        pvt_value += 0
+        pvt_value = '-'
     if pvt == '0.25%':
         pvtworking = (0.25/100) * value
         pvt_value += pvtworking
 
     if excess_protector == 'Inclusive':
-        ex_pr += 0
+        ex_pr = '-'
     if excess_protector == '0.25%':
         working = (0.25/100) * value
         ex_pr += working
