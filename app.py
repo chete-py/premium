@@ -72,7 +72,7 @@ if st.button("Calculate"):
     <style>
         table {{
         border-collapse: collapse;
-        width: 40%;
+        width: 45%;
         margin: 10px auto; /* Center the table */
         font-size: 12px;
         font-family: Candara;
@@ -98,12 +98,7 @@ if st.button("Calculate"):
         border-bottom: 2px double black;        
     }}
 
-    .total_pemium {{
-        border-top: 2px solid black;
-        border-bottom: 2px solid black;        
-    }}
-
-
+    
     
     </style>
     </head>
