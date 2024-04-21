@@ -170,7 +170,7 @@ if st.button("Calculate"):
             <td></td>
             <td class = 'bold' style="color:#152637">{formatted_total} /-</td>
         </tr>
-        <tr style= "color:#073980" >
+        <tr style= "background-color:#073980" >
            
             <th colspan="4" style='color:red'>{notes} </th>
             
