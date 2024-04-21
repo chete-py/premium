@@ -73,8 +73,8 @@ if st.button("Calculate"):
         table {{
         border-collapse: collapse;
         width: 45%;
-        margin: 10px auto; /* Center the table */
-        font-size: 12px;
+        margin: 2.5px auto; /* Center the table */
+        font-size: 10px;
         font-family: Candara;
     }}
 
