@@ -176,7 +176,7 @@ if st.button("Calculate"):
         </tr>
         <tr class='footer-row'>
            
-            <th colspan="4" style='color:red'>{notes} </th>
+            <th colspan="4" style='color:white'>{notes} </th>
             
         </tr>
     </table>
