@@ -9,7 +9,7 @@ excess_protector = st.selectbox("Choose excess protector rate", ["Inclusive", "0
 pvt = st.selectbox("Choose pvt rate", ["Inclusive", "0.25%", "0.5%", "Excluded"])
 loss_of_use = st.selectbox("Choose number of days", ["N/A", "10 days", "15 days"])
 policy_fee = st.selectbox("Choose cover", ["Renewal", "New Business",])
-notes = st.text_input("Include Important Note eg. Cover does not include Excess Protector")
+notes = st.text_input("Include Important Remarks eg. Cover does not include Excess Protector")
                                                     
 
 car_hire = 0
