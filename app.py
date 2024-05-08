@@ -11,6 +11,7 @@ with tab1:
     underwriter = st.selectbox("Choose Underwriter", ["APA INSURANCE", "FIDELITY INSURANCE", "CANNON GENERAL INSURANCE", "GA INSURANCE", "MAYFAIR INSURANCE", "ICEA LION INSURANCE", "JUBILEE ALLIANZ"])
     value = int(st.number_input('Sum Insured'))
     rate = st.number_input('Rate as a number eg 4 0r 3.5')
+    days = st.number_input('Pro-Rated Days')
     excess_protector = st.selectbox("Choose excess protector rate", ["Inclusive", "0.25%", "0.5%", "Excluded"])
     pvt = st.selectbox("Choose pvt rate", ["Inclusive", "0.25%", "0.5%", "Excluded"])
     loss_of_use = st.selectbox("Choose number of days", ["N/A", "10 days", "15 days"])
@@ -24,7 +25,7 @@ with tab1:
     pvt_value = 0
 
     if st.button("Calculate"):
-        premium = value * (rate/100)
+        premium = value * (rate/100) * (days/366)
 
         if pvt == 'Inclusive' or 'Excluded':
             pvt_value += 0
