@@ -14,7 +14,7 @@ with tab1:
     days = st.number_input('Pro-Rated Days')
     excess_protector = st.selectbox("Choose excess protector rate", ["Inclusive", "0.25%", "0.5%", "Excluded"])
     pvt = st.selectbox("Choose pvt rate", ["Inclusive", "0.25%", "0.5%", "Excluded"])
-    loss_of_use = st.selectbox("Choose number of days", ["N/A", "10 days", "15 days"])
+    loss_of_use = st.selectbox("Choose amount charged", ["N/A", "KES 3000", "KES 45000"])
     policy_fee = st.selectbox("Choose cover", ["Renewal", "New Business",])
     notes = st.text_input("Include Important Remarks eg. Cover does not include Excess Protector")
                                                         
@@ -46,11 +46,11 @@ with tab1:
             ex_pr += working
 
         
-        if loss_of_use == '10 days':
+        if loss_of_use == 'KES 3000':
             car_hire += 3000
         if loss_of_use == 'N/A':
             car_hire += 0
-        if loss_of_use == '15days':
+        if loss_of_use == 'KES 4500':
             car_hire += 4500
         if policy_fee == "Renewal":
             fee += 100
@@ -154,7 +154,7 @@ with tab1:
             <tr>
                 <td>Loss of Use/Courtesy Car</td>
                 <td></td>
-                <td style="color:red" >{loss_of_use}</td>
+                <td style="color:red" ></td>
                 <td>{formatted_car_hire}</td>
             </tr>
             <tr>
