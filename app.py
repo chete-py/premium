@@ -27,18 +27,18 @@ with tab1:
     if st.button("Calculate"):
         premium = value * (rate/100) * (days/366)
 
-        if pvt == 'Inclusive' or 'Excluded':
+        if pvt == 'Inclusive' or  pvt == 'Excluded':
             pvt_value += 0
-        if pvt == '0.25%':
+        elif pvt == '0.25%':
             pvtworking = (0.25/100) * value
             pvt_value += pvtworking
-        if pvt == '0.5%':
+        elif pvt == '0.5%':
             pvtworking = (0.5/100) * value
             pvt_value += pvtworking
 
-        if excess_protector == 'Inclusive' or 'Exluded':
+        if excess_protector == 'Inclusive' or excess_protector == 'Exluded':
             ex_pr += 0
-        if excess_protector == '0.25%':
+        elif excess_protector == '0.25%':
             working = (0.25/100) * value
             ex_pr += working
         elif excess_protector == '0.5%':
