@@ -41,20 +41,21 @@ with tab1:
         if excess_protector == '0.25%':
             working = (0.25/100) * value
             ex_pr += working
-        if excess_protector == '0.5%':
+        elif excess_protector == '0.5%':
             working = (0.5/100) * value
             ex_pr += working
 
         
         if loss_of_use == 'KES 3000':
             car_hire += 3000
-        if loss_of_use == 'N/A':
+        elif loss_of_use == 'N/A':
             car_hire += 0
-        if loss_of_use == 'KES 4500':
+        elif loss_of_use == 'KES 4500':
             car_hire += 4500
+            
         if policy_fee == "Renewal":
             fee += 100
-        if policy_fee == "New Business":
+        elif policy_fee == "New Business":
             fee += 40
 
         gross_premium = ( premium + car_hire + ex_pr + pvt_value )
