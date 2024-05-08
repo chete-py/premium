@@ -16,9 +16,9 @@ with tab1:
     pvt = st.selectbox("Choose pvt rate", ["Inclusive", "0.25%", "0.5%", "Excluded"])
     loss_of_use = st.selectbox("Choose amount charged", ["Inclusive", "Excluded", 3000, 4500])
     policy_fee = st.selectbox("Choose cover", ["Renewal", "New Business",])
-    notes1 = st.text_input("Include Important Remarks eg. Political/Terrorism Risks/RSCC - Reinstated at 0.35% of Value Once utilized")
-    notes2 = st.text_input("Include Important Remarks eg.  Days Loss of use/Courtesy Car - Reinstated at KShs. 3,000/- Once Utilized")
-    notes3 = st.text_input("Include Important Remarks eg. Excess Protector - Own Damage Reinstated at 0.25% of Value Once utilized")
+    notes1 = st.text_input("Include Important Remarks 1 eg. Political/Terrorism Risks/RSCC - Reinstated at 0.35% of Value Once utilized")
+    notes2 = st.text_input("Include Important Remarks 2 eg.  Days Loss of use/Courtesy Car - Reinstated at KShs. 3,000/- Once Utilized")
+    notes3 = st.text_input("Include Important Remarks 3 eg. Excess Protector - Own Damage Reinstated at 0.25% of Value Once utilized")
                                                         
 
     car_hire = 0
@@ -187,9 +187,9 @@ with tab1:
             </tr>
             <tr class='footer-row'>
             
-                <td colspan="4" style='color:white'>{notes1} </td>
-                <td colspan="4" style='color:white'>{notes2} </td>
-                <td colspan="4" style='color:white'>{notes3} </td>
+                <td colspan="4" style='color:white'>1. {notes1} </td>
+                <td colspan="4" style='color:white'>2. {notes2} </td>
+                <td colspan="4" style='color:white'>3. {notes3} </td>
                 
             </tr>
         </table>
