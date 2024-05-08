@@ -187,9 +187,11 @@ with tab1:
             </tr>
             <tr class='footer-row'>
             
-                <th colspan="4" style='color:white'>1. {notes1} </th>
-                <th colspan="4" style='color:white'>2. {notes2} </th>
-                <th colspan="4" style='color:white'>3. {notes3} </th>
+                <th colspan="4" style='color:white'>
+                {notes1}<br>
+                {notes2}<br>
+                {notes3}
+                </th>
                 
             </tr>
         </table>
