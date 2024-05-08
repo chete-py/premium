@@ -49,8 +49,7 @@ with tab1:
             car_hire += 4500
         elif loss_of_use == 'NA':
             car_hire += 0
-        elif loss_of_use == 'KES 3000':
-            car_hire += 3000
+       
 
             
         if policy_fee == "Renewal":
