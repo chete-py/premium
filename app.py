@@ -45,13 +45,13 @@ with tab1:
             working = (0.5/100) * value
             ex_pr += working
 
-        
         if loss_of_use == 'KES 4500':
             car_hire += 4500
-        elif loss_of_use == 'N/A':
+        elif loss_of_use == 'NA':
             car_hire += 0
         elif loss_of_use == 'KES 3000':
             car_hire += 3000
+
             
         if policy_fee == "Renewal":
             fee += 100
