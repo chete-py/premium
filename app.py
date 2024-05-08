@@ -50,7 +50,7 @@ with tab1:
         elif loss_of_use == 4500:
             car_hire += 4500
         elif loss_of_use == 3000:
-            car_hire += 3000
+            car_hire += 4500
        
 
             
