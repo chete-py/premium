@@ -33,18 +33,22 @@ with tab1:
             pvt_value += 0
         elif pvt == '0.25%':
             pvtworking = (0.25/100) * value
+            pvtworking = max(pvtworking, 2500)
             pvt_value += pvtworking
         elif pvt == '0.5%':
             pvtworking = (0.5/100) * value
+            pvtworking = max(pvtworking, 2500)
             pvt_value += pvtworking
 
         if excess_protector == 'Inclusive' or excess_protector == 'Exluded':
             ex_pr += 0
         elif excess_protector == '0.25%':
             working = (0.25/100) * value
+            working = max(working, 2500)
             ex_pr += working
         elif excess_protector == '0.5%':
             working = (0.5/100) * value
+            working = max(working, 2500)
             ex_pr += working
 
         if loss_of_use == 'Inclusive' or loss_of_use == 'Exluded':
