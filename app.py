@@ -162,7 +162,7 @@ with tab1:
             <tr>
                 <td>Loss of Use/Courtesy Car</td>
                 <td></td>
-                <td style="color:red" ></td>
+                <td style="color:red" >{loss_of_use}</td>
                 <td>{formatted_car_hire}</td>
             </tr>
             <tr>
