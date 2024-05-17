@@ -30,7 +30,7 @@ with tab1:
     
         if st.button("Calculate"):
             if underwriter == 'FIDELITY INSURANCE':
-                prorata_premium = max((value * (rate/100), 30000)
+                prorata_premium = max(value * (rate/100), 30000)
                 premium = prorata_premium * (days/366)
             else:  
                 premium = value * (rate/100) * (days/366)
