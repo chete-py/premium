@@ -1,6 +1,25 @@
 import streamlit as st
 import pandas as pd
+from google.oauth2 import service_account
+import gspread
+import base64
+import datetime
 
+
+# Define your Google Sheets credentials JSON file (replace with your own)
+credentials_path = 'renewals-423611-a0e5b69ee774.json'
+    
+# Authenticate with Google Sheets using the credentials
+credentials = service_account.Credentials.from_service_account_file(credentials_path, scopes=['https://spreadsheets.google.com/feeds'])
+    
+# Authenticate with Google Sheets using gspread
+gc = gspread.authorize(credentials)
+    
+# Your Google Sheets URL
+url = "https://docs.google.com/spreadsheets/d/1OGtNQnciAJLJiOmKlfvuZWar0zFwCjA77GwvBe5BF9Q/edit#gid=0"
+    
+# Open the Google Sheets spreadsheet
+worksheet = gc.open_by_url(url).worksheet("Upcoming")
 
 view1, view2 = st.tabs(["Premium", "Renewal"])
 
@@ -694,6 +713,13 @@ with view2:
     
         # df = pd.DataFrame(data, columns=headers)
         # st.write(df)
+
+
+
+
+
+    
+
 
 
 
