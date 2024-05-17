@@ -700,19 +700,15 @@ with view2:
         st.stop()
     
     if check_password():
-        st.subheader("WORK SPACE")
-        st.subheader("WORK SPACE")
-        
-        # # Assuming you have already set up Google Sheets and the worksheet
-        # # worksheet = some_google_sheets_api_function_to_get_the_worksheet()
-        
-        # # Read data from the Google Sheets worksheet
-        # data = worksheet.get_all_values()
-        # headers = data[0]
-        # data = data[1:]
+               
+       
+        #Read data from the Google Sheets worksheet
+        data = worksheet.get_all_values()
+        headers = data[0]
+        data = data[1:]
     
-        # df = pd.DataFrame(data, columns=headers)
-        # st.write(df)
+        df = pd.DataFrame(data, columns=headers)
+        st.write(df)
 
 
 
