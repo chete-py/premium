@@ -726,9 +726,11 @@ with view2:
         else:
             # If "All" is selected, show the entire DataFrame
             final_df = df
-  
-                    
-        st.data_editor(final_df)
+
+        task1, task2, task3, task4 = st.tabs(["Work Load", "Invite Sent", "Renewed", "Debited"])
+
+        with task1:                    
+            st.data_editor(final_df)
 
 
 
