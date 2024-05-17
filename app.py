@@ -38,7 +38,7 @@ with view1:
                 elif underwriter == 'APA INSURANCE':
                     prorata_premium = max(value * (rate/100), 25000)
                     premium = prorata_premium * (days/366)
-                else:  
+                else:
                     premium = value * (rate/100) * (days/366)
     
                 
@@ -231,7 +231,9 @@ with view1:
             
             reg = st.text_input('Enter Registration')
             underwriter = st.selectbox("Choose Underwriter", ["APA INSURANCE", "FIDELITY INSURANCE", "CANNON GENERAL INSURANCE", "GA INSURANCE", "MAYFAIR INSURANCE", "ICEA LION INSURANCE", "JUBILEE ALLIANZ"])
-        
+            value = int(st.number_input('Sum Insured'))
+            rate = st.number_input('Rate as a number eg 4 0r 3.5')
+            days = st.number_input('Pro-Rated Days')
             excess_protector = st.selectbox("Choose excess protector rate", ["Inclusive", "0.25%", "0.5%", "Excluded"])
             pvt = st.selectbox("Choose pvt rate", ["Inclusive", "0.25%", "0.5%", "Excluded"])
             loss_of_use = st.selectbox("Choose amount charged", ["Inclusive", "Excluded", 3000, 4500])
