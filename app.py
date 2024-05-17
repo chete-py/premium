@@ -728,7 +728,7 @@ with view2:
             final_df = df
   
                     
-        st.write(final_df)
+        st.data_editor(final_df)
 
 
 
