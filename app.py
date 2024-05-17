@@ -32,6 +32,9 @@ with tab1:
             if underwriter == 'FIDELITY INSURANCE':
                 prorata_premium = max(value * (rate/100), 30000)
                 premium = prorata_premium * (days/366)
+            elif underwriter == 'APA INSURANCE':
+                prorata_premium = max(value * (rate/100), 25000)
+                premium = prorata_premium * (days/366)
             else:  
                 premium = value * (rate/100) * (days/366)
 
