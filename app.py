@@ -708,7 +708,7 @@ with view2:
     
         df = pd.DataFrame(data, columns=headers)
 
-        df['Date'] = pd.to_datetime(df['Date'], format='%m/%d/%Y %H:%M', errors='coerce')
+        df['Date'] = pd.to_datetime(df['Date'], format='%d/%m/%Y %H:%M', errors='coerce')
 
         df['Renewal Month'] = df['Date'].dt.month_name()
 
