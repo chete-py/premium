@@ -637,6 +637,55 @@ with view1:
 
 
 
+with view2:
+    def check_password():
+        """Returns `True` if the user entered a correct password."""
+        return st.session_state.get("password_correct", False)
+
+    def password_entered():
+        """Checks whether a password entered by the user is correct."""
+        if (
+            st.session_state["username"] in st.secrets["passwords"]
+            and st.session_state["password"]
+            == st.secrets["passwords"][st.session_state["username"]]
+        ):
+            st.session_state["password_correct"] = True
+            del st.session_state["password"]  # Don't store username + password
+            del st.session_state["username"]
+        else:
+            st.session_state["password_correct"] = False
+    
+    if "password_correct" not in st.session_state:
+        # First run, show inputs for username + password.
+        st.text_input("Username", key="username")
+        st.text_input("Password", type="password", key="password")
+        st.button("Submit", on_click=password_entered)
+        st.stop()
+    
+    if not st.session_state["password_correct"]:
+        # Password not correct, show input + error.
+        st.text_input("Username", key="username")
+        st.text_input("Password", type="password", key="password")
+        st.button("Submit", on_click=password_entered)
+        st.error("User not known or incorrect password")
+        st.stop()
+    
+    if check_password():
+        st.subheader("WORK SPACE")
+        st.subheader("WORK SPACE")
+        
+        # # Assuming you have already set up Google Sheets and the worksheet
+        # # worksheet = some_google_sheets_api_function_to_get_the_worksheet()
+        
+        # # Read data from the Google Sheets worksheet
+        # data = worksheet.get_all_values()
+        # headers = data[0]
+        # data = data[1:]
+    
+        # df = pd.DataFrame(data, columns=headers)
+        # st.write(df)
+
+
 
 
 
