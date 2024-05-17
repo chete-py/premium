@@ -708,24 +708,26 @@ with view2:
     
         df = pd.DataFrame(data, columns=headers)
 
-        # df['Renewal Month'] = df['Date'].dt.month_name()
+        df['Date'] = pd.to_datetime(df['Date'])
 
-        # # Get the unique reviewer names from the DataFrame
-        # unique_outcome = df['Renewal Month'].unique()
+        df['Renewal Month'] = df['Date'].dt.month_name()
+
+        # Get the unique reviewer names from the DataFrame
+        unique_outcome = df['Renewal Month'].unique()
   
-        # # Create a dropdown to select a reviewer with "All" option
-        # selected = st.selectbox("Filter by Outcome:", ["All"] + list(unique_outcome))
+        # Create a dropdown to select a reviewer with "All" option
+        selected = st.selectbox("Filter by Outcome:", ["All"] + list(unique_outcome))
   
-        # if selected != "All":
-        #     # Filter the DataFrame based on the selected reviewer
-        #     final_df = df[df['Renewal Month'] == selected]
+        if selected != "All":
+            # Filter the DataFrame based on the selected reviewer
+            final_df = df[df['Renewal Month'] == selected]
   
-        # else:
-        #     # If "All" is selected, show the entire DataFrame
-        #     final_df = df
+        else:
+            # If "All" is selected, show the entire DataFrame
+            final_df = df
   
                     
-        st.write(df)
+        st.write(final_df)
 
 
 
