@@ -708,9 +708,9 @@ with view2:
     
         df = pd.DataFrame(data, columns=headers)
 
-        df['New Date'] = pd.to_datetime(df['Date'], format='%d/%m/%Y %H:%M', errors='coerce')
+        df['Date'] = pd.to_datetime(df['Date'], format='%m/%d/%Y %H:%M', errors='coerce')
 
-        df['Renewal Month'] = df['New Date'].dt.month_name()
+        df['Renewal Month'] = df['Date'].dt.month_name()
 
         # Get the unique reviewer names from the DataFrame
         unique_outcome = df['Renewal Month'].unique()
