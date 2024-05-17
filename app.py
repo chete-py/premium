@@ -709,7 +709,8 @@ with view2:
         df = pd.DataFrame(data, columns=headers)
 
         
-
+        df['Date'] = pd.to_datetime(df['Date'])
+        
         df['Renewal Month'] = df['Date'].dt.month_name()
 
         # Get the unique reviewer names from the DataFrame
