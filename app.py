@@ -104,8 +104,8 @@ with tab1:
             <style>
                 table {{
                 border-collapse: collapse;
-                width: 45%;
-                margin: 2.5px auto; /* Center the table */
+                width: 40%;
+                margin: 1px auto; /* Center the table */
                 font-size: 10px;
                 font-family: Candara;
             }}
