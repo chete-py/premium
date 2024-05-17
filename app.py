@@ -708,7 +708,9 @@ with view2:
     
         df = pd.DataFrame(data, columns=headers)
 
-        df['Renewal Month'] = df['Date'].dt.month_name()
+        headers = df.columns
+
+        # df['Renewal Month'] = df['Date'].dt.month_name()
 
         # Get the unique reviewer names from the DataFrame
         unique_outcome = df['Renewal Month'].unique()
@@ -725,7 +727,7 @@ with view2:
             final_df = df
   
                     
-        st.write(df)
+        st.write(headers)
 
 
 
