@@ -700,6 +700,8 @@ with view2:
         st.stop()
     
     if check_password():
+
+       
                
        
         #Read data from the Google Sheets worksheet
@@ -708,7 +710,25 @@ with view2:
         data = data[1:]
     
         df = pd.DataFrame(data, columns=headers)
-        st.write(df)
+
+         month = df.groupby
+
+        # Get the unique reviewer names from the DataFrame
+        unique_outcome = df['Renewal Month'].unique()
+  
+        # Create a dropdown to select a reviewer with "All" option
+        selected = st.selectbox("Filter by Outcome:", ["All"] + list(unique_outcome))
+  
+        if selected != "All":
+            # Filter the DataFrame based on the selected reviewer
+            final_df = df[df['Renewal Month'] == selected]
+  
+        else:
+            # If "All" is selected, show the entire DataFrame
+            final_df = df
+  
+                    
+        st.write(final_df)
 
 
 
