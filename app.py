@@ -727,7 +727,7 @@ with view2:
             # If "All" is selected, show the entire DataFrame
             final_df = df
 
-        task1, task2, task3, task4 = st.tabs(["Work Load", "Invite Sent", "Renewed", "Debited"])
+        task1, task2, task3, task4 task5 = st.tabs(["Work Load", "Invite Sent", "Renewed", "Debited", "Exits"])
 
         with task1:                    
             st.data_editor(final_df)
