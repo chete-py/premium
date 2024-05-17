@@ -16,10 +16,10 @@ credentials = service_account.Credentials.from_service_account_file(credentials_
 gc = gspread.authorize(credentials)
     
 # Your Google Sheets URL
-url = "https://docs.google.com/spreadsheets/d/1OGtNQnciAJLJiOmKlfvuZWar0zFwCjA77GwvBe5BF9Q/edit#gid=0"
+url = "https://docs.google.com/spreadsheets/d/10RkBeRYprne_5q2GDCwW5n_xC3F3ryAGdy4-bMLdxs0/edit#gid=0"
     
 # Open the Google Sheets spreadsheet
-worksheet = gc.open_by_url(url).worksheet("Upcoming")
+worksheet = gc.open_by_url(url).worksheet("July")
 
 view1, view2 = st.tabs(["Premium", "Renewal"])
 
