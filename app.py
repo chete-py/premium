@@ -236,7 +236,7 @@ with view1:
             days = st.number_input('Pro-Rated Days')
             excess_protector = st.selectbox("Choose excess protector rate", ["Inclusive", "0.25%", "0.5%", "Excluded"])
             pvt = st.selectbox("Choose pvt rate", ["Inclusive", "0.25%", "0.5%", "Excluded"])
-            loss_of_use = st.selectbox("Choose amount charged", ["Inclusive", "Excluded", 3000, 4500])
+            loss_of_use = st.selectbox("Choose amount charged", ["Inclusive", "Excluded", 1500, 3000, 4500])
             policy_fee = st.selectbox("Choose cover", ["Renewal", "New Business",])
             notes1 = st.text_input("Include Important Remarks 1 eg. Political/Terrorism Risks/RSCC - Reinstated at 0.35% of Value Once utilized")
             notes2 = st.text_input("Include Important Remarks 2 eg.  Days Loss of use/Courtesy Car - Reinstated at KShs. 3,000/- Once Utilized")
