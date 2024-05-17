@@ -699,12 +699,9 @@ with view2:
         st.error("User not known or incorrect password")
         st.stop()
     
-    if check_password():
-
+    if check_password():     
        
-               
-       
-        #Read data from the Google Sheets worksheet
+        # Read data from the Google Sheets worksheet
         data = worksheet.get_all_values()
         headers = data[0]
         data = data[1:]
@@ -730,7 +727,7 @@ with view2:
             final_df = df
   
                     
-        st.write(final_df)
+        st.write(df)
 
 
 
