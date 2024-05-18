@@ -733,7 +733,7 @@ with view2:
             workload = final_df[final_df['Status'] == 'Pending']
             # st.data_editor(workload, key = 'workload')
             edited_df =  st.data_editor(workload, key = 'workload')
-            edited_df['Date'] = json.dumps(edited_df['Date'], default=str)
+            edited_df['Date'] = json.dumps(edited_df['Date'])
             # Add a button to update Google Sheets with the changes
             if st.button("Update Records", key='button1'):                
                 worksheet.update([edited_df.columns.tolist()] + edited_df.values.tolist())
