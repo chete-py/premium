@@ -735,7 +735,7 @@ with view2:
             # Add a button to update Google Sheets with the changes
             if st.button("Update Records", key='button1'):
                 
-                worksheet.update([workload.columns.tolist()] + workload.values.tolist())
+                worksheet.update()
         
         with task2:
             invited = final_df[final_df['Status'] == 'Invited']
@@ -744,7 +744,7 @@ with view2:
             # Add a button to update Google Sheets with the changes
             if st.button("Update Records", key='button2'):
                 # worksheet.clear()  # Clear the existing data in the worksheet
-                worksheet.update([invited.columns.tolist()] + invited.values.tolist())
+                worksheet.update()
         
         with task3:
             renewed = final_df[final_df['Status'] == 'Renewed']
