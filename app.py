@@ -731,19 +731,19 @@ with view2:
 
         with task1:
             workload = final_df[final_df['Status'] == 'Pending']
-            st.data_editor(workload)
+            st.data_editor(workload, key = 'workload')
         with task2:
             invited = final_df[final_df['Status'] == 'Invited']
-            st.data_editor(invited)
+            st.data_editor(invited, key= 'invited')
         with task3:
             renewed = final_df[final_df['Status'] == 'Renewed']
-            st.data_editor(renewed)
+            st.data_editor(renewed' key='renewed')
         with task4:
-            debitted = final_df[final_df['Status'] == 'Debitted']
-            st.data_editor(debitted)
+            debited = final_df[final_df['Status'] == 'Debited']
+            st.data_editor(debited, key='debited')
         with task5:
             exits = final_df[final_df['Status'] == 'Exits']
-            st.data_editor(exits)
+            st.data_editor(exits, key='exits')
 
 
 
