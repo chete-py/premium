@@ -731,7 +731,6 @@ with view2:
 
         with task1:
             workload = final_df[final_df['Status'] == 'Pending']
-            # st.data_editor(workload, key = 'workload')
             edited_df =  st.data_editor(workload, key = 'workload')
             edited_df = edited_df.astype(str).fillna('')
             # Add a button to update Google Sheets with the changes
@@ -739,23 +738,37 @@ with view2:
                 worksheet.update([edited_df.columns.tolist()] + edited_df.values.tolist())
         
         with task2:
-            invited = final_df[final_df['Status'] == 'Invited']
-            st.data_editor(invited, key= 'invited')
-            
+            invited = final_df[final_df['Status'] == 'Invited']            
+            edited_df =  st.data_editor(invited, key = 'invitedd')
+            edited_df = edited_df.astype(str).fillna('')
             # Add a button to update Google Sheets with the changes
-            if st.button("Update Records", key='button2'):
-                # worksheet.clear()  # Clear the existing data in the worksheet
-                worksheet.update()
+            if st.button("Update Records", key='button2'):                
+                worksheet.update([edited_df.columns.tolist()] + edited_df.values.tolist())
+        
         
         with task3:
             renewed = final_df[final_df['Status'] == 'Renewed']
-            st.data_editor(renewed, key='renewed')
+            edited_df =  st.data_editor(renewed, key = 'renewed')
+            edited_df = edited_df.astype(str).fillna('')
+            # Add a button to update Google Sheets with the changes
+            if st.button("Update Records", key='button3'):                
+                worksheet.update([edited_df.columns.tolist()] + edited_df.values.tolist())
+                
         with task4:
             debited = final_df[final_df['Status'] == 'Debited']
-            st.data_editor(debited, key='debited')
+            edited_df = st.data_editor(debited, key='debited')
+            edited_df = edited_df.astype(str).fillna('')
+            # Add a button to update Google Sheets with the changes
+            if st.button("Update Records", key='button4'):                
+                worksheet.update([edited_df.columns.tolist()] + edited_df.values.tolist())
+                
         with task5:
             exits = final_df[final_df['Status'] == 'Exits']
-            st.data_editor(exits, key='exits')
+            edited_df = st.data_editor(exits, key='exits')
+            edited_df = edited_df.astype(str).fillna('')
+            # Add a button to update Google Sheets with the changes
+            if st.button("Update Records", key='button5'):                
+                worksheet.update([edited_df.columns.tolist()] + edited_df.values.tolist())
 
 
 
