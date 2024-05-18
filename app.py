@@ -731,7 +731,7 @@ with view2:
 
         with task1:
             workload = final_df[final_df['Status'] == 'Pending']
-            st.data_editor(workload, key = 'workload')
+            # st.data_editor(workload, key = 'workload')
             edited_df =  st.data_editor(workload, key = 'workload')
             # Add a button to update Google Sheets with the changes
             if st.button("Update Records", key='button1'):                
