@@ -729,8 +729,21 @@ with view2:
 
         task1, task2, task3, task4, task5 = st.tabs(["Work Load", "Invite Sent", "Renewed", "Debited", "Exits"])
 
-        with task1:                    
-            st.data_editor(final_df)
+        with task1:
+            workload = final_df[final_df['Status'] == 'Pending']
+            st.data_editor(workload)
+        with task2:
+            invited = final_df[final_df['Status'] == 'Invited']
+            st.data_editor(invited)
+        with task3:
+            renewed = final_df[final_df['Status'] == 'Renewed']
+            st.data_editor(renewed)
+        with task4:
+            debitted = final_df[final_df['Status'] == 'Debitted']
+            st.data_editor(debitted)
+        with task5:
+            exits = final_df[final_df['Status'] == 'Exits']
+            st.data_editor(exits)
 
 
 
