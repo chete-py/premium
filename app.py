@@ -737,7 +737,7 @@ with view2:
             st.data_editor(invited, key= 'invited')
         with task3:
             renewed = final_df[final_df['Status'] == 'Renewed']
-            st.data_editor(renewed' key='renewed')
+            st.data_editor(renewed, key='renewed')
         with task4:
             debited = final_df[final_df['Status'] == 'Debited']
             st.data_editor(debited, key='debited')
