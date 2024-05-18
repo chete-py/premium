@@ -733,7 +733,7 @@ with view2:
             workload = final_df[final_df['Status'] == 'Pending']
             st.data_editor(workload, key = 'workload')
             # Add a button to update Google Sheets with the changes
-            if st.button("Update Records"):
+            if st.button("Update Records", key='button1'):
                 worksheet.clear()  # Clear the existing data in the worksheet
                 worksheet.update([final_df.columns.tolist()] + final_df.values.tolist())
         
@@ -742,7 +742,7 @@ with view2:
             st.data_editor(invited, key= 'invited')
             
             # Add a button to update Google Sheets with the changes
-            if st.button("Update Records"):
+            if st.button("Update Records", key='button2'):
                 worksheet.clear()  # Clear the existing data in the worksheet
                 worksheet.update([final_df.columns.tolist()] + final_df.values.tolist())
         
