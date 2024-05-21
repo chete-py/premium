@@ -736,7 +736,8 @@ with view2:
             final = merged.drop_duplicates(subset=['Key'], keep='last')
             df1 = final.astype(str).fillna('')            
             # Add a button to update Google Sheets with the changes
-            if st.button("Update Records", key='button1'):                
+            if st.button("Update Records", key='button1'):   
+                worksheet.clear()
                 worksheet.update([df1.columns.tolist()] + df1.values.tolist())
         
         with task2:
