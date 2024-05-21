@@ -672,7 +672,7 @@ with view1:
                                                             
         fee = 0
     
-        if st.button("Calculate Quote"):          
+        if st.button("Calculate Quote", key='tpo'):          
             
             if policy_fee == "Renewal":
                 fee += 100
