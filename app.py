@@ -744,7 +744,7 @@ with view2:
         with task2:
             invited = final_df[final_df['Status'] == 'Invited']            
             edited_df =  st.data_editor(invited, key = 'invitedd')
-             merged = pd.concat([final_df, edited_df])
+            merged = pd.concat([final_df, edited_df])
             finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
             descending = finalmerged.sort_values(by=['Key'], ascending=False)
             df2 = descending.astype(str).fillna('')            
