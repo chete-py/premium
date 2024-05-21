@@ -866,7 +866,7 @@ with view2:
             # If "All" is selected, show the entire DataFrame
             final_df = df
 
-        task1, task2, task3, task4, task5 = st.tabs(["Work Load", "Invite Sent", "Renewed", "Debited", "Exits"])
+        task1, task2, task3, task4, task5, task6 = st.tabs(["Work Load", "Invite Sent", "Valuation", "Renewed", "Debited", "Exits"])
 
         with task1:
             workload = final_df[final_df['Status'] == 'Pending']
@@ -895,23 +895,37 @@ with view2:
             if st.button("Update Records", key='button2'):   
                 worksheet.clear()
                 worksheet.update([df2.columns.tolist()] + df2.values.tolist())
-        
-            
+
+
+
+        with task3:
+            renewed = final_df[final_df['Status'] == 'Valued']
+            edited_df =  st.data_editor(renewed, key = 'valued')
+            merged = pd.concat([final_df, edited_df])
+            finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
+            descending = finalmerged.sort_values(by=['Key'], ascending=True)
+            df3 = descending.astype(str).fillna('') 
+            num = len(valued)
+            st.markdown(f'Valued: {num}')
+            # Add a button to update Google Sheets with the changes
+            if st.button("Update Records", key='button3'):   
+                worksheet.clear()
+                worksheet.update([df3.columns.tolist()] + df3.values.tolist())      
            
         
-        with task3:
+        with task4:
             renewed = final_df[final_df['Status'] == 'Renewed']
             edited_df =  st.data_editor(renewed, key = 'renewed')
             merged = pd.concat([final_df, edited_df])
             finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
             descending = finalmerged.sort_values(by=['Key'], ascending=True)
-            df3 = descending.astype(str).fillna('') 
+            df4 = descending.astype(str).fillna('') 
             num = len(renewed)
             st.markdown(f'Renewed: {num}')
             # Add a button to update Google Sheets with the changes
-            if st.button("Update Records", key='button3'):   
+            if st.button("Update Records", key='button4'):   
                 worksheet.clear()
-                worksheet.update([df3.columns.tolist()] + df3.values.tolist())
+                worksheet.update([df4.columns.tolist()] + df4.values.tolist())
         
             
         with task4:
@@ -920,17 +934,17 @@ with view2:
             merged = pd.concat([final_df, edited_df])
             finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
             descending = finalmerged.sort_values(by=['Key'], ascending=True)
-            df4 = descending.astype(str).fillna('') 
+            df5 = descending.astype(str).fillna('') 
             num = len(debited)
             st.markdown(f'Certificate Issued: {num}')
             # Add a button to update Google Sheets with the changes
-            if st.button("Update Records", key='button4'):   
+            if st.button("Update Records", key='button5'):   
                 worksheet.clear()
-                worksheet.update([df4.columns.tolist()] + df4.values.tolist())
+                worksheet.update([df5.columns.tolist()] + df5.values.tolist())
         
            
                 
-        with task5:
+        with task6:
             exits = final_df[final_df['Status'] == 'Exits']
             edited_df = st.data_editor(exits, key='exits')
             merged = pd.concat([final_df, edited_df])
@@ -940,9 +954,9 @@ with view2:
             num = len(exits)
             st.markdown(f'Cancelled Policy: {num}')
             # Add a button to update Google Sheets with the changes
-            if st.button("Update Records", key='button5'):   
+            if st.button("Update Records", key='button6'):   
                 worksheet.clear()
-                worksheet.update([df5.columns.tolist()] + df5.values.tolist())
+                worksheet.update([df6.columns.tolist()] + df6.values.tolist())
         
 
             
