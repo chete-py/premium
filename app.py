@@ -733,8 +733,9 @@ with view2:
             workload = final_df[final_df['Status'] == 'Pending']
             edited_df =  st.data_editor(workload, key = 'workload')
             merged = pd.concat([final_df, edited_df])
-            final = merged.drop_duplicates(subset=['Key'], keep='last')
-            df1 = final.astype(str).fillna('')            
+            finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
+            descending = finalmerged.sort_values(by=['Population'], ascending=False)
+            df1 = descending.astype(str).fillna('')            
             # Add a button to update Google Sheets with the changes
             if st.button("Update Records", key='button1'):   
                 worksheet.clear()
