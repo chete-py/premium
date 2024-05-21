@@ -733,6 +733,7 @@ with view2:
             workload = final_df[final_df['Status'] == 'Pending']
             edited_df =  st.data_editor(workload, key = 'workload')
             merged = pd.concat([final_df, edited_df])
+            merged.drop_duplicates(subset=['Key'], keep='last')
             df1 = merged.astype(str).fillna('')            
             # Add a button to update Google Sheets with the changes
             if st.button("Update Records", key='button1'):                
