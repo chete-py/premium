@@ -739,7 +739,7 @@ with view2:
             descending = finalmerged.sort_values(by=['Key'], ascending=True)
             df1 = descending.astype(str).fillna('')
             num = len(workload)
-            st.markdown(f'Pending Invites:{num}')
+            st.markdown(f'Pending Invites: {num}')
             # Add a button to update Google Sheets with the changes
             if st.button("Update Records", key='button1'):   
                 worksheet.clear()
@@ -753,7 +753,7 @@ with view2:
             descending = finalmerged.sort_values(by=['Key'], ascending=True)
             df2 = descending.astype(str).fillna('')    
             num = len(invited)
-            st.markdown(f'Invite Sent:{num}')
+            st.markdown(f'Invite Sent: {num}')
             # Add a button to update Google Sheets with the changes
             if st.button("Update Records", key='button2'):   
                 worksheet.clear()
@@ -768,7 +768,9 @@ with view2:
             merged = pd.concat([final_df, edited_df])
             finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
             descending = finalmerged.sort_values(by=['Key'], ascending=True)
-            df3 = descending.astype(str).fillna('')            
+            df3 = descending.astype(str).fillna('') 
+            num = len(renewed)
+            st.markdown(f'Invite Sent: {num}')
             # Add a button to update Google Sheets with the changes
             if st.button("Update Records", key='button3'):   
                 worksheet.clear()
