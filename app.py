@@ -899,7 +899,7 @@ with view2:
 
 
         with task3:
-            renewed = final_df[final_df['Status'] == 'Valued']
+            valued = final_df[final_df['Status'] == 'Valued']
             edited_df =  st.data_editor(renewed, key = 'valued')
             merged = pd.concat([final_df, edited_df])
             finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
