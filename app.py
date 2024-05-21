@@ -54,7 +54,7 @@ with view1:
                 if underwriter == 'FIDELITY INSURANCE':
                     prorata_premium = max(value * (rate/100), 30000)
                     premium = prorata_premium * (days/366)
-                elif underwriter == 'APA INSURANCE':
+                elif underwriter == 'APA INSURANCE' or underwriter == "CANNON GENERAL INSURANCE":
                     prorata_premium = max(value * (rate/100), 25000)
                     premium = prorata_premium * (days/366)
                 else:
