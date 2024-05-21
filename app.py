@@ -735,7 +735,7 @@ with view2:
             df1 = edited_df.astype(str).fillna('')
             # Add a button to update Google Sheets with the changes
             if st.button("Update Records", key='button1'):                
-                worksheet.update(df1.columns.tolist()] + df1.values.tolist())
+                worksheet.update([df1.columns.tolist()] + df1.values.tolist())
         
         with task2:
             invited = final_df[final_df['Status'] == 'Invited']            
