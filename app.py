@@ -708,6 +708,8 @@ with view2:
     
         df = pd.DataFrame(data, columns=headers)
 
+        df['Key'] = df['Key'].astype(int)
+
         
         df['Date'] = pd.to_datetime(df['Date'])
         
