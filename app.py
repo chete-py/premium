@@ -664,10 +664,10 @@ with view1:
             )
 
     with tab3:
-        reg = st.text_input('Enter Vehicle Registration')
-        underwriter = st.selectbox("Select Underwriter", ["APA INSURANCE", "FIDELITY INSURANCE", "CANNON GENERAL INSURANCE", "GA INSURANCE", "MAYFAIR INSURANCE", "ICEA LION INSURANCE", "JUBILEE ALLIANZ"])
-        premium = int(st.number_input('Enter Premium Charged'))      
-        notes = st.text_input("Include Important Remarks eg. LIMITED TO UBER ONLY")
+        reg = st.text_input('Enter Vehicle Reg')
+        underwriter = st.selectbox("Select Underwriter", ["APA INSURANCE", "FIDELITY INSURANCE", "CANNON GENERAL INSURANCE", "GA INSURANCE", "MAYFAIR INSURANCE", "ICEA LION GENERAL INSURANCE", "JUBILEE ALLIANZ"])
+        premium = int(st.number_input('Enter Premium Payable'))      
+        notes = st.text_input("Include Important Remarks eg. COVERS THIRD PARTY ONLY")
         
                                                             
         fee = 0
