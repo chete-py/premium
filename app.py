@@ -751,7 +751,9 @@ with view2:
             merged = pd.concat([final_df, edited_df])
             finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
             descending = finalmerged.sort_values(by=['Key'], ascending=True)
-            df2 = descending.astype(str).fillna('')            
+            df2 = descending.astype(str).fillna('')    
+            num = len(invited)
+            st.markdown(f'Invite Sent:{num}')
             # Add a button to update Google Sheets with the changes
             if st.button("Update Records", key='button2'):   
                 worksheet.clear()
