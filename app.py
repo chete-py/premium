@@ -25,7 +25,7 @@ view1, view2 = st.tabs(["Premium", "Renewal"])
 
 with view1:
     
-    tab1, tab2, tab3 = st.tabs(["Motor Private", "📈 Motor Private PSV",  "📈 Motor Commercial"])
+    tab1, tab2, tab3 = st.tabs(["Motor Private", "📈 Motor Private PSV",  "📈 Motor Private TPO"])
     
     with tab1:
         view = st.radio("Client Type", ["Renewal", "New"])
@@ -662,6 +662,143 @@ with view1:
                 file_name=f"{reg}_quote.html",
                 mime="text/html"
             )
+
+    with tab3:
+        reg = st.text_input('Enter Vehicle Registration')
+        underwriter = st.selectbox("Select Underwriter", ["APA INSURANCE", "FIDELITY INSURANCE", "CANNON GENERAL INSURANCE", "GA INSURANCE", "MAYFAIR INSURANCE", "ICEA LION INSURANCE", "JUBILEE ALLIANZ"])
+        premium = int(st.number_input('Enter Premium Charged'))      
+        notes = st.text_input("Include Important Remarks eg. LIMITED TO UBER ONLY")
+        
+                                                            
+        fee = 0
+    
+        if st.button("Calculate Quote"):          
+            
+            if policy_fee == "Renewal":
+                fee += 100
+            if policy_fee == "New Business":
+                fee += 40
+    
+            
+    
+            gross_premium = (premium + 0)
+    
+            levies = gross_premium * 0.0045
+    
+            total = ( gross_premium + fee + levies  )
+    
+            # Format numbers with commas for thousands
+            def format_with_commas(number):
+                rounded_number = round(number, 2)
+                return "{:,.2f}".format(rounded_number)
+                
+        
+            formatted_premium = format_with_commas(premium)
+            formatted_gross_premium = format_with_commas(gross_premium)
+            formatted_levies = format_with_commas(levies)
+            formatted_total = format_with_commas(total)
+    
+    
+            # Create an HTML report
+            html_report = f"""
+            <html>
+            <head>
+            <style>
+                table {{
+                border-collapse: collapse;
+                width: 45%;
+                margin: 2.5px auto; /* Center the table */
+                font-size: 10px;
+                font-family: Candara;
+            }}
+    
+            th, td {{
+                border: 1px solid black;
+                padding: 5px; /* Increased padding for better spacing */
+                text-align: left;
+            }}
+    
+            th {{
+                background-color: #966fd6;
+                color: black; /* Text color for table headers */
+            }}
+    
+            .bold {{
+                font-weight: bold;
+            }}
+    
+            .gross_premium {{
+                border-top: 2px solid black;
+                border-bottom: 2px double black;        
+            }}
+    
+            .footer-row th {{
+                background-color: #073980;
+            }}
+    
+            
+            
+            </style>
+            </head>
+            <body>
+            <table>
+                <tr>
+                    <th colspan="2">{reg} - MOTOR PRIVATE TPO COVER</th>
+                    <th colspan="2">{underwriter} </th>
+                    
+                </tr>
+                <tr >
+                    <th style="background-color: #17B169"></th>
+                    <th style="background-color: #17B169">Value - KES</th>
+                    <th style="background-color: #17B169">Rate</th>
+                    <th style="background-color: #17B169">Premium</th>
+                </tr>
+                <tr>
+                    <td>Basic Premium</td>
+                    <td>{premium}/-</td> <!-- Updated formatting for better readability -->
+                    <td style="color:red"></td>
+                    <td>{formatted_gross_premium}</td> <!-- Updated formatting for better readability -->
+                </tr>
+                
+                <tr>
+                    <td>Levies</td>
+                    <td></td>
+                    <td style="color:red">0.45%</td>
+                    <td >{formatted_levies}</td> <!-- Updated formatting for better readability -->
+                </tr>
+                <tr>
+                    <td>Policy Fee</td>
+                    <td></td>
+                    <td></td>
+                    <td>{fee}</td>
+                </tr>
+                <tr style=" border-top: 2px double black;  border-bottom: 2px double black;">
+                    <td class= 'bold' style="color:#152637">Total Premium Payable</td>
+                    <td></td>
+                    <td></td>
+                    <td class = 'bold' style="color:#152637">{formatted_total} /-</td>
+                </tr>
+                <tr class='footer-row'>
+                
+                    <th colspan="4" style='color:white'>{notes} </th>
+                    
+                </tr>
+            </table>
+            </body>
+                
+            </html>
+            """
+            
+        # Create a download button with customized file name
+    
+            st.download_button(
+                label=f"Download {reg}'s_tpo_premium_quote(HTML)",
+                data=html_report.encode('utf-8'),
+                file_name=f"{reg}_quote.html",
+                mime="text/html"
+            )
+                
+
                 
 
 
