@@ -733,9 +733,10 @@ with view2:
             workload = final_df[final_df['Status'] == 'Pending']
             edited_df =  st.data_editor(workload, key = 'workload')
             df1 = edited_df.astype(str).fillna('')
+            merged = pd.merge(final_df, df1)
             # Add a button to update Google Sheets with the changes
             if st.button("Update Records", key='button1'):                
-                worksheet.update([df1.columns.tolist()] + df1.values.tolist())
+                worksheet.update([merged.columns.tolist()] + merged.values.tolist())
         
         with task2:
             invited = final_df[final_df['Status'] == 'Invited']            
