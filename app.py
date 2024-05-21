@@ -734,7 +734,7 @@ with view2:
             edited_df =  st.data_editor(workload, key = 'workload')
             merged = pd.concat([final_df, edited_df])
             finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
-            descending = finalmerged.sort_values(by=['Key'], ascending=False)
+            descending = finalmerged.sort_values(by=['Key'], ascending=True)
             df1 = descending.astype(str).fillna('')            
             # Add a button to update Google Sheets with the changes
             if st.button("Update Records", key='button1'):   
@@ -743,10 +743,10 @@ with view2:
         
         with task2:
             invited = final_df[final_df['Status'] == 'Invited']            
-            edited_df =  st.data_editor(invited, key = 'invitedd')
+            edited_df =  st.data_editor(invited, key = 'invited')
             merged = pd.concat([final_df, edited_df])
             finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
-            descending = finalmerged.sort_values(by=['Key'], ascending=False)
+            descending = finalmerged.sort_values(by=['Key'], ascending=True)
             df2 = descending.astype(str).fillna('')            
             # Add a button to update Google Sheets with the changes
             if st.button("Update Records", key='button2'):   
@@ -761,7 +761,7 @@ with view2:
             edited_df =  st.data_editor(renewed, key = 'renewed')
             merged = pd.concat([final_df, edited_df])
             finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
-            descending = finalmerged.sort_values(by=['Key'], ascending=False)
+            descending = finalmerged.sort_values(by=['Key'], ascending=True)
             df3 = descending.astype(str).fillna('')            
             # Add a button to update Google Sheets with the changes
             if st.button("Update Records", key='button3'):   
@@ -774,7 +774,7 @@ with view2:
             edited_df = st.data_editor(debited, key='debited')
             merged = pd.concat([final_df, edited_df])
             finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
-            descending = finalmerged.sort_values(by=['Key'], ascending=False)
+            descending = finalmerged.sort_values(by=['Key'], ascending=True)
             df4 = descending.astype(str).fillna('')            
             # Add a button to update Google Sheets with the changes
             if st.button("Update Records", key='button4'):   
@@ -788,7 +788,7 @@ with view2:
             edited_df = st.data_editor(exits, key='exits')
             merged = pd.concat([final_df, edited_df])
             finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
-            descending = finalmerged.sort_values(by=['Key'], ascending=False)
+            descending = finalmerged.sort_values(by=['Key'], ascending=True)
             df5 = descending.astype(str).fillna('')            
             # Add a button to update Google Sheets with the changes
             if st.button("Update Records", key='button5'):   
