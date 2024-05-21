@@ -739,7 +739,7 @@ with view2:
             descending = finalmerged.sort_values(by=['Key'], ascending=True)
             df1 = descending.astype(str).fillna('')
             num = len(workload)
-            st.markdown('Pending Invites:{num}')
+            st.markdown(f'Pending Invites:{num}')
             # Add a button to update Google Sheets with the changes
             if st.button("Update Records", key='button1'):   
                 worksheet.clear()
