@@ -734,7 +734,7 @@ with view2:
             edited_df =  st.data_editor(workload, key = 'workload')
             merged = pd.concat([final_df, edited_df])
             finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
-            descending = finalmerged.sort_values(by=['Population'], ascending=False)
+            descending = finalmerged.sort_values(by=['Key'], ascending=False)
             df1 = descending.astype(str).fillna('')            
             # Add a button to update Google Sheets with the changes
             if st.button("Update Records", key='button1'):   
@@ -744,37 +744,59 @@ with view2:
         with task2:
             invited = final_df[final_df['Status'] == 'Invited']            
             edited_df =  st.data_editor(invited, key = 'invitedd')
-            df2 = edited_df.astype(str).fillna('')
+             merged = pd.concat([final_df, edited_df])
+            finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
+            descending = finalmerged.sort_values(by=['Key'], ascending=False)
+            df2 = descending.astype(str).fillna('')            
             # Add a button to update Google Sheets with the changes
-            if st.button("Update Records", key='button2'):                
+            if st.button("Update Records", key='button1'):   
+                worksheet.clear()
                 worksheet.update([df2.columns.tolist()] + df2.values.tolist())
         
+            
+           
         
         with task3:
             renewed = final_df[final_df['Status'] == 'Renewed']
             edited_df =  st.data_editor(renewed, key = 'renewed')
-            df3 = edited_df.astype(str).fillna('')
+            merged = pd.concat([final_df, edited_df])
+            finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
+            descending = finalmerged.sort_values(by=['Key'], ascending=False)
+            df3 = descending.astype(str).fillna('')            
             # Add a button to update Google Sheets with the changes
-            if st.button("Update Records", key='button3'):                
+            if st.button("Update Records", key='button1'):   
+                worksheet.clear()
                 worksheet.update([df3.columns.tolist()] + df3.values.tolist())
-                
+        
+            
         with task4:
             debited = final_df[final_df['Status'] == 'Debited']
             edited_df = st.data_editor(debited, key='debited')
-            df4 = edited_df.astype(str).fillna('')
+            merged = pd.concat([final_df, edited_df])
+            finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
+            descending = finalmerged.sort_values(by=['Key'], ascending=False)
+            df4 = descending.astype(str).fillna('')            
             # Add a button to update Google Sheets with the changes
-            if st.button("Update Records", key='button4'):                
+            if st.button("Update Records", key='button1'):   
+                worksheet.clear()
                 worksheet.update([df4.columns.tolist()] + df4.values.tolist())
+        
+           
                 
         with task5:
             exits = final_df[final_df['Status'] == 'Exits']
             edited_df = st.data_editor(exits, key='exits')
-            df5 = edited_df.astype(str).fillna('')
+            merged = pd.concat([final_df, edited_df])
+            finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
+            descending = finalmerged.sort_values(by=['Key'], ascending=False)
+            df5 = descending.astype(str).fillna('')            
             # Add a button to update Google Sheets with the changes
-            if st.button("Update Records", key='button5'):                
+            if st.button("Update Records", key='button1'):   
+                worksheet.clear()
                 worksheet.update([df5.columns.tolist()] + df5.values.tolist())
+        
 
-
+            
 
 
 
