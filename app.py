@@ -749,7 +749,7 @@ with view2:
             descending = finalmerged.sort_values(by=['Key'], ascending=False)
             df2 = descending.astype(str).fillna('')            
             # Add a button to update Google Sheets with the changes
-            if st.button("Update Records", key='button1'):   
+            if st.button("Update Records", key='button2'):   
                 worksheet.clear()
                 worksheet.update([df2.columns.tolist()] + df2.values.tolist())
         
@@ -764,7 +764,7 @@ with view2:
             descending = finalmerged.sort_values(by=['Key'], ascending=False)
             df3 = descending.astype(str).fillna('')            
             # Add a button to update Google Sheets with the changes
-            if st.button("Update Records", key='button1'):   
+            if st.button("Update Records", key='button3'):   
                 worksheet.clear()
                 worksheet.update([df3.columns.tolist()] + df3.values.tolist())
         
@@ -777,7 +777,7 @@ with view2:
             descending = finalmerged.sort_values(by=['Key'], ascending=False)
             df4 = descending.astype(str).fillna('')            
             # Add a button to update Google Sheets with the changes
-            if st.button("Update Records", key='button1'):   
+            if st.button("Update Records", key='button4'):   
                 worksheet.clear()
                 worksheet.update([df4.columns.tolist()] + df4.values.tolist())
         
@@ -791,7 +791,7 @@ with view2:
             descending = finalmerged.sort_values(by=['Key'], ascending=False)
             df5 = descending.astype(str).fillna('')            
             # Add a button to update Google Sheets with the changes
-            if st.button("Update Records", key='button1'):   
+            if st.button("Update Records", key='button5'):   
                 worksheet.clear()
                 worksheet.update([df5.columns.tolist()] + df5.values.tolist())
         
