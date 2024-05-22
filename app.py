@@ -467,9 +467,9 @@ with view1:
         
     with tab2:
         reg = st.text_input('Enter Vehicle Registration')
-        underwriter = st.selectbox("Select Underwriter", ["APA INSURANCE", "FIDELITY INSURANCE", "CANNON GENERAL INSURANCE", "GA INSURANCE", "MAYFAIR INSURANCE", "ICEA LION INSURANCE", "JUBILEE ALLIANZ"])
+        underwriter = st.selectbox("Select Underwriter", ["GA INSURANCE", "JUBILEE ALLIANZ"])
         value = int(st.number_input('Enter Sum Insured'))
-        rate = st.number_input('Enter Rate as a number eg 4 ')
+        rate = st.number_input('Enter Rate as a number eg 7.5 ')
         excess_protector = st.selectbox("Select excess protector rate", ["Inclusive", "0.25%", "0.45", "0.5", "Excluded"])
         pvt = st.selectbox("Select pvt rate", ["Inclusive", "0.25%", "0.45", "0.5", "Excluded"])
         pll = st.number_input('Number of Passangers eg 4')
@@ -484,18 +484,19 @@ with view1:
         pvt_value = 0
     
         if st.button("Calculate Quote"):
-            premium = value * (rate/100)
+
+             if underwriter == 'GA INSURANCE':
+                    premium = max(value * (rate/100), 37500)
+                                
     
             if pvt == 'Inclusive' or 'Excluded':
                 pvt_value += 0
             if pvt == '0.25%':
-                pvtworking = (0.25/100) * value
+                pvtworking = max((0.25/100) * value, 5000)
                 pvt_value += pvtworking
-            if pvt == '0.45%':
-                pvtworking = (0.45/100) * value
-                pvt_value += pvtworking
+
             if pvt == '0.5%':
-                pvtworking = (0.5/100) * value
+                pvtworking = max((0.5/100) * value, 5000)
                 pvt_value += pvtworking
     
             if excess_protector == 'Inclusive' or 'Exluded':
