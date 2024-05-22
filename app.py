@@ -471,7 +471,7 @@ with view1:
         value = int(st.number_input('Enter Sum Insured'))
         rate = st.number_input('Enter Rate as a number eg 7.5 ')
         excess_protector = st.selectbox("Select excess protector rate", ["Inclusive", "0.25%", "0.45", "0.5", "Excluded"])
-        pvt = st.selectbox("Select pvt rate", ["Inclusive", "0.25%", "0.45", "0.5", "Excluded"])
+        pvt = st.selectbox("Select pvt rate", ["Inclusive", "0.25%", "0.5%", "Excluded"])
         pll = st.number_input('Number of Passangers eg 4')
         policy_fee = st.selectbox("Select cover", ["Renewal", "New Business",])
         notes = st.text_input("Include Important Remarks eg. LIMITED TO UBER ONLY")
