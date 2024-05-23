@@ -959,7 +959,7 @@ with view2:
             merged = pd.concat([final_df, edited_df])
             finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
             descending = finalmerged.sort_values(by=['Key'], ascending=True)
-            df5 = descending.astype(str).fillna('')  
+            df6 = descending.astype(str).fillna('')  
             num = len(exits)
             st.markdown(f'Cancelled Policy: {num}')
             # Add a button to update Google Sheets with the changes
