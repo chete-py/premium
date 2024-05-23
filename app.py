@@ -37,6 +37,7 @@ with view1:
             if underwriter == "CANNON GENERAL INSURANCE":
                 eabl =  st.selectbox("Choose EABL or NON-EABL", ["EABL", "NON-EABL"])
             value = int(st.number_input('Sum Insured'))
+            windscreen = int(st.number_input('Chargeable difference (above 50K)'))
             rate = st.number_input('Rate as a number eg 4 0r 3.5')
             days = st.number_input('Pro-Rated Days')
             excess_protector = st.selectbox("Choose excess protector rate", ["Inclusive", "0.25%", "0.5%", "Excluded"])
@@ -55,19 +56,19 @@ with view1:
         
             if st.button("Calculate"):
                 if underwriter == 'FIDELITY INSURANCE':
-                    prorata_premium = max(value * (rate/100), 30000)
+                    prorata_premium = (max(value * (rate/100), 30000)) + (windscreen * (10/100))
                     premium = prorata_premium * (days/366)
                 elif underwriter == 'APA INSURANCE':
-                    prorata_premium = max(value * (rate/100), 25000)
+                    prorata_premium = (max(value * (rate/100), 25000)) + (windscreen * (10/100))
                     premium = prorata_premium * (days/366)
                 elif eabl == 'EABL':
-                    prorata_premium = max(value * (rate/100), 25000)
+                    prorata_premium = (max(value * (rate/100), 25000)) + (windscreen * (10/100))
                     premium = prorata_premium * (days/366)
                 elif eabl == 'NON-EABL':
-                    prorata_premium = max(value * (rate/100), 30000)
+                    prorata_premium = (max(value * (rate/100), 30000)) + (windscreen * (10/100))
                     premium = prorata_premium * (days/366)
                 else:
-                    premium = value * (rate/100) * (days/366)
+                    premium = (value * (rate/100) * (days/366)) + (windscreen * (10/100))
     
                 
                 if pvt == 'Inclusive' or  pvt == 'Excluded':
