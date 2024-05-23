@@ -37,7 +37,7 @@ with view1:
             if underwriter == "CANNON GENERAL INSURANCE":
                 eabl =  st.selectbox("Choose EABL or NON-EABL", ["EABL", "NON-EABL"])
             value = int(st.number_input('Sum Insured'))
-            windscreen = int(st.number_input('Windscreen Chargeable difference (above 50K)'))
+            windscreen = int(st.number_input('Windscreen Chargeable difference (above 50K/EABL 250K)'))
             rate = st.number_input('Rate as a number eg 4 0r 3.5')
             days = st.number_input('Pro-Rated Days')
             excess_protector = st.selectbox("Choose excess protector rate", ["Inclusive", "0.25%", "0.5%", "Excluded"])
