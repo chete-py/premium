@@ -30,9 +30,12 @@ with view1:
     with tab1:
         view = st.radio("Client Type", ["Renewal", "New"])
         if view == 'Renewal':
-            
+
+                        
             reg = st.text_input('Enter Registration')
             underwriter = st.selectbox("Choose Underwriter", ["APA INSURANCE", "FIDELITY INSURANCE", "CANNON GENERAL INSURANCE", "GA INSURANCE", "MAYFAIR INSURANCE", "ICEA LION INSURANCE", "JUBILEE ALLIANZ"])
+            if underwriter == "CANNON GENERAL INSURANCE":
+                eabl =  st.selectbox("Choose EABL or NON-EABL", ["EABL", "NON-EABL"])
             value = int(st.number_input('Sum Insured'))
             rate = st.number_input('Rate as a number eg 4 0r 3.5')
             days = st.number_input('Pro-Rated Days')
@@ -54,8 +57,14 @@ with view1:
                 if underwriter == 'FIDELITY INSURANCE':
                     prorata_premium = max(value * (rate/100), 30000)
                     premium = prorata_premium * (days/366)
-                elif underwriter == 'APA INSURANCE' or underwriter == "CANNON GENERAL INSURANCE":
+                elif underwriter == 'APA INSURANCE':
                     prorata_premium = max(value * (rate/100), 25000)
+                    premium = prorata_premium * (days/366)
+                elif eabl == 'EABL':
+                    prorata_premium = max(value * (rate/100), 25000)
+                    premium = prorata_premium * (days/366)
+                elif eabl == 'NON-EABL':
+                    prorata_premium = max(value * (rate/100), 30000)
                     premium = prorata_premium * (days/366)
                 else:
                     premium = value * (rate/100) * (days/366)
