@@ -141,14 +141,14 @@ with view1:
                     table {{
                     border-collapse: collapse;
                     width: 30%;
-                    margin: 0.5px auto; /* Center the table */
+                    margin: 0.25px auto; /* Center the table */
                     font-size: 10px;
                     font-family: Candara;
                 }}
         
                 th, td {{
                     border: 1px solid black;
-                    padding: 5px; /* Increased padding for better spacing */
+                    padding: 2.5px; /* Increased padding for better spacing */
                     text-align: left;
                 }}
         
