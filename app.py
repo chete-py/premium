@@ -508,7 +508,7 @@ with view1:
               
                 cannon_premium = value * (4/100) * (days/366)
                
-                cannon_gross_premium = (premium + car_hire)
+                cannon_gross_premium = (cannon_premium + car_hire)
                 icea_gross_premium = ( icea_premium + car_hire)
         
                 cannon_levies = cannon_gross_premium * 0.0045
