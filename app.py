@@ -514,8 +514,8 @@ with view1:
                 cannon_levies = cannon_gross_premium * 0.0045
                 icea_levies = icea_gross_premium * 0.0045                
         
-                cannon_total = ( cannon_gross_premium + fee + levies  )
-                icea_total = ( icea_gross_premium + fee + levies  )
+                cannon_total = ( cannon_gross_premium + fee + cannon_levies  )
+                icea_total = ( icea_gross_premium + fee + icea_levies  )
         
                 # Format numbers with commas for thousands
                 def format_with_commas(number):
@@ -524,13 +524,22 @@ with view1:
                     
                 
                 formatted_value = format_with_commas(value)
-                formatted_premium = format_with_commas(premium)
-                formatted_ex_pr = format_with_commas(ex_pr)
-                formatted_pvt = format_with_commas(pvt_value)
+                               
+                formatted_icea_premium = format_with_commas(icea_premium)
+                formatted_icea_premium = format_with_commas(cannon_premium)
+               
                 formatted_car_hire = format_with_commas(car_hire)
-                formatted_gross_premium = format_with_commas(gross_premium)
+
+                
+                formatted_icea_gross_premium = format_with_commas(icea_gross_premium)
+                formatted_icea_gross_premium = format_with_commas(cannon_gross_premium)
+
+                
                 formatted_levies = format_with_commas(levies)
-                formatted_total = format_with_commas(total)
+
+                
+                formatted_icea_total = format_with_commas(icea_total)
+                formatted_cannon_total = format_with_commas(cannon_total)
         
         
                 # Create an HTML report
@@ -578,7 +587,7 @@ with view1:
                 <table>
                     <tr>
                         <th colspan="2">{reg} - MOTOR PRIVATE COMPREHENSIVE</th>
-                        <th colspan="2">{underwriter} </th>
+                        <th colspan="2"> </th>
                         
                     </tr>
                     <tr >
@@ -590,11 +599,12 @@ with view1:
                     <tr>
                         <td>Basic Premium</td>
                         <td>{formatted_value}</td> <!-- Updated formatting for better readability -->
-                        <td style="color:red">{rate}%</td>
-                        <td>{formatted_premium}</td> <!-- Updated formatting for better readability -->
-                        <td style="color:red">{rate}%</td>
-                        <td>{formatted_premium}</td> <!-- Updated formatting for better readability --><td style="color:red">{rate}%</td>
-                        <td>{formatted_premium}</td> <!-- Updated formatting for better readability -->
+                        <td style="color:red">{cannon_rate}%</td>
+                        <td>{formatted_cannon_premium}</td> <!-- Updated formatting for better readability -->
+                        <td style="color:red">{icea_rate}%</td>
+                        <td>{formatted_icea_premium}</td> <!-- Updated formatting for better readability -->
+                        <td style="color:red">{icea_rate}%</td>
+                        <td>{formatted_icea_premium}</td> <!-- Updated formatting for better readability -->
                     </tr>
                     
                     <tr>
@@ -611,21 +621,21 @@ with view1:
                         <td>Gross Premium</td>
                         <td></td> 
                         <td></td>
-                        <td class='gross_premium'>{formatted_gross_premium}</td> 
+                        <td class='gross_premium'>{formatted_cannon_gross_premium}</td> 
                         <td></td>
-                        <td class='gross_premium'>{formatted_gross_premium}</td> 
+                        <td class='gross_premium'>{formatted_icea_gross_premium}</td> 
                         <td></td>
-                        <td class='gross_premium'>{formatted_gross_premium}</td> 
+                        <td class='gross_premium'>{formatted_icea_gross_premium}</td> 
                     </tr>
                     <tr>
                         <td>Levies</td>
                         <td></td>
                         <td style="color:red">0.45%</td>
-                        <td >{formatted_levies}</td> <!-- Updated formatting for better readability -->
+                        <td >{formatted_cannon_levies}</td> <!-- Updated formatting for better readability -->
                         <td style="color:red">0.45%</td>
-                        <td >{formatted_levies}</td> <!-- Updated formatting for better readability -->
+                        <td >{formatted_icea_levies}</td> <!-- Updated formatting for better readability -->
                         <td style="color:red">0.45%</td>
-                        <td >{formatted_levies}</td> <!-- Updated formatting for better readability -->
+                        <td >{formatted_icea_levies}</td> <!-- Updated formatting for better readability -->
                     </tr>
                     <tr>
                         <td>Policy Fee</td>
@@ -641,11 +651,11 @@ with view1:
                         <td class= 'bold' style="color:#152637">Total Premium Payable</td>
                         <td></td>
                         <td></td>
-                        <td class = 'bold' style="color:#152637">{formatted_total} /-</td>
+                        <td class = 'bold' style="color:#152637">{formatted_cannon_total} /-</td>
                         <td></td>
-                        <td class = 'bold' style="color:#152637">{formatted_total} /-</td>
+                        <td class = 'bold' style="color:#152637">{formatted_icea_total} /-</td>
                         <td></td>
-                        <td class = 'bold' style="color:#152637">{formatted_total} /-</td>
+                        <td class = 'bold' style="color:#152637">{formatted_icea_total} /-</td>
                     </tr>
                    
                 </table>
