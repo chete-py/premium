@@ -532,7 +532,7 @@ with view1:
 
                 
                 formatted_icea_gross_premium = format_with_commas(icea_gross_premium)
-                formatted_icea_gross_premium = format_with_commas(cannon_gross_premium)
+                formatted_cannon_gross_premium = format_with_commas(cannon_gross_premium)
 
                 
                 formatted_icea_levies = format_with_commas(icea_levies)
