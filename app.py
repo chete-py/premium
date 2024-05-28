@@ -525,7 +525,7 @@ with view1:
                 formatted_value = format_with_commas(value)
                                
                 formatted_icea_premium = format_with_commas(icea_premium)
-                formatted_icea_premium = format_with_commas(cannon_premium)
+                formatted_cannon_premium = format_with_commas(cannon_premium)
                
                 formatted_car_hire = format_with_commas(car_hire)
 
