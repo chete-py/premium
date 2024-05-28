@@ -504,7 +504,6 @@ with view1:
             pvt_value = 0
         
             if st.button("Calculate"):
-                
               
                 cannon_premium = value * (4/100) * (days/366)
                
@@ -600,7 +599,7 @@ with view1:
                     <tr>
                         <td>Basic Premium</td>
                         <td>{formatted_value}</td> <!-- Updated formatting for better readability -->
-                        <td style="color:red">{cannon_rate}%</td>
+                        <td style="color:red">{4}%</td>
                         <td>{formatted_cannon_premium}</td> <!-- Updated formatting for better readability -->
                         <td style="color:red">{icea_rate}%</td>
                         <td>{formatted_icea_premium}</td> <!-- Updated formatting for better readability -->
