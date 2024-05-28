@@ -475,6 +475,7 @@ with view1:
             
             reg = st.text_input('Enter Registration')            
             value = int(st.number_input('Sum Insured')) 
+            loss_of_use = st.selectbox("Choose amount charged", ["Inclusive", "Excluded", 3000])
             windscreen = int(st.number_input('Windscreen Amount Above Free Limit'))
             days = st.number_input('Pro-Rated Days')           
             notes1 = st.text_input("Include Important Remarks 1 eg. Political/Terrorism Risks/RSCC - Reinstated at 0.35% of Value Once utilized")
