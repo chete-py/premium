@@ -676,6 +676,8 @@ with view1:
                         <td>{formatted_car_hire}</td>
                         <td style="color:red" >{loss_of_use}</td>
                         <td>{formatted_car_hire}</td>
+                        <td style="color:red" >{loss_of_use}</td>
+                        <td>{formatted_car_hire}</td>
                     </tr>
                     <tr>
                         <td>Gross Premium</td>
