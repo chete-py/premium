@@ -485,7 +485,7 @@ with view1:
             
             if value > 0:
                 cannon_rate = 4
-                cannon_premium = (value * (cannon_rate/100))
+                cannon_premium = max(value * (cannon_rate/100), 37500)
             
             
             if value > 600000 and value < 1000000:
@@ -559,7 +559,7 @@ with view1:
                 elif loss_of_use == 3000:
                     car_hire += 3000
                               
-                cannon_gross_premium = (cannon_premium + car_hire)
+                cannon_gross_premium = (cannon_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
                 fidelity_gross_premium = (fidelity_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
                 icea_gross_premium = ( icea_premium + car_hire)
                 apa_gross_premium = ( apa_premium + car_hire)
@@ -695,8 +695,8 @@ with view1:
                     <tr>
                         <td>Excess Protector - Own Damage</td>
                         <td></td>
-                        <td style="color:red">Inclusive</td>
-                        <td >0.00</td>                       
+                        <td style="color:red">0.25%</td>
+                        <td >{fidelity_ex_prt}</td>                       
                         <td style="color:red">Inclusive</td>  
                         <td >0.00</td>
                         <td style="color:red">0.25%</td>
@@ -709,8 +709,8 @@ with view1:
                     <tr>
                         <td>Political/Terrorism Risks/RSCC</td>
                         <td></td>
-                        <td style="color:red">Inclusive</td>
-                        <td >0.00</td>                       
+                        <td style="color:red">0.25%</td>
+                        <td >{fidelity_pvt}</td>                       
                         <td style="color:red">Inclusive</td>  
                         <td >0.00</td>
                         <td style="color:red">0.25%</td>
