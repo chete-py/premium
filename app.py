@@ -487,16 +487,16 @@ with view1:
                 apa_premium = max(value * (apa_rate/100) * (days/366), 42500)
             elif value > 999999 and value < 2500000:
                 apa_rate = 4
-                apa_premium = max(value * (apa_rate/100) * (days/366))
+                apa_premium = (value * (apa_rate/100) * (days/366))
             elif value > 2499999 and value < 5000000:
                 apa_rate = 3.5
-                apa_premium = max(value * (apa_rate/100) * (days/366))
+                apa_premium = (value * (apa_rate/100) * (days/366))
             elif value > 4999999 and value < 10000000:
                 apa_rate = 3
-                apa_premium = max(value * (apa_rate/100) * (days/366))
+                apa_premium = (value * (apa_rate/100) * (days/366))
             elif value > 10000000:
                 apa_rate = 3.5
-                apa_premium = max(value * (apa_rate/100) * (days/366))
+                apa_premium = (value * (apa_rate/100) * (days/366))
 
 
             if value > 0 and value < 1000000:
@@ -504,13 +504,13 @@ with view1:
                 fidelity_premium = max(value * (fidelity_rate/100) * (days/366), 37500)
             elif value > 999999 and value < 1500000:
                 fidelity_rate = 4.75
-                fidelity_premium = max(value * (fidelity_rate/100) * (days/366))
+                fidelity_premium = (value * (fidelity_rate/100) * (days/366))
             elif value > 1499999 and value < 2500000:
                 fidelity_rate = 3.75
-                fidelity_premium = max(value * (fidelity_rate/100) * (days/366))            
+                fidelity_premium = (value * (fidelity_rate/100) * (days/366))            
             elif value > 2500000:
                 fidelity_rate = 3
-                fidelity_premium = max(value * (fidelity_rate/100) * (days/366))
+                fidelity_premium = (value * (fidelity_rate/100) * (days/366))
 
             
 
