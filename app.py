@@ -512,6 +512,8 @@ with view1:
                 fidelity_rate = 3
                 fidelity_premium = (value * (fidelity_rate/100) * (days/366))
 
+            fidelity_pvt = (value * (0.25/100))
+            fidelity_ex_prt = (value * (0.25/100))
             
 
             if value > 0 and value < 1000000:
@@ -553,7 +555,7 @@ with view1:
                 cannon_premium = value * (4/100) * (days/366)
                
                 cannon_gross_premium = (cannon_premium + car_hire)
-                fidelity_gross_premium = ( fidelity_premium + car_hire)
+                fidelity_gross_premium = (fidelity_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
                 icea_gross_premium = ( icea_premium + car_hire)
                 apa_gross_premium = ( apa_premium + car_hire)
         
@@ -679,8 +681,35 @@ with view1:
                         <td>{formatted_icea_premium}</td> <!-- Updated formatting for better readability -->
                     </tr>
                     
+
                     <tr>
-                        <td>Loss of Use/Courtesy Car</td>
+                    <td>Excess Protector - Own Damage</td>
+                        <td></td>
+                        <td style="color:red">Inclusive</td>
+                        <td></td>
+                        <td style="color:red">Inclusive</td>
+                        <td></td>
+                        <td style="color:red">{fidelity_ex_prt}</td>    
+                        <td></td>
+                        <td style="color:red">Inclusive</td>
+                    </tr>
+
+                    
+                    <tr>
+                        <td>Political/Terrorism Risks/RSCC</td>
+                        <td></td>
+                        <td style="color:red">Inclusive</td>
+                        <td></td>
+                        <td style="color:red">Inclusive</td>
+                        <td></td>
+                        <td style="color:red">{fidelity_ex_prt}</td>    
+                        <td></td>
+                        <td style="color:red">Inclusive</td>
+                    </tr>
+                    <tr>
+                    
+                    <tr>
+                        <td>Loss of Use/Courtesy Car</td>                        
                         <td></td>
                         <td style="color:red" >{loss_of_use}</td>
                         <td>{formatted_car_hire}</td>
