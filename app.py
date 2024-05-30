@@ -529,8 +529,9 @@ with view1:
                 apa_gross_premium = ( apa_premium + car_hire)
         
                 cannon_levies = cannon_gross_premium * 0.0045
-                icea_levies = icea_gross_premium * 0.0045 
-                apa_gross_premium = ( apa_premium + car_hire)
+                icea_levies = icea_gross_premium * 0.0045
+                apa_levies = apa_gross_premium * 0.0045 
+               
         
                 cannon_total = ( cannon_gross_premium + fee + cannon_levies  )
                 icea_total = ( icea_gross_premium + fee + icea_levies  )
