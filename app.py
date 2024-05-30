@@ -576,7 +576,7 @@ with view1:
                     return "{:,.2f}".format(rounded_number)
                     
                 
-                formatted_value = format_with_commas(copy_value)
+                formatted_value = format_with_commas(value)
 
                 formatted_value = format_with_commas(fidelity_pvt)
 
