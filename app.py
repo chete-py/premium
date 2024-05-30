@@ -508,8 +508,9 @@ with view1:
 
 
             if value > 0 and value < 1000000:
-                fidelity_rate = 6
-                fidelity_premium = max((value * (fidelity_rate/100) * (days/366)),37500)
+                fidelity_rate = 6                
+                fidelity_one = (value * (fidelity_rate/100) * (days/366)
+                fidelity_premium = max(fidelity_one, 37500)                 
             elif value > 999999 and value < 1500000:
                 fidelity_rate = 4.75
                 fidelity_premium = (value * (fidelity_rate/100) * (days/366))
