@@ -623,6 +623,10 @@ with view1:
                         <th style="background-color: #17B169">Value - KES</th>
                         <th style="background-color: #17B169">Rate</th>
                         <th style="background-color: #17B169">Premium</th>
+                        <th style="background-color: #17B169">Rate</th>
+                        <th style="background-color: #17B169">Premium</th>
+                        <th style="background-color: #17B169">Rate</th>
+                        <th style="background-color: #17B169">Premium</th>
                     </tr>
                     <tr>
                         <td>Basic Premium</td>
