@@ -484,6 +484,8 @@ with view1:
 
             copy_value = (value + 0)
 
+            cannon_premium = value * (4/100) * (days/366)
+            
             if value > 600000 and value < 1000000:
                 apa_rate = 6
                 apa_premium = max(value * (apa_rate/100) * (days/366), 42500)
@@ -552,10 +554,7 @@ with view1:
                     car_hire += 4500
                 elif loss_of_use == 3000:
                     car_hire += 3000
-               
-              
-                cannon_premium = value * (4/100) * (days/366)
-               
+                              
                 cannon_gross_premium = (cannon_premium + car_hire)
                 fidelity_gross_premium = (fidelity_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
                 icea_gross_premium = ( icea_premium + car_hire)
