@@ -613,7 +613,9 @@ with view1:
                 <table>
                     <tr>
                         <th colspan="2">{reg} - MOTOR PRIVATE COMPREHENSIVE</th>
-                        <th colspan="2"> </th>
+                        <th colspan="2">CANNON</th>
+                        <th colspan="2">APA</th>
+                        <th colspan="2">ICEA LION</th>
                         
                     </tr>
                     <tr >
