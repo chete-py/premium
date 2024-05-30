@@ -514,8 +514,8 @@ with view1:
                 fidelity_rate = 3
                 fidelity_premium = (value * (fidelity_rate/100) * (days/366))
 
-            fidelity_pvt = (value * (0.25/100))
-            fidelity_ex_prt = (value * (0.25/100))
+            fidelity_pvt = max(value * (0.25/100), 2500)
+            fidelity_ex_prt = max(value * (0.25/100), 2500)
             
 
             if value > 0 and value < 1000000:
@@ -541,6 +541,8 @@ with view1:
             pvt_value = 0
         
             if st.button("Calculate"):
+
+                
 
                 if loss_of_use == 'Inclusive' or loss_of_use == 'Exluded':
                     car_hire += 0
