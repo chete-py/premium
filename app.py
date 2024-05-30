@@ -498,6 +498,22 @@ with view1:
                 apa_rate = 3.5
                 apa_premium = max(value * (apa_rate/100) * (days/366))
 
+
+             if value > 0 and value < 1000000:
+                fidelity_rate = 6
+                fidelity_premium = max(value * (fidelity_rate/100) * (days/366), 37500)
+            elif value > 999999 and value < 1500000:
+                fidelity_rate = 4.75
+                fidelity_premium = max(value * (fidelity_rate/100) * (days/366))
+            elif value > 1499999 and value < 2500000:
+                fidelity_rate = 3.75
+                fidelity_premium = max(value * (fidelity_rate/100) * (days/366))            
+            elif value > 2500000:
+                fidelity_rate = 3
+                fidelity_premium = max(value * (fidelity_rate/100) * (days/366))
+
+            
+
             if value > 0 and value < 1000000:
                 icea_rate = 6
                 icea_premium = max(value * (icea_rate/100) * (days/366), 37500)
@@ -525,15 +541,18 @@ with view1:
                 cannon_premium = value * (4/100) * (days/366)
                
                 cannon_gross_premium = (cannon_premium + car_hire)
+                fidelity_gross_premium = ( fidelity_premium + car_hire)
                 icea_gross_premium = ( icea_premium + car_hire)
                 apa_gross_premium = ( apa_premium + car_hire)
         
                 cannon_levies = cannon_gross_premium * 0.0045
+                fidelity_levies = fidelity_gross_premium * 0.0045
                 icea_levies = icea_gross_premium * 0.0045
                 apa_levies = apa_gross_premium * 0.0045 
                
         
                 cannon_total = ( cannon_gross_premium + fee + cannon_levies  )
+                fidelity_total = ( fidelity_gross_premium + fee + fidelity_levies  )
                 icea_total = ( icea_gross_premium + fee + icea_levies  )
                 apa_total = ( apa_gross_premium + fee + apa_levies  )
                
@@ -547,6 +566,7 @@ with view1:
                 formatted_value = format_with_commas(value)
                                
                 formatted_icea_premium = format_with_commas(icea_premium)
+                formatted_fidelity_premium = format_with_commas(fidelity_premium)
                 formatted_apa_premium = format_with_commas(apa_premium)
                 formatted_cannon_premium = format_with_commas(cannon_premium)
                
@@ -554,16 +574,19 @@ with view1:
 
                 
                 formatted_icea_gross_premium = format_with_commas(icea_gross_premium)
+                formatted_fidelity_gross_premium = format_with_commas(fidelity_gross_premium)
                 formatted_apa_gross_premium = format_with_commas(apa_gross_premium)
                 formatted_cannon_gross_premium = format_with_commas(cannon_gross_premium)
 
                 
                 formatted_icea_levies = format_with_commas(icea_levies)
+                formatted_fidelity_levies = format_with_commas(fidelity_levies)
                 formatted_apa_levies = format_with_commas(apa_levies)
                 formatted_cannon_levies = format_with_commas(cannon_levies)
 
                 
                 formatted_icea_total = format_with_commas(icea_total)
+                formatted_fidelity_total = format_with_commas(fidelity_total)
                 formatted_apa_total = format_with_commas(apa_total)              
                 formatted_cannon_total = format_with_commas(cannon_total)
         
@@ -613,8 +636,9 @@ with view1:
                 <table>
                     <tr>
                         <th colspan="2">{reg} - MOTOR PRIVATE COMPREHENSIVE</th>
-                        <th colspan="2">CANNON</th>
+                        <th colspan="2">CANNON</th>                       
                         <th colspan="2">APA</th>
+                        <th colspan="2">FIDELITY</th>
                         <th colspan="2">ICEA LION</th>
                         
                     </tr>
@@ -627,14 +651,18 @@ with view1:
                         <th style="background-color: #17B169">Premium</th>
                         <th style="background-color: #17B169">Rate</th>
                         <th style="background-color: #17B169">Premium</th>
+                        <th style="background-color: #17B169">Rate</th>
+                        <th style="background-color: #17B169">Premium</th>
                     </tr>
                     <tr>
                         <td>Basic Premium</td>
                         <td>{formatted_value}</td> <!-- Updated formatting for better readability -->
                         <td style="color:red">{4}%</td>
                         <td>{formatted_cannon_premium}</td> <!-- Updated formatting for better readability -->
-                        <td style="color:red">{icea_rate}%</td>
+                        <td style="color:red">{apa_rate}%</td>
                         <td>{formatted_apa_premium}</td> <!-- Updated formatting for better readability -->
+                        <td style="color:red">{fidelity_rate}%</td>
+                        <td>{formatted_fidelity_premium}</td> <!-- Updated formatting for better readability -->
                         <td style="color:red">{icea_rate}%</td>
                         <td>{formatted_icea_premium}</td> <!-- Updated formatting for better readability -->
                     </tr>
@@ -657,6 +685,8 @@ with view1:
                         <td></td>
                         <td class='gross_premium'>{formatted_apa_gross_premium}</td> 
                         <td></td>
+                        <td class='gross_premium'>{formatted_fidelity_gross_premium}</td> 
+                        <td></td>
                         <td class='gross_premium'>{formatted_icea_gross_premium}</td> 
                     </tr>
                     <tr>
@@ -667,11 +697,15 @@ with view1:
                         <td style="color:red">0.45%</td>
                         <td >{formatted_apa_levies}</td> <!-- Updated formatting for better readability -->
                         <td style="color:red">0.45%</td>
+                        <td >{formatted_fidelity_levies}</td> <!-- Updated formatting for better readability -->
+                        <td style="color:red">0.45%</td>
                         <td >{formatted_icea_levies}</td> <!-- Updated formatting for better readability -->
                     </tr>
                     <tr>
                         <td>Policy Fee</td>
                         <td></td>
+                        <td></td>
+                        <td>{fee}</td>
                         <td></td>
                         <td>{fee}</td>
                         <td></td>
@@ -686,6 +720,8 @@ with view1:
                         <td class = 'bold' style="color:#152637">{formatted_cannon_total} /-</td>
                         <td></td>
                         <td class = 'bold' style="color:#152637">{formatted_apa_total} /-</td>
+                        <td></td>
+                        <td class = 'bold' style="color:#152637">{formatted_fidelity_total} /-</td>
                         <td></td>
                         <td class = 'bold' style="color:#152637">{formatted_icea_total} /-</td>
                     </tr>
