@@ -482,7 +482,7 @@ with view1:
             notes2 = st.text_input("Include Important Remarks 2 eg.  Days Loss of use/Courtesy Car - Reinstated at KShs. 3,000/- Once Utilized")
             notes3 = st.text_input("Include Important Remarks 3 eg. Excess Protector - Own Damage Reinstated at 0.25% of Value Once utilized")
 
-            copy_value = value.copy()
+            copy_value = (value + 0)
 
             if value > 600000 and value < 1000000:
                 apa_rate = 6
