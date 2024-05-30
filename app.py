@@ -564,7 +564,7 @@ with view1:
                               
                 cannon_gross_premium = (cannon_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
                 fidelity_gross_premium = (fidelity_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
-                icea_gross_premium = ( icea_premium + car_hire)
+                icea_gross_premium = ( icea_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
                 apa_gross_premium = ( apa_premium + car_hire)
         
                 cannon_levies = cannon_gross_premium * 0.0045
