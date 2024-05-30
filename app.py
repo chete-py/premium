@@ -507,7 +507,7 @@ with view1:
 
             if value > 0 and value < 1000000:
                 fidelity_rate = 6
-                fidelity_premium = max(value * (fidelity_rate/100) * (days/366), 37500)
+                fidelity_premium = max((value * (fidelity_rate/100) * (days/366)), 37500)
             elif value > 999999 and value < 1500000:
                 fidelity_rate = 4.75
                 fidelity_premium = (value * (fidelity_rate/100) * (days/366))
@@ -524,7 +524,7 @@ with view1:
 
             if value > 0 and value < 1000000:
                 icea_rate = 6
-                icea_premium = max(value * (icea_rate/100) * (days/366), 37500)
+                icea_premium = max((value * (icea_rate/100) * (days/366)), 37500)
             elif value > 999999 and value < 1500000:
                 icea_rate = 5
                 icea_premium = max(value * (icea_rate/100) * (days/366), 60000)
