@@ -690,14 +690,14 @@ with view1:
                     <td>Excess Protector - Own Damage</td>
                         <td></td>
                         <td style="color:red">Inclusive</td>
-                        <td >-</td>
-                        <td></td>
-                        <td style="color:red">Inclusive</td>
-                        <td></td>
-                        <td style="color:red">0.25</td>
+                        <td >0.00</td>                       
+                        <td style="color:red">Inclusive</td>  
+                        <td >0.00</td>
+                        <td style="color:red">0.25%</td>
                         <td >{fidelity_ex_prt}</td>    
                         <td></td>
                         <td style="color:red">Inclusive</td>
+                        <td>0.00</td>
                     </tr>
 
                     
