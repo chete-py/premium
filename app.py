@@ -482,6 +482,22 @@ with view1:
             notes2 = st.text_input("Include Important Remarks 2 eg.  Days Loss of use/Courtesy Car - Reinstated at KShs. 3,000/- Once Utilized")
             notes3 = st.text_input("Include Important Remarks 3 eg. Excess Protector - Own Damage Reinstated at 0.25% of Value Once utilized")
 
+            if value > 600000 and value < 1000000:
+                apa_rate = 6
+                apa_premium = max(value * (apa_rate/100) * (days/366), 42500)
+            elif value > 999999 and value < 2500000:
+                apa_rate = 4
+                apa_premium = max(value * (apa_rate/100) * (days/366))
+            elif value > 2499999 and value < 5000000:
+                apa_rate = 3.5
+                apa_premium = max(value * (apa_rate/100) * (days/366))
+            elif value > 4999999 and value < 10000000:
+                apa_rate = 3
+                apa_premium = max(value * (apa_rate/100) * (days/366))
+            elif value > 10000000:
+                apa_rate = 3.5
+                apa_premium = max(value * (apa_rate/100) * (days/366))
+
             if value > 0 and value < 1000000:
                 icea_rate = 6
                 icea_premium = max(value * (icea_rate/100) * (days/366), 37500)
@@ -510,12 +526,15 @@ with view1:
                
                 cannon_gross_premium = (cannon_premium + car_hire)
                 icea_gross_premium = ( icea_premium + car_hire)
+                apa_gross_premium = ( apa_premium + car_hire)
         
                 cannon_levies = cannon_gross_premium * 0.0045
-                icea_levies = icea_gross_premium * 0.0045                
+                icea_levies = icea_gross_premium * 0.0045 
+                apa_gross_premium = ( apa_premium + car_hire)
         
                 cannon_total = ( cannon_gross_premium + fee + cannon_levies  )
                 icea_total = ( icea_gross_premium + fee + icea_levies  )
+                apa_gross_premium = ( apa_premium + car_hire)
         
                 # Format numbers with commas for thousands
                 def format_with_commas(number):
@@ -526,20 +545,24 @@ with view1:
                 formatted_value = format_with_commas(value)
                                
                 formatted_icea_premium = format_with_commas(icea_premium)
+                formatted_apa_premium = format_with_commas(apa_premium)
                 formatted_cannon_premium = format_with_commas(cannon_premium)
                
                 formatted_car_hire = format_with_commas(car_hire)
 
                 
                 formatted_icea_gross_premium = format_with_commas(icea_gross_premium)
+                formatted_apa_gross_premium = format_with_commas(apa_gross_premium)
                 formatted_cannon_gross_premium = format_with_commas(cannon_gross_premium)
 
                 
                 formatted_icea_levies = format_with_commas(icea_levies)
+                formatted_apa_levies = format_with_commas(apa_levies)
                 formatted_cannon_levies = format_with_commas(cannon_levies)
 
                 
                 formatted_icea_total = format_with_commas(icea_total)
+                formatted_apa_total = format_with_commas(apa_total)              
                 formatted_cannon_total = format_with_commas(cannon_total)
         
         
@@ -603,7 +626,7 @@ with view1:
                         <td style="color:red">{4}%</td>
                         <td>{formatted_cannon_premium}</td> <!-- Updated formatting for better readability -->
                         <td style="color:red">{icea_rate}%</td>
-                        <td>{formatted_icea_premium}</td> <!-- Updated formatting for better readability -->
+                        <td>{formatted_apa_premium}</td> <!-- Updated formatting for better readability -->
                         <td style="color:red">{icea_rate}%</td>
                         <td>{formatted_icea_premium}</td> <!-- Updated formatting for better readability -->
                     </tr>
@@ -624,7 +647,7 @@ with view1:
                         <td></td>
                         <td class='gross_premium'>{formatted_cannon_gross_premium}</td> 
                         <td></td>
-                        <td class='gross_premium'>{formatted_icea_gross_premium}</td> 
+                        <td class='gross_premium'>{formatted_apa_gross_premium}</td> 
                         <td></td>
                         <td class='gross_premium'>{formatted_icea_gross_premium}</td> 
                     </tr>
@@ -634,7 +657,7 @@ with view1:
                         <td style="color:red">0.45%</td>
                         <td >{formatted_cannon_levies}</td> <!-- Updated formatting for better readability -->
                         <td style="color:red">0.45%</td>
-                        <td >{formatted_icea_levies}</td> <!-- Updated formatting for better readability -->
+                        <td >{formatted_apa_levies}</td> <!-- Updated formatting for better readability -->
                         <td style="color:red">0.45%</td>
                         <td >{formatted_icea_levies}</td> <!-- Updated formatting for better readability -->
                     </tr>
@@ -654,7 +677,7 @@ with view1:
                         <td></td>
                         <td class = 'bold' style="color:#152637">{formatted_cannon_total} /-</td>
                         <td></td>
-                        <td class = 'bold' style="color:#152637">{formatted_icea_total} /-</td>
+                        <td class = 'bold' style="color:#152637">{formatted_apa_total} /-</td>
                         <td></td>
                         <td class = 'bold' style="color:#152637">{formatted_icea_total} /-</td>
                     </tr>
