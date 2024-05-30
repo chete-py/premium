@@ -537,6 +537,18 @@ with view1:
             pvt_value = 0
         
             if st.button("Calculate"):
+
+                if loss_of_use == 'Inclusive' or loss_of_use == 'Exluded':
+                    car_hire += 0
+                elif loss_of_use == 1500:
+                    car_hire += 1500
+                elif loss_of_use == 6000:
+                    car_hire += 6000
+                elif loss_of_use == 4500:
+                    car_hire += 4500
+                elif loss_of_use == 3000:
+                    car_hire += 3000
+               
               
                 cannon_premium = value * (4/100) * (days/366)
                
