@@ -535,7 +535,8 @@ with view1:
         
                 cannon_total = ( cannon_gross_premium + fee + cannon_levies  )
                 icea_total = ( icea_gross_premium + fee + icea_levies  )
-                apa_gross_premium = ( apa_premium + car_hire)
+                apa_total = ( apa_gross_premium + fee + apa_levies  )
+               
         
                 # Format numbers with commas for thousands
                 def format_with_commas(number):
