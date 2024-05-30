@@ -486,9 +486,10 @@ with view1:
             if value > 0:
                 cannon_rate = 4
                 cannon_premium = max(value * (cannon_rate/100) * (days/366),37500)
+                
             
             
-            if value > 600000 and value < 1000000:
+            elif value > 600000 and value < 1000000:
                 apa_rate = 6
                 apa_premium = max(value * (apa_rate/100) * (days/366),42500)
             elif value > 999999 and value < 2500000:
