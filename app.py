@@ -482,7 +482,11 @@ with view1:
             notes2 = st.text_input("Include Important Remarks 2 eg.  Days Loss of use/Courtesy Car - Reinstated at KShs. 3,000/- Once Utilized")
             notes3 = st.text_input("Include Important Remarks 3 eg. Excess Protector - Own Damage Reinstated at 0.25% of Value Once utilized")
             
-            cannon_premium = (value * (4/100) * (days/366))
+            
+            if value > 0:
+                cannon_rate = 4
+                cannon_premium = (value * (cannon_rate/100))
+            
             
             if value > 600000 and value < 1000000:
                 apa_rate = 6
@@ -583,11 +587,12 @@ with view1:
                 formatted_value = format_with_commas(fidelity_pvt)
 
                 formatted_value = format_with_commas(fidelity_ex_prt)
-                               
+
+                formatted_cannon_premium = format_with_commas(cannon_premium)
                 formatted_icea_premium = format_with_commas(icea_premium)
                 formatted_fidelity_premium = format_with_commas(fidelity_premium)
                 formatted_apa_premium = format_with_commas(apa_premium)
-                formatted_cannon_premium = format_with_commas(cannon_premium)
+             
                
                 formatted_car_hire = format_with_commas(car_hire)
 
@@ -676,7 +681,7 @@ with view1:
                     <tr>
                         <td>Basic Premium</td>
                         <td>{value}</td> <!-- Updated formatting for better readability -->
-                        <td style="color:red">{4}%</td>
+                        <td style="color:red">{cannon_rate}%</td>
                         <td>{formatted_cannon_premium}</td> <!-- Updated formatting for better readability -->
                         <td style="color:red">{apa_rate}%</td>
                         <td>{formatted_apa_premium}</td> <!-- Updated formatting for better readability -->
