@@ -578,6 +578,10 @@ with view1:
                     
                 
                 formatted_value = format_with_commas(value)
+
+                formatted_value = format_with_commas(fidelity_pvt)
+
+                formatted_value = format_with_commas(fidelity_ex_prt)
                                
                 formatted_icea_premium = format_with_commas(icea_premium)
                 formatted_fidelity_premium = format_with_commas(fidelity_premium)
@@ -686,10 +690,12 @@ with view1:
                     <td>Excess Protector - Own Damage</td>
                         <td></td>
                         <td style="color:red">Inclusive</td>
+                        <td >-</td>
                         <td></td>
                         <td style="color:red">Inclusive</td>
                         <td></td>
-                        <td style="color:red">{fidelity_ex_prt}</td>    
+                        <td style="color:red">0.25</td>
+                        <td >{fidelity_ex_prt}</td>    
                         <td></td>
                         <td style="color:red">Inclusive</td>
                     </tr>
