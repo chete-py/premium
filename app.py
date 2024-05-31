@@ -696,7 +696,7 @@ with view1:
                     
 
                     <tr>
-                        <td>Excess Protector - Own Damage</td>
+                        <td>Excess Protector</td>
                         <td></td>
                         <td style="color:red">0.25%</td>
                         <td >{fidelity_ex_prt}</td>                       
@@ -710,7 +710,7 @@ with view1:
 
                     
                     <tr>
-                        <td>Political/Terrorism Risks/RSCC</td>
+                        <td>Political/Terrorism Risks</td>
                         <td></td>
                         <td style="color:red">0.25%</td>
                         <td >{fidelity_pvt}</td>                       
@@ -724,7 +724,7 @@ with view1:
                     
                     
                     <tr>
-                        <td>Loss of Use/Courtesy Car</td>                        
+                        <td>Courtesy Car</td>                        
                         <td></td>
                         <td style="color:red" >{loss_of_use}</td>
                         <td>{formatted_car_hire}</td>
