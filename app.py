@@ -359,8 +359,8 @@ with view1:
                 }}
         
                 th, td {{
-                    border: 1px solid black;
-                    padding: 5px; /* Increased padding for better spacing */
+                    border: 1.5px solid black;
+                    padding: 2.5px; /* Increased padding for better spacing */
                     text-align: left;
                 }}
         
