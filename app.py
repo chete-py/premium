@@ -176,12 +176,12 @@ with view1:
                 <body>
                 <table>
                     <tr>
-                        <th colspan="2">{reg} - MOTOR PRIVATE COMPREHENSIVE</th>
+                        <th colspan="2">MOTOR PRIVATE COMPREHENSIVE</th>
                         <th colspan="2">{underwriter} </th>
                         
                     </tr>
                     <tr >
-                        <th style="background-color: #17B169"></th>
+                        <th style="background-color: #17B169">{reg}</th>
                         <th style="background-color: #17B169">Value - KES</th>
                         <th style="background-color: #17B169">Rate</th>
                         <th style="background-color: #17B169">Premium</th>
@@ -389,12 +389,12 @@ with view1:
                 <body>
                 <table>
                     <tr>
-                        <th colspan="2">{reg} - MOTOR PRIVATE COMPREHENSIVE</th>
+                        <th colspan="2">MOTOR PRIVATE COMPREHENSIVE</th>
                         <th colspan="2">{underwriter} </th>
                         
                     </tr>
                     <tr >
-                        <th style="background-color: #17B169"></th>
+                        <th style="background-color: #17B169">{reg}</th>
                         <th style="background-color: #17B169">Value - KES</th>
                         <th style="background-color: #17B169">Rate</th>
                         <th style="background-color: #17B169">Premium</th>
