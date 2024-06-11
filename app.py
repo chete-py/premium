@@ -483,7 +483,7 @@ with view1:
             notes3 = st.text_input("Include Important Remarks 3 eg. Excess Protector - Own Damage Reinstated at 0.25% of Value Once utilized")
             
             
-            if value > 0:
+            if value < 2500000:
                 cannon_rate = 4
                 cannon_premium = max(value * (cannon_rate/100) * (days/366),37500)
             elif value > 2500000:
