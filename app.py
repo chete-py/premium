@@ -534,7 +534,7 @@ with view1:
                 icea_premium = max((value * (icea_rate/100) * (days/366)),(37500 * (days/365)))
             elif value > 999999 and value < 1500000:
                 icea_rate = 5
-                icea_premium = max(value * (icea_rate/100) * (days/366), (60000 * * (days/365)))
+                icea_premium = max(value * (icea_rate/100) * (days/366), (60000 * (days/365)))
             elif value > 1499999 and value < 2500000:
                 icea_rate = 4
                 icea_premium = max(value * (icea_rate/100) * (days/366), (75000 * (days/365)))
