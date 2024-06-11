@@ -485,7 +485,7 @@ with view1:
             
             if value < 2500000:
                 cannon_rate = 4
-                cannon_premium = max(value * (cannon_rate/100) * (days/366),37500)
+                cannon_premium = max(value * (cannon_rate/100) * (days/365),(37500 * (days/365)))
             elif value > 2500000:
                 cannon_rate = 3.5
                 cannon_premium = (value * (cannon_rate/100) * (days/366))
@@ -493,7 +493,7 @@ with view1:
             
             if value > 600000 and value < 1000000:
                 apa_rate = 6
-                apa_premium = max(value * (apa_rate/100) * (days/366),42500)
+                apa_premium = max(value * (apa_rate/100) * (days/366), (42500 * (days/365)))
             elif value < 600000:
                 apa_rate = 0
                 apa_premium = (value * (apa_rate/100) * (days/366))
@@ -531,19 +531,19 @@ with view1:
 
             if value > 0 and value < 1000000:
                 icea_rate = 6
-                icea_premium = max((value * (icea_rate/100) * (days/366)),37500)
+                icea_premium = max((value * (icea_rate/100) * (days/366)),(37500 * (days/365)))
             elif value > 999999 and value < 1500000:
                 icea_rate = 5
-                icea_premium = max(value * (icea_rate/100) * (days/366), 60000)
+                icea_premium = max(value * (icea_rate/100) * (days/366), (60000 * * (days/365)))
             elif value > 1499999 and value < 2500000:
                 icea_rate = 4
-                icea_premium = max(value * (icea_rate/100) * (days/366), 75000)
+                icea_premium = max(value * (icea_rate/100) * (days/366), (75000 * (days/365)))
             elif value > 2499999 and value < 5000000:
                 icea_rate = 3.5
-                icea_premium = max(value * (icea_rate/100) * (days/366), 100000)
+                icea_premium = max(value * (icea_rate/100) * (days/366), (100000 * (days/365)))
             elif value > 5000000:
                 icea_rate = 3
-                icea_premium = max(value * (icea_rate/100) * (days/366), 175000)
+                icea_premium = max(value * (icea_rate/100) * (days/366), (175000 * (days/365)))
             
         
             car_hire = 0
