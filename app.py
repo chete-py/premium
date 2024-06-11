@@ -486,8 +486,8 @@ with view1:
             if value > 0:
                 cannon_rate = 4
                 cannon_premium = max(value * (cannon_rate/100) * (days/366),37500)
-            elif value < 0:
-                cannon_rate = 0               
+            elif value > 2500000:
+                cannon_rate = 3.5               
             
             
             if value > 600000 and value < 1000000:
@@ -565,7 +565,7 @@ with view1:
                 elif loss_of_use == 3000:
                     car_hire += 3000
                               
-                cannon_gross_premium = (cannon_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
+                cannon_gross_premium = (cannon_premium + car_hire)
                 fidelity_gross_premium = (fidelity_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
                 icea_gross_premium = ( icea_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
                 apa_gross_premium = ( apa_premium + car_hire)
