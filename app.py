@@ -56,18 +56,18 @@ with view1:
             if st.button("Calculate"):
                 if underwriter == 'FIDELITY INSURANCE':
                     prorata_premium = (max(value * (rate/100), 30000)) + (windscreen * (10/100))
-                    premium = prorata_premium * (days/366)
+                    premium = prorata_premium * (days/365)
                 elif underwriter == 'APA INSURANCE':
                     prorata_premium = (max(value * (rate/100), 25000)) + (windscreen * (10/100))
-                    premium = prorata_premium * (days/366)
+                    premium = prorata_premium * (days/365)
                 elif eabl == 'EABL':
                     prorata_premium = (max(value * (rate/100), 25000)) + (windscreen * (10/100))
-                    premium = prorata_premium * (days/366)
+                    premium = prorata_premium * (days/365)
                 elif eabl == 'NON-EABL':
                     prorata_premium = (max(value * (rate/100), 30000)) + (windscreen * (10/100))
-                    premium = prorata_premium * (days/366)
+                    premium = prorata_premium * (days/365)
                 else:
-                    premium = (value * (rate/100) * (days/366)) + (windscreen * (10/100))
+                    premium = (value * (rate/100) * (days/365)) + (windscreen * (10/100))
     
                 
                 if pvt == 'Inclusive' or  pvt == 'Excluded':
@@ -281,7 +281,7 @@ with view1:
             pvt_value = 0
         
             if st.button("Calculate"):
-                premium = value * (rate/100) * (days/366)
+                premium = value * (rate/100) * (days/365)
         
                 if pvt == 'Inclusive' or  pvt == 'Excluded':
                     pvt_value += 0
@@ -488,42 +488,42 @@ with view1:
                 cannon_premium = max(value * (cannon_rate/100) * (days/365),(37500 * (days/365)))
             elif value > 2500000:
                 cannon_rate = 3.5
-                cannon_premium = (value * (cannon_rate/100) * (days/366))
+                cannon_premium = (value * (cannon_rate/100) * (days/365))
             
             
             if value > 600000 and value < 1000000:
                 apa_rate = 6
-                apa_premium = max(value * (apa_rate/100) * (days/366), (42500 * (days/365)))
+                apa_premium = max(value * (apa_rate/100) * (days/365), (42500 * (days/365)))
             elif value < 600000:
                 apa_rate = 0
-                apa_premium = (value * (apa_rate/100) * (days/366))
+                apa_premium = (value * (apa_rate/100) * (days/365))
             elif value > 999999 and value < 2500000:
                 apa_rate = 4
-                apa_premium = (value * (apa_rate/100) * (days/366))
+                apa_premium = (value * (apa_rate/100) * (days/365))
             elif value > 2499999 and value < 5000000:
                 apa_rate = 3.5
-                apa_premium = (value * (apa_rate/100) * (days/366))
+                apa_premium = (value * (apa_rate/100) * (days/365))
             elif value > 4999999 and value < 10000000:
                 apa_rate = 3
-                apa_premium = (value * (apa_rate/100) * (days/366))
+                apa_premium = (value * (apa_rate/100) * (days/365))
             elif value > 10000000:
                 apa_rate = 3.5
-                apa_premium = (value * (apa_rate/100) * (days/366))
+                apa_premium = (value * (apa_rate/100) * (days/365))
 
 
             if value > 0 and value < 1000000:
                 fidelity_rate = 6                
-                fidelity_one = (value * (fidelity_rate/100) * (days/366))
+                fidelity_one = (value * (fidelity_rate/100) * (days/365))
                 fidelity_premium = max(fidelity_one, 37500)                 
             elif value > 999999 and value < 1500000:
                 fidelity_rate = 4.75
-                fidelity_premium = (value * (fidelity_rate/100) * (days/366))
+                fidelity_premium = (value * (fidelity_rate/100) * (days/365))
             elif value > 1499999 and value < 2500000:
                 fidelity_rate = 3.75
-                fidelity_premium = (value * (fidelity_rate/100) * (days/366))            
+                fidelity_premium = (value * (fidelity_rate/100) * (days/365))            
             elif value > 2500000:
                 fidelity_rate = 3
-                fidelity_premium = (value * (fidelity_rate/100) * (days/366))
+                fidelity_premium = (value * (fidelity_rate/100) * (days/365))
 
             fidelity_pvt = max(value * (0.25/100), 2500)
             fidelity_ex_prt = max(value * (0.25/100), 2500)
@@ -531,19 +531,19 @@ with view1:
 
             if value > 0 and value < 1000000:
                 icea_rate = 6
-                icea_premium = max((value * (icea_rate/100) * (days/366)),(37500 * (days/365)))
+                icea_premium = max((value * (icea_rate/100) * (days/365)),(37500 * (days/365)))
             elif value > 999999 and value < 1500000:
                 icea_rate = 5
-                icea_premium = max(value * (icea_rate/100) * (days/366), (60000 * (days/365)))
+                icea_premium = max(value * (icea_rate/100) * (days/365), (60000 * (days/365)))
             elif value > 1499999 and value < 2500000:
                 icea_rate = 4
-                icea_premium = max(value * (icea_rate/100) * (days/366), (75000 * (days/365)))
+                icea_premium = max(value * (icea_rate/100) * (days/365), (75000 * (days/365)))
             elif value > 2499999 and value < 5000000:
                 icea_rate = 3.5
-                icea_premium = max(value * (icea_rate/100) * (days/366), (100000 * (days/365)))
+                icea_premium = max(value * (icea_rate/100) * (days/365), (100000 * (days/365)))
             elif value > 5000000:
                 icea_rate = 3
-                icea_premium = max(value * (icea_rate/100) * (days/366), (175000 * (days/365)))
+                icea_premium = max(value * (icea_rate/100) * (days/365), (175000 * (days/365)))
             
         
             car_hire = 0
