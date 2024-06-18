@@ -60,6 +60,9 @@ with view1:
                 elif underwriter == 'APA INSURANCE':
                     prorata_premium = (max(value * (rate/100), 25000)) + (windscreen * (10/100))
                     premium = prorata_premium * (days/365)
+                elif underwriter == 'ICEA LION INSURANCE':
+                    prorata_premium = (max(value * (rate/100), 37500)) + (windscreen * (10/100))
+                    premium = prorata_premium * (days/365)
                 elif eabl == 'EABL':
                     prorata_premium = (max(value * (rate/100), 25000)) + (windscreen * (10/100))
                     premium = prorata_premium * (days/365)
