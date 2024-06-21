@@ -284,7 +284,7 @@ with view1:
             pvt_value = 0
         
             if st.button("Calculate"):
-                premium = value * (rate/100) * (days/365)
+                premium = max(value * (rate/100) * (days/365), 37500)
         
                 if pvt == 'Inclusive' or  pvt == 'Excluded':
                     pvt_value += 0
