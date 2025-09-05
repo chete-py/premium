@@ -7,7 +7,8 @@ import gspread
 import json
 import base64
 import re
-import pdfkit, os
+import pdfkit
+import os
     
 view1, view2, view3 = st.tabs(["Premium", "Renewal", "New Business"])
 
