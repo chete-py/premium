@@ -916,17 +916,17 @@ with view1:
                 )
 
              
-                config = pdfkit.configuration(wkhtmltopdf="/usr/bin/wkhtmltopdf")  # Default install path
-                pdfkit.from_string(html_report, "report.pdf", configuration=config)
+                # config = pdfkit.configuration(wkhtmltopdf="/usr/bin/wkhtmltopdf")  # Default install path
+                # pdfkit.from_string(html_report, "report.pdf", configuration=config)
 
-                file_name = 'report.pdf'
-                pdfkit.from_string(html_report, file_name, configuration=config)
-                with open(file_name, "rb") as pdf_file:
-                    st.download_button(
-                        'Download PDF',
-                        data = pdf_file,
-                        file_name = file_name,
-                        mime = 'application/octet-stream')
+                # file_name = 'report.pdf'
+                # pdfkit.from_string(html_report, file_name, configuration=config)
+                # with open(file_name, "rb") as pdf_file:
+                #     st.download_button(
+                #         'Download PDF',
+                #         data = pdf_file,
+                #         file_name = file_name,
+                #         mime = 'application/octet-stream')
                   
             
         
