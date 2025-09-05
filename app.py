@@ -917,10 +917,9 @@ with view1:
                 )
 
              
-
-                config = pdfkit.configuration()  
-
-           
+ 
+                path_wkhtmltopdf = os.path.join(os.getcwd(), "wkhtmltopdf", "bin", "wkhtmltopdf")
+                config = pdfkit.configuration(wkhtmltopdf=path_wkhtmltopdf)
 
                 file_name = 'report.pdf'
                 pdfkit.from_string(html_report, file_name, configuration=config)
