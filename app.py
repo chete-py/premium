@@ -916,9 +916,9 @@ with view1:
                     mime="text/html"
                 )
 
-                path_wkhtmltopdf = r"C:\Users\hp\Desktop\AUTOMATION\wkhtmltopdf\bin\wkhtmltopdf.exe"
-                config = pdfkit.configuration(wkhtmltopdf=path_wkhtmltopdf)
-
+               
+                config = pdfkit.configuration(wkhtmltopdf='/opt/bin/wkhtmltopdf')
+               
 
                 file_name = 'report.pdf'
                 pdfkit.from_string(html_report, file_name, configuration=config)
