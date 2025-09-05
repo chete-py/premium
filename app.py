@@ -1498,311 +1498,311 @@ with view1:
 
     
 
-# Define your Google Sheets credentials JSON file (replace with your own)
-credentials_path = 'newretail-b682d2880f30.json'
+# # Define your Google Sheets credentials JSON file (replace with your own)
+# credentials_path = 'newretail-b682d2880f30.json'
     
-# Authenticate with Google Sheets using the credentials
-credentials = service_account.Credentials.from_service_account_file(credentials_path, scopes=['https://spreadsheets.google.com/feeds'])
+# # Authenticate with Google Sheets using the credentials
+# credentials = service_account.Credentials.from_service_account_file(credentials_path, scopes=['https://spreadsheets.google.com/feeds'])
     
-# Authenticate with Google Sheets using gspread
-gc = gspread.authorize(credentials)
+# # Authenticate with Google Sheets using gspread
+# gc = gspread.authorize(credentials)
     
-# Your Google Sheets URL
-url = "https://docs.google.com/spreadsheets/d/1e09gr3_1UI7yaX_Kjo21nh4m-5d6n0ITJwyA4-L1fTw/edit?gid=0#gid=0"
+# # Your Google Sheets URL
+# url = "https://docs.google.com/spreadsheets/d/1e09gr3_1UI7yaX_Kjo21nh4m-5d6n0ITJwyA4-L1fTw/edit?gid=0#gid=0"
     
-# Open the Google Sheets spreadsheet
-worksheet = gc.open_by_url(url).worksheet("Renewals")
-worksheet2 = gc.open_by_url(url).worksheet("New_Business")
+# # Open the Google Sheets spreadsheet
+# worksheet = gc.open_by_url(url).worksheet("Renewals")
+# worksheet2 = gc.open_by_url(url).worksheet("New_Business")
 
-# Read data from the Google Sheets worksheet
-data = worksheet.get_all_values()
-headers = data[0]
-data = data[1:]
+# # Read data from the Google Sheets worksheet
+# data = worksheet.get_all_values()
+# headers = data[0]
+# data = data[1:]
 
-df = pd.DataFrame(data, columns=headers)
+# df = pd.DataFrame(data, columns=headers)
                 
 
-with view2:
-    def check_password():
-        """Returns `True` if the user entered a correct password."""
-        return st.session_state.get("password_correct", False)
+# with view2:
+#     def check_password():
+#         """Returns `True` if the user entered a correct password."""
+#         return st.session_state.get("password_correct", False)
 
-    def password_entered():
-        """Checks whether a password entered by the user is correct."""
-        if (
-            st.session_state["username"] in st.secrets["passwords"]
-            and st.session_state["password"]
-            == st.secrets["passwords"][st.session_state["username"]]
-        ):
-            st.session_state["password_correct"] = True
-            del st.session_state["password"]  # Don't store username + password
-            del st.session_state["username"]
-        else:
-            st.session_state["password_correct"] = False
+#     def password_entered():
+#         """Checks whether a password entered by the user is correct."""
+#         if (
+#             st.session_state["username"] in st.secrets["passwords"]
+#             and st.session_state["password"]
+#             == st.secrets["passwords"][st.session_state["username"]]
+#         ):
+#             st.session_state["password_correct"] = True
+#             del st.session_state["password"]  # Don't store username + password
+#             del st.session_state["username"]
+#         else:
+#             st.session_state["password_correct"] = False
     
-    if "password_correct" not in st.session_state:
-        # First run, show inputs for username + password.
-        st.text_input("Username", key="username")
-        st.text_input("Password", type="password", key="password")
-        st.button("Submit", on_click=password_entered)
-        st.stop()
+#     if "password_correct" not in st.session_state:
+#         # First run, show inputs for username + password.
+#         st.text_input("Username", key="username")
+#         st.text_input("Password", type="password", key="password")
+#         st.button("Submit", on_click=password_entered)
+#         st.stop()
     
-    if not st.session_state["password_correct"]:
-        # Password not correct, show input + error.
-        st.text_input("Username", key="username")
-        st.text_input("Password", type="password", key="password")
-        st.button("Submit", on_click=password_entered)
-        st.error("User not known or incorrect password")
-        st.stop()
+#     if not st.session_state["password_correct"]:
+#         # Password not correct, show input + error.
+#         st.text_input("Username", key="username")
+#         st.text_input("Password", type="password", key="password")
+#         st.button("Submit", on_click=password_entered)
+#         st.error("User not known or incorrect password")
+#         st.stop()
     
-    if check_password():           
+#     if check_password():           
 
-        df['Key'] = df['Key'].astype(int)
+#         df['Key'] = df['Key'].astype(int)
         
-        df['Date'] = pd.to_datetime(df['Date'])
+#         df['Date'] = pd.to_datetime(df['Date'])
         
-        df['Renewal Month'] = df['Date'].dt.month_name()
+#         df['Renewal Month'] = df['Date'].dt.month_name()
 
-        # Get the unique reviewer names from the DataFrame
-        unique_outcome = df['Renewal Month'].unique()
+#         # Get the unique reviewer names from the DataFrame
+#         unique_outcome = df['Renewal Month'].unique()
   
-        # Create a dropdown to select a reviewer with "All" option
-        selected = st.selectbox("Filter by Outcome:", ["All"] + list(unique_outcome))
+#         # Create a dropdown to select a reviewer with "All" option
+#         selected = st.selectbox("Filter by Outcome:", ["All"] + list(unique_outcome))
   
-        if selected != "All":
-            # Filter the DataFrame based on the selected reviewer
-            final_df = df[df['Renewal Month'] == selected].copy()
+#         if selected != "All":
+#             # Filter the DataFrame based on the selected reviewer
+#             final_df = df[df['Renewal Month'] == selected].copy()
   
-        else:
-            # If "All" is selected, show the entire DataFrame
-            final_df = df
+#         else:
+#             # If "All" is selected, show the entire DataFrame
+#             final_df = df
 
-        task1, task2, task3, task4, task5, task6 = st.tabs(["Work Load", "Invite Sent", "Valuation", "Renewed", "Debited", "Lost"])
+#         task1, task2, task3, task4, task5, task6 = st.tabs(["Work Load", "Invite Sent", "Valuation", "Renewed", "Debited", "Lost"])
 
-        with task1:
-            workload = final_df[final_df['Status'] == 'Pending']
-            edited_df =  st.data_editor(workload, key = 'workload')
-            merged = pd.concat([df, edited_df])
-            finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
-            descending = finalmerged.sort_values(by=['Key'], ascending=True)
-            df1 = descending.astype(str).fillna('')
-            num = len(workload)
-            st.markdown(f'Pending Invites: {num}')
-            # Add a button to update Google Sheets with the changes
-            if st.button("Update Records", key='button1'):   
-                worksheet.clear()
-                worksheet.update([df1.columns.tolist()] + df1.values.tolist())
+#         with task1:
+#             workload = final_df[final_df['Status'] == 'Pending']
+#             edited_df =  st.data_editor(workload, key = 'workload')
+#             merged = pd.concat([df, edited_df])
+#             finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
+#             descending = finalmerged.sort_values(by=['Key'], ascending=True)
+#             df1 = descending.astype(str).fillna('')
+#             num = len(workload)
+#             st.markdown(f'Pending Invites: {num}')
+#             # Add a button to update Google Sheets with the changes
+#             if st.button("Update Records", key='button1'):   
+#                 worksheet.clear()
+#                 worksheet.update([df1.columns.tolist()] + df1.values.tolist())
         
-        with task2:
-            invited = final_df[final_df['Status'] == 'Invited']            
-            edited_df =  st.data_editor(invited, key = 'invited')
-            merged = pd.concat([df, edited_df])
-            finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
-            descending = finalmerged.sort_values(by=['Key'], ascending=True)
-            df2 = descending.astype(str).fillna('')    
-            num = len(invited)
-            st.markdown(f'Invite Sent: {num}')
-            # Add a button to update Google Sheets with the changes
-            if st.button("Update Records", key='button2'):   
-                worksheet.clear()
-                worksheet.update([df2.columns.tolist()] + df2.values.tolist())
+#         with task2:
+#             invited = final_df[final_df['Status'] == 'Invited']            
+#             edited_df =  st.data_editor(invited, key = 'invited')
+#             merged = pd.concat([df, edited_df])
+#             finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
+#             descending = finalmerged.sort_values(by=['Key'], ascending=True)
+#             df2 = descending.astype(str).fillna('')    
+#             num = len(invited)
+#             st.markdown(f'Invite Sent: {num}')
+#             # Add a button to update Google Sheets with the changes
+#             if st.button("Update Records", key='button2'):   
+#                 worksheet.clear()
+#                 worksheet.update([df2.columns.tolist()] + df2.values.tolist())
 
 
 
-        with task3:
-            valued = final_df[final_df['Status'] == 'Valued']
-            edited_df =  st.data_editor(valued, key = 'valued')
-            merged = pd.concat([df, edited_df])
-            finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
-            descending = finalmerged.sort_values(by=['Key'], ascending=True)
-            df3 = descending.astype(str).fillna('') 
-            num = len(valued)
-            st.markdown(f'Valued: {num}')
-            # Add a button to update Google Sheets with the changes
-            if st.button("Update Records", key='button3'):   
-                worksheet.clear()
-                worksheet.update([df3.columns.tolist()] + df3.values.tolist())      
+#         with task3:
+#             valued = final_df[final_df['Status'] == 'Valued']
+#             edited_df =  st.data_editor(valued, key = 'valued')
+#             merged = pd.concat([df, edited_df])
+#             finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
+#             descending = finalmerged.sort_values(by=['Key'], ascending=True)
+#             df3 = descending.astype(str).fillna('') 
+#             num = len(valued)
+#             st.markdown(f'Valued: {num}')
+#             # Add a button to update Google Sheets with the changes
+#             if st.button("Update Records", key='button3'):   
+#                 worksheet.clear()
+#                 worksheet.update([df3.columns.tolist()] + df3.values.tolist())      
            
         
-        with task4:
-            renewed = final_df[final_df['Status'] == 'Renewed']
-            edited_df =  st.data_editor(renewed, key = 'renewed')
-            merged = pd.concat([df, edited_df])            
-            finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
-            descending = finalmerged.sort_values(by=['Key'], ascending=True)
-            df4 = descending.astype(str).fillna('') 
-            num = len(renewed)
-            st.markdown(f'Renewed: {num}')
-            # Add a button to update Google Sheets with the changes
-            if st.button("Update Records", key='button4'):   
-                worksheet.clear()
-                worksheet.update([df4.columns.tolist()] + df4.values.tolist())
+#         with task4:
+#             renewed = final_df[final_df['Status'] == 'Renewed']
+#             edited_df =  st.data_editor(renewed, key = 'renewed')
+#             merged = pd.concat([df, edited_df])            
+#             finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
+#             descending = finalmerged.sort_values(by=['Key'], ascending=True)
+#             df4 = descending.astype(str).fillna('') 
+#             num = len(renewed)
+#             st.markdown(f'Renewed: {num}')
+#             # Add a button to update Google Sheets with the changes
+#             if st.button("Update Records", key='button4'):   
+#                 worksheet.clear()
+#                 worksheet.update([df4.columns.tolist()] + df4.values.tolist())
         
             
-        with task5:
-            debited = final_df[final_df['Status'] == 'Debited']
-            edited_df = st.data_editor(debited, key='debited')
-            merged = pd.concat([df, edited_df])
-            finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
-            descending = finalmerged.sort_values(by=['Key'], ascending=True)
-            df5 = descending.astype(str).fillna('') 
-            num = len(debited)
-            st.markdown(f'Certificate Issued: {num}')
-            # Add a button to update Google Sheets with the changes
-            if st.button("Update Records", key='button5'):   
-                worksheet.clear()
-                worksheet.update([df5.columns.tolist()] + df5.values.tolist())
+#         with task5:
+#             debited = final_df[final_df['Status'] == 'Debited']
+#             edited_df = st.data_editor(debited, key='debited')
+#             merged = pd.concat([df, edited_df])
+#             finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
+#             descending = finalmerged.sort_values(by=['Key'], ascending=True)
+#             df5 = descending.astype(str).fillna('') 
+#             num = len(debited)
+#             st.markdown(f'Certificate Issued: {num}')
+#             # Add a button to update Google Sheets with the changes
+#             if st.button("Update Records", key='button5'):   
+#                 worksheet.clear()
+#                 worksheet.update([df5.columns.tolist()] + df5.values.tolist())
         
            
                 
-        with task6:
-            lost = final_df[final_df['Status'] == 'Lost']
-            edited_df = st.data_editor(lost, key='lost')
-            merged = pd.concat([df, edited_df])
-            finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
-            descending = finalmerged.sort_values(by=['Key'], ascending=True)
-            df6 = descending.astype(str).fillna('')  
-            num = len(lost)
-            st.markdown(f'Cancelled Policy: {num}')
-            # Add a button to update Google Sheets with the changes
-            if st.button("Update Records", key='button6'):   
-                worksheet.clear()
-                worksheet.update([df6.columns.tolist()] + df6.values.tolist())
-            # Add a button to download the filtered data as a CSV
-        if st.button("Download CSV"):
-            csv_data = df6.to_csv(index=False, encoding='utf-8')
-            b64 = base64.b64encode(csv_data.encode()).decode()
-            href = f'<a href="data:file/csv;base64,{b64}" download="renewal_list.csv">Download CSV</a>'
-            st.markdown(href, unsafe_allow_html=True) 
+#         with task6:
+#             lost = final_df[final_df['Status'] == 'Lost']
+#             edited_df = st.data_editor(lost, key='lost')
+#             merged = pd.concat([df, edited_df])
+#             finalmerged = merged.drop_duplicates(subset=['Key'], keep='last')
+#             descending = finalmerged.sort_values(by=['Key'], ascending=True)
+#             df6 = descending.astype(str).fillna('')  
+#             num = len(lost)
+#             st.markdown(f'Cancelled Policy: {num}')
+#             # Add a button to update Google Sheets with the changes
+#             if st.button("Update Records", key='button6'):   
+#                 worksheet.clear()
+#                 worksheet.update([df6.columns.tolist()] + df6.values.tolist())
+#             # Add a button to download the filtered data as a CSV
+#         if st.button("Download CSV"):
+#             csv_data = df6.to_csv(index=False, encoding='utf-8')
+#             b64 = base64.b64encode(csv_data.encode()).decode()
+#             href = f'<a href="data:file/csv;base64,{b64}" download="renewal_list.csv">Download CSV</a>'
+#             st.markdown(href, unsafe_allow_html=True) 
 
 
-with view3:
-    tab31, tab32, tab33 = st.tabs(["Add Entry", "📈 Clients",  "📈 Summary"])
-    with tab31:
-        name = st.text_input('Enter Client Name')
-        plate = st.text_input('Enter Car Registration')
-        date = json.dumps(st.date_input("Date"), default=str)
-        premium = st.number_input('Premium Charged')
+# with view3:
+#     tab31, tab32, tab33 = st.tabs(["Add Entry", "📈 Clients",  "📈 Summary"])
+#     with tab31:
+#         name = st.text_input('Enter Client Name')
+#         plate = st.text_input('Enter Car Registration')
+#         date = json.dumps(st.date_input("Date"), default=str)
+#         premium = st.number_input('Premium Charged')
     
-        if st.button("Add Entry"):
-            # Create a new row of data to add to the Google Sheets spreadsheet
-            new_data = [name, plate, date, premium] 
+#         if st.button("Add Entry"):
+#             # Create a new row of data to add to the Google Sheets spreadsheet
+#             new_data = [name, plate, date, premium] 
             
-            # Append the new row of data to the worksheet
-            worksheet2.append_row(new_data)         
-            st.success("Data submitted successfully!")
+#             # Append the new row of data to the worksheet
+#             worksheet2.append_row(new_data)         
+#             st.success("Data submitted successfully!")
             
-    with tab32:
-        new = worksheet2.get_all_values()        
-        second_headers = new[0]
-        new_data_frame = new[1:]              
-        newdf =  pd.DataFrame(new_data_frame, columns=second_headers) 
-        newdf['Premium'] = newdf['Premium'].astype(int)
-        total = newdf['Premium'].sum()
-        st.table(newdf)
-        st.write(total)
+#     with tab32:
+#         new = worksheet2.get_all_values()        
+#         second_headers = new[0]
+#         new_data_frame = new[1:]              
+#         newdf =  pd.DataFrame(new_data_frame, columns=second_headers) 
+#         newdf['Premium'] = newdf['Premium'].astype(int)
+#         total = newdf['Premium'].sum()
+#         st.table(newdf)
+#         st.write(total)
 
-    with tab33:
-        # Regular expression to capture date values in the format YYYY-MM-DD
-        date_pattern = re.compile(r"\b(\d{4}-\d{2}-\d{2})\b")
+#     with tab33:
+#         # Regular expression to capture date values in the format YYYY-MM-DD
+#         date_pattern = re.compile(r"\b(\d{4}-\d{2}-\d{2})\b")
 
-        new = worksheet2.get_all_values()
-        renew = worksheet.get_all_values()
-        second_headers = new[0]
-        third_headers = renew[0]
-        new_data_frame = new[1:]
-        renew_data_frame = renew[1:]
-        renew_df = pd.DataFrame(renew_data_frame, columns=third_headers)        
-        newdf =  pd.DataFrame(new_data_frame, columns=second_headers)  
+#         new = worksheet2.get_all_values()
+#         renew = worksheet.get_all_values()
+#         second_headers = new[0]
+#         third_headers = renew[0]
+#         new_data_frame = new[1:]
+#         renew_data_frame = renew[1:]
+#         renew_df = pd.DataFrame(renew_data_frame, columns=third_headers)        
+#         newdf =  pd.DataFrame(new_data_frame, columns=second_headers)  
         
-        newdf['Date Onboarded'] = newdf['Date'].str.extract(date_pattern)
-        newdf['Date Onboarded'] = pd.to_datetime(newdf['Date Onboarded'])
-        newdf['Month Onboarded'] = newdf['Date Onboarded'].dt.month_name()
-        newdf['Count'] = 1
-        renew_df['Count'] = 1
-        renewals = renew_df[renew_df['Status'] == 'Debited']
-        lost  = renew_df[renew_df['Status'] == 'Lost']
-        # renew_df['Renewal Month'] = renew_df['Date'].dt.month_name()
+#         newdf['Date Onboarded'] = newdf['Date'].str.extract(date_pattern)
+#         newdf['Date Onboarded'] = pd.to_datetime(newdf['Date Onboarded'])
+#         newdf['Month Onboarded'] = newdf['Date Onboarded'].dt.month_name()
+#         newdf['Count'] = 1
+#         renew_df['Count'] = 1
+#         renewals = renew_df[renew_df['Status'] == 'Debited']
+#         lost  = renew_df[renew_df['Status'] == 'Lost']
+#         # renew_df['Renewal Month'] = renew_df['Date'].dt.month_name()
 
-        newdf['Premium'] = pd.to_numeric(newdf['Premium'], errors='coerce')
-        renewals['Premium'] = pd.to_numeric(renewals['Premium'], errors='coerce')
+#         newdf['Premium'] = pd.to_numeric(newdf['Premium'], errors='coerce')
+#         renewals['Premium'] = pd.to_numeric(renewals['Premium'], errors='coerce')
 
 
-        # Calculate the sum of amounts for each category
-        bar_renew = renewals.groupby('Renewal Month')['Count'].sum().reset_index()
-        bar_new = newdf.groupby('Month Onboarded')['Count'].sum().reset_index()
-        bar_lost = lost.groupby('Renewal Month')['Count'].sum().reset_index()
+#         # Calculate the sum of amounts for each category
+#         bar_renew = renewals.groupby('Renewal Month')['Count'].sum().reset_index()
+#         bar_new = newdf.groupby('Month Onboarded')['Count'].sum().reset_index()
+#         bar_lost = lost.groupby('Renewal Month')['Count'].sum().reset_index()
 
-        bar_renew_total = renewals.groupby('Renewal Month')['Premium'].sum().reset_index()
-        bar_renew_total['Premium'] = bar_renew_total['Premium'] / 10
-        bar_new_total = newdf.groupby('Month Onboarded')['Premium'].sum().reset_index()
-        bar_new_total['Premium'] = bar_new_total['Premium'] / 10
+#         bar_renew_total = renewals.groupby('Renewal Month')['Premium'].sum().reset_index()
+#         bar_renew_total['Premium'] = bar_renew_total['Premium'] / 10
+#         bar_new_total = newdf.groupby('Month Onboarded')['Premium'].sum().reset_index()
+#         bar_new_total['Premium'] = bar_new_total['Premium'] / 10
 
         
 
-        fig = go.Figure()
+#         fig = go.Figure()
 
-        fig.add_trace(go.Bar(
-                width= 0.25,
-                x= bar_renew['Renewal Month'],
-                y= bar_renew['Count'],   
-                name = 'Renewals',
-                marker_color="#e49b0f"                   
-                )) 
+#         fig.add_trace(go.Bar(
+#                 width= 0.25,
+#                 x= bar_renew['Renewal Month'],
+#                 y= bar_renew['Count'],   
+#                 name = 'Renewals',
+#                 marker_color="#e49b0f"                   
+#                 )) 
 
-        fig.add_trace(go.Bar(
-                width= 0.25,
-                x= bar_new['Month Onboarded'],
-                y= bar_new['Count'],   
-                name = 'New Clients',
-                marker_color="#00ab66"
+#         fig.add_trace(go.Bar(
+#                 width= 0.25,
+#                 x= bar_new['Month Onboarded'],
+#                 y= bar_new['Count'],   
+#                 name = 'New Clients',
+#                 marker_color="#00ab66"
                    
-                )) 
+#                 )) 
 
-        fig.add_trace(go.Bar(
-                width= 0.25,
-                x= bar_lost['Renewal Month'],
-                y= bar_lost['Count'],   
-                name = 'Lost',
-                marker_color="#e32636"                   
-                )) 
+#         fig.add_trace(go.Bar(
+#                 width= 0.25,
+#                 x= bar_lost['Renewal Month'],
+#                 y= bar_lost['Count'],   
+#                 name = 'Lost',
+#                 marker_color="#e32636"                   
+#                 )) 
 
-        fig.update_layout(title={'text': 'RETAIL MONTHLY BUSINESS TRACKING', 'x': 0.5, 'xanchor': 'center'},  width=650,
-                                                xaxis_title='Month',
-                                                yaxis_title='No Of Policies',
-                                                xaxis=dict(tickfont=dict(size=7)),                                  
-                                                )
+#         fig.update_layout(title={'text': 'RETAIL MONTHLY BUSINESS TRACKING', 'x': 0.5, 'xanchor': 'center'},  width=650,
+#                                                 xaxis_title='Month',
+#                                                 yaxis_title='No Of Policies',
+#                                                 xaxis=dict(tickfont=dict(size=7)),                                  
+#                                                 )
 
-        st.plotly_chart(fig)
+#         st.plotly_chart(fig)
 
         
-        fig2 = go.Figure()
+#         fig2 = go.Figure()
 
-        fig2.add_trace(go.Bar(
-                width= 0.35,
-                x= bar_renew_total['Renewal Month'],
-                y= bar_renew_total['Premium'],   
-                name = 'Renewals',
-                marker_color="#e49b0f"                   
-                )) 
+#         fig2.add_trace(go.Bar(
+#                 width= 0.35,
+#                 x= bar_renew_total['Renewal Month'],
+#                 y= bar_renew_total['Premium'],   
+#                 name = 'Renewals',
+#                 marker_color="#e49b0f"                   
+#                 )) 
 
-        fig2.add_trace(go.Bar(
-                width= 0.35,
-                x= bar_new_total['Month Onboarded'],
-                y= bar_new_total['Premium'],   
-                name = 'New Clients',
-                marker_color="#00ab66"
+#         fig2.add_trace(go.Bar(
+#                 width= 0.35,
+#                 x= bar_new_total['Month Onboarded'],
+#                 y= bar_new_total['Premium'],   
+#                 name = 'New Clients',
+#                 marker_color="#00ab66"
                    
-                )) 
+#                 )) 
  
 
-        fig2.update_layout(title={'text': 'RETAIL MONTHLY INCOME TRACKING', 'x': 0.5, 'xanchor': 'center'},  width=650,
-                                                xaxis_title='Month',
-                                                yaxis_title='Commission Earned',
-                                                xaxis=dict(tickfont=dict(size=7)),                                  
-                                                )
+#         fig2.update_layout(title={'text': 'RETAIL MONTHLY INCOME TRACKING', 'x': 0.5, 'xanchor': 'center'},  width=650,
+#                                                 xaxis_title='Month',
+#                                                 yaxis_title='Commission Earned',
+#                                                 xaxis=dict(tickfont=dict(size=7)),                                  
+#                                                 )
 
-        st.plotly_chart(fig2)
+#         st.plotly_chart(fig2)
 
         
 
