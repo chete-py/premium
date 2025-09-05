@@ -916,8 +916,8 @@ with view1:
                     mime="text/html"
                 )
 
-               
-                config = pdfkit.configuration(wkhtmltopdf='/opt/bin/wkhtmltopdf')
+               path_wkhtmltopdf = os.path.join(os.getcwd(), "wkhtmltopdf", "bin", "wkhtmltopdf.exe")
+
                
 
                 file_name = 'report.pdf'
