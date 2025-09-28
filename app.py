@@ -498,11 +498,11 @@ with view1:
             elif value > 3000001 and value < 5000001:
                 om_rate = 3.25
                 om_premium = (value * (om_rate/100) * (days/365))
-                om_gross_premium = ( om_premium + 0 )
+                om_gross_premium = ( om_premium + car_hire )
             elif value > 5000001:
                 om_rate = 3
                 om_premium = (value * (om_rate/100) * (days/365))
-                om_gross_premium = ( om_premium + 0)
+                om_gross_premium = ( om_premium + car_hire)
                
           
         
