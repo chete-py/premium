@@ -313,24 +313,24 @@ with view1:
                 phone = "0793 269 588"
                 
 
-            # if value > 0:
-            #     om_pvt = 'Inclusive'
-            #     om_ex_prt = 'Inclusive'
-            #     formatted_om_pvt = 0.00
-            #     formatted_om_ex_prt = 0.00
-            #     lou_rate = 'Inclusive'
-            #     lou = 0.00
-            # else:
-            #     om_pvt = '0.25%'
-            #     om_ex_prt = '0.25%'
-            #     formatted_om_pvt = format_with_commas(max(value * (0.25/100), 2500))
-            #     formatted_om_ex_prt = format_with_commas(max(value * (0.25/100), 2500))
-            #     if loss_of_use == 3000:
-            #         lou_rate = 3000
-            #         lou = 3000
-            #     else:
-            #         lou_rate = 'Excluded'
-            #         lou = 0.00
+            if value > 3000000:
+                om_pvt = 'Inclusive'
+                om_ex_prt = 'Inclusive'
+                formatted_om_pvt = 0.00
+                formatted_om_ex_prt = 0.00
+                lou_rate = '3000'
+                lou = 3000
+            else:
+                om_pvt = '0.25%'
+                om_ex_prt = '0.25%'
+                formatted_om_pvt = format_with_commas(max(value * (0.25/100), 2500))
+                formatted_om_ex_prt = format_with_commas(max(value * (0.25/100), 2500))
+                if loss_of_use == 3000:
+                    lou_rate = 3000
+                    lou = 3000
+                else:
+                    lou_rate = 'Excluded'
+                    lou = 0.00
                  
             
             if value < 2500000:
@@ -736,7 +736,7 @@ with view1:
                         <td>{formatted_car_hire}</td>
                         <td style="color:red" >{loss_of_use}</td>
                         <td>{formatted_car_hire}</td>
-                        <td style="color:red" >{loss_of_use}</td>
+                        <td style="color:red" >{lou}</td>
                         <td>{lou}</td>
                         <td style="color:red" >{loss_of_use}</td>
                         <td>{formatted_car_hire}</td>
