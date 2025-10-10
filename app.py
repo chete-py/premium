@@ -281,7 +281,7 @@ with view1:
             
             reg = st.text_input('Enter Registration')            
             value = int(st.number_input('Sum Insured')) 
-            staff = st.selectbox("Prepared By:", ["Collins Chetekei", "Daniel Cheruiyot", "Patrick Kimani", "Ephantus Ngari", "Samuel Ndoto", "Charity Rono"])
+            staff = st.selectbox("Prepared By:", ["Collins Chetekei", "Daniel Cheruiyot", "Patrick Kimani", "Ephantus Ngari", "Samuel Ndoto", "Charity Rono", "Monica Waruguru"])
             loss_of_use = st.selectbox("Choose Loss Of Use Amount charged", [3000, "Excluded"])
             windscreen = int(st.number_input('Windscreen Amount Above Free Limit'))
             span = st.selectbox("Choose Length of cover", ["Annual Cover", "Pro-Rated Cover"])
@@ -311,6 +311,8 @@ with view1:
                 phone = "0712 853 717"
             elif staff == "Charity Rono":
                 phone = "0793 269 588"
+             elif staff == "Monica Waruguru":
+                phone = "0792 448 161"
                 
 
             if value > 3000000:
@@ -846,7 +848,7 @@ with view1:
                 <p><u><b>Benefit Summary</b></u></p>
 
                 <p>
-                1. Death or Bodily Injury to any Third Party - As per statute (unlimited liability as required by law).<br>
+                1. Death or Bodily Injury to any Third Party - As per statute (KES. 3,000,000).<br>
 
                 2. Third Party Property Damage - Up to KES. 20,000,000/-.<br>
 
