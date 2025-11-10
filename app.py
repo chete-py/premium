@@ -952,9 +952,8 @@ with view1:
     
         if st.button("Calculate Quote"):
             if underwriter == 'GA INSURANCE':
-                premium = max((value * (rate/100)), 45000)       
+                premium = max((value * (rate/100)), 50000)       
             
-    
             if pvt == 'Inclusive' or 'Excluded':
                 pvt_value += 0
             elif pvt == '0.25%':
