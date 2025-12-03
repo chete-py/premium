@@ -282,7 +282,7 @@ with view1:
             reg = st.text_input('Enter Registration')            
             value = int(st.number_input('Sum Insured')) 
             staff = st.selectbox("Prepared By:", ["Collins Chetekei", "Daniel Cheruiyot", "Patrick Kimani", "Ephantus Ngari", "Samuel Ndoto", "Charity Rono", "Monica Waruguru"])
-            loss_of_use = st.selectbox("Choose Loss Of Use Amount charged", [3000, 6000, "Excluded"])
+            loss_of_use = st.selectbox("Choose Loss Of Use Amount charged", [3000, 5000, "Excluded"])
             windscreen = int(st.number_input('Windscreen Amount Above Free Limit'))
             span = st.selectbox("Choose Length of cover", ["Annual Cover", "Pro-Rated Cover"])
             if span == "Pro-Rated Cover":                
