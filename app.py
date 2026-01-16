@@ -614,7 +614,7 @@ with view1:
                     background-color: #073980; 
                 }}                
     
-                .card {{font-family: Candara; border: 1.5px solid; width:100%; margin: 1px auto; font-size:18px; padding: 2.5px;}}         
+                .card {{font-family: Candara; border: 1.5px solid; width:100%; margin: 1px auto; font-size:16px; padding: 2.5px;}}         
                 
                 </style>
                 </head>
