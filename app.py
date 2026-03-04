@@ -335,7 +335,7 @@ with view1:
                     lou = 0.00
 
 
-            if value < 600000:
+            if value < 500000:
                 cannon_rate = 'Minimum 500K'
                 formatted_cannon_gross_premium = 'NA'
                 formatted_cannon_premium = 'NA'
