@@ -333,15 +333,32 @@ with view1:
                 else:
                     lou_rate = 'Excluded'
                     lou = 0.00
-                 
-            
-            if value < 2500000:
-                cannon_rate = 4
-                cannon_premium = max(value * (cannon_rate/100) * (days/365),(30000 * (days/365)))
-            elif value > 2499999:
-                cannon_rate = 3.5
-                cannon_premium = (value * (cannon_rate/100) * (days/365))
 
+
+            if value < 600000:
+                cannon_rate = 'Minimum 500K'
+                formatted_cannon_gross_premium = 'NA'
+                formatted_cannon_premium = 'NA'
+                formatted_cannon_levies = 'NA'
+                formatted_cannon_total = 'Consider TPO'
+                formatted_cannon_car_hire = 'NA'
+            else:                
+                if value > 499999 and value < 1000000:
+                    cannon_rate = 5.5
+                    cannon_premium = max(value * (cannon_rate/100) * (days/365), (42500 * (days/365)))
+                 
+                elif value > 999999 and value < 1499999:
+                    cannon_rate = 5.5
+                    cannon_premium = max(value * (cannon_rate/100) * (days/365), (60000 * (days/365)))
+                elif value > 1499999 and value < 2499999:
+                    cannon_rate = 4
+                    cannon_premium = max(value * (cannon_rate/100) * (days/365), (75000 * (days/365)))
+                elif value > 2499999 and value < 4999999:
+                    cannon_rate = 3.5
+                    cannon_premium = max(value * (cannon_rate/100) * (days/365), (100000 * (days/365)))
+                elif value > 4999999:
+                    cannon_rate = 3.25
+                    cannon_premium = max(value * (cannon_rate/100) * (days/365), (175000 * (days/365)))
             
             car_hire = 0
             fee = 100
