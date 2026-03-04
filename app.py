@@ -701,7 +701,7 @@ with view1:
                     <tr>
                         <td>Basic Premium</td>
                         <td>{value}</td> 
-                        <td style="color:red">{cannon_rate}%</td>
+                        <td style="color:red">{cannon_rate}</td>
                         <td>{formatted_cannon_premium}</td>
                         <td style="color:red">{apa_rate}</td>
                         <td>{formatted_apa_premium}</td> 
