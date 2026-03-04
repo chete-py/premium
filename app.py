@@ -334,6 +334,27 @@ with view1:
                     lou_rate = 'Excluded'
                     lou = 0.00
 
+            
+            
+            car_hire = 0
+            fee = 100
+            ex_pr = 0
+            pvt_value = 0
+            excess = (value * 2.5/100)
+            
+            if excess < 20000:
+                excess = 20000
+            elif excess > 100000:
+                excess = 100000
+            new_excess = format_with_commas(excess)
+
+            if loss_of_use == 'Exluded':
+                car_hire += 0                
+            elif loss_of_use == 3000:
+                car_hire += 3000
+            elif loss_of_use == 5000:
+                car_hire += 5000
+
 
             if value < 500000:
                 cannon_rate = 'Minimum 500K'
@@ -359,24 +380,17 @@ with view1:
                 elif value > 4999999:
                     cannon_rate = 3.25
                     cannon_premium = max(value * (cannon_rate/100) * (days/365), (175000 * (days/365)))
-            
-            car_hire = 0
-            fee = 100
-            ex_pr = 0
-            pvt_value = 0
-            excess = (value * 2.5/100)
-            if excess < 20000:
-                excess = 20000
-            elif excess > 100000:
-                excess = 100000
-            new_excess = format_with_commas(excess)
 
-            if loss_of_use == 'Exluded':
-                car_hire += 0                
-            elif loss_of_use == 3000:
-                car_hire += 3000
-            elif loss_of_use == 5000:
-                car_hire += 5000
+                cannon_gross_premium = (cannon_premium + car_hire)
+                cannon_levies = cannon_gross_premium * 0.0045
+                cannon_total = ( cannon_gross_premium + fee + cannon_levies )
+                formatted_cannon_premium = format_with_commas(cannon_premium)
+                formatted_cannon_gross_premium = format_with_commas(cannon_gross_premium)
+                formatted_cannon_levies = format_with_commas(cannon_levies)
+                formatted_cannon_total = format_with_commas(cannon_total)
+                formatted_cannon_car_hire = format_with_commas(car_hire)
+
+            
             
             if value < 600000:
                 apa_rate = 'Minimum 500K'
@@ -529,20 +543,20 @@ with view1:
         
             if st.button("Calculate"):                
                               
-                cannon_gross_premium = (cannon_premium + car_hire)
+                
                 fidelity_gross_premium = (fidelity_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
                 icea_gross_premium = ( icea_premium + fidelity_pvt + car_hire)
                 ga_gross_premium = ( ga_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
                
         
-                cannon_levies = cannon_gross_premium * 0.0045
+                
                 fidelity_levies = fidelity_gross_premium * 0.0045
                 icea_levies = icea_gross_premium * 0.0045
                 ga_levies = ga_gross_premium * 0.0045
                 om_levies = om_gross_premium * 0.0045               
                
         
-                cannon_total = ( cannon_gross_premium + fee + cannon_levies )
+                
                 fidelity_total = ( fidelity_gross_premium + fee + fidelity_levies )
                 icea_total = ( icea_gross_premium + fee + icea_levies )
                 ga_total = ( ga_gross_premium + fee + ga_levies )
@@ -556,7 +570,7 @@ with view1:
 
                 formatted_fidelity_ex_prt = format_with_commas(fidelity_ex_prt)
 
-                formatted_cannon_premium = format_with_commas(cannon_premium)
+                
                 formatted_icea_premium = format_with_commas(icea_premium)
                 formatted_ga_premium = format_with_commas(ga_premium)
                 formatted_om_premium = format_with_commas(om_premium)
@@ -570,21 +584,21 @@ with view1:
                 formatted_ga_gross_premium = format_with_commas(ga_gross_premium)
                 formatted_om_gross_premium = format_with_commas(om_gross_premium)
                 formatted_fidelity_gross_premium = format_with_commas(fidelity_gross_premium)
-                formatted_cannon_gross_premium = format_with_commas(cannon_gross_premium)
+               
                
                 
                 formatted_icea_levies = format_with_commas(icea_levies)
                 formatted_ga_levies = format_with_commas(ga_levies)
                 formatted_om_levies = format_with_commas(om_levies)
                 formatted_fidelity_levies = format_with_commas(fidelity_levies)
-                formatted_cannon_levies = format_with_commas(cannon_levies)
+               
                
                 
                 formatted_icea_total = format_with_commas(icea_total)
                 formatted_ga_total = format_with_commas(ga_total)
                 formatted_om_total = format_with_commas(om_total)
                 formatted_fidelity_total = format_with_commas(fidelity_total)          
-                formatted_cannon_total = format_with_commas(cannon_total)
+               
 
                    # Create an HTML report
                 html_report = f"""
