@@ -682,7 +682,7 @@ with view1:
                         <th colspan="2"><img src="https://th.bing.com/th/id/OIP.pqmNPWTCP_Ef4Eqo_Vp5-wAAAA?w=400&h=400&rs=1&pid=ImgDetMain" alt="Fidelity Logo"></th>
                         <th colspan="2"><img src="https://th.bing.com/th/id/OIP.Jz5UcTVU1JbjzmCGb2nt8gAAAA?w=194&h=186&rs=1&pid=ImgDetMain" alt="ICEA Logo"></th>
                         <th colspan="2"><img src="https://th.bing.com/th/id/OIP.yI9_Wi3jP0NwLeYGgbFUhQHaEK?rs=1&pid=ImgDetMain" alt="GA Logo"></th> 
-                        <th colspan="2"><img src="https://www.bing.com/images/search?view=detailV2&ccid=7mWxdyy9&id=181A49F281C940C7C1D640AC00A561287A25BA81&thid=OIP.7mWxdyy9_8Je0sN6hfhjkAAAAA&mediaurl=https%3a%2f%2fmemimaltd.co.ke%2fwp-content%2fuploads%2fNCBAIG.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.ee65b1772cbdffc25ed2c37a85f86390%3frik%3dgboleihhpQCsQA%26pid%3dImgRaw%26r%3d0&exph=70&expw=191&q=ncbaig&FORM=IRPRST&ck=695DDEF13FB952626EF87590CC1CA600&selectedIndex=4&itb=0" alt="AIG Logo"></th> 
+                        <th colspan="2"><img src="ncba.png" alt="AIG Logo"></th> 
              
                        
                      </tr>
