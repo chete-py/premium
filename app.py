@@ -681,9 +681,8 @@ with view1:
                         <th colspan="2"><img src="https://i.ytimg.com/vi/7BORiuBsmyo/maxresdefault.jpg" alt="APA Logo"></th>
                         <th colspan="2"><img src="https://th.bing.com/th/id/OIP.pqmNPWTCP_Ef4Eqo_Vp5-wAAAA?w=400&h=400&rs=1&pid=ImgDetMain" alt="Fidelity Logo"></th>
                         <th colspan="2"><img src="https://th.bing.com/th/id/OIP.Jz5UcTVU1JbjzmCGb2nt8gAAAA?w=194&h=186&rs=1&pid=ImgDetMain" alt="ICEA Logo"></th>
-                        <th colspan="2"><img src="https://th.bing.com/th/id/OIP.snnk8ltfoo-_qalEPNgqEQHaEK?w=920&h=518&rs=1&pid=ImgDetMain" alt="OM Logo"></th> 
                         <th colspan="2"><img src="https://th.bing.com/th/id/OIP.yI9_Wi3jP0NwLeYGgbFUhQHaEK?rs=1&pid=ImgDetMain" alt="GA Logo"></th> 
-                        <th colspan="2"><img src="https://th.bing.com/th/id/OIP.IJBSY54mBVEfqRY3oQCVMgHaHa?pid=ImgDet&w=207&h=207&c=7&dpr=1.5" alt="GA Logo"></th> 
+                        <th colspan="2"><img src="https://sl.bing.net/gDmhxpT2AHA" alt="AIG Logo"></th> 
              
                        
                      </tr>
@@ -691,8 +690,6 @@ with view1:
                     <tr>
                         <th style="background-color: #17B169">{reg}</th>
                         <th style="background-color: #17B169">Value - KES</th>
-                        <th style="background-color: #17B169">Rate</th>
-                        <th style="background-color: #17B169">Premium</th>
                         <th style="background-color: #17B169">Rate</th>
                         <th style="background-color: #17B169">Premium</th>
                         <th style="background-color: #17B169">Rate</th>
@@ -718,9 +715,7 @@ with view1:
                         <td style="color:red">{fidelity_rate}%</td>
                         <td>{formatted_fidelity_premium}</td> 
                         <td style="color:red">{icea_rate}%</td>
-                        <td>{formatted_icea_premium}</td> 
-                        <td style="color:red">{om_rate}%</td>
-                        <td>{formatted_om_premium}</td>
+                        <td>{formatted_icea_premium}</td>                        
                         <td style="color:red">{ga_rate}%</td>
                         <td>{formatted_ga_premium}</td>
                         <td style="color:red">{aig_rate}%</td>
@@ -740,8 +735,6 @@ with view1:
                         <td >{formatted_fidelity_ex_prt}</td>              
                         <td style="color:red">Inclusive</td>
                         <td>0.00</td>
-                        <td style="color:red">{om_ex_prt}</td>
-                        <td>{formatted_om_ex_prt}</td>
                         <td style="color:red">0.25%</td>
                         <td>{formatted_fidelity_ex_prt}</td>
                         <td style="color:red">Inclusive</td>
@@ -761,8 +754,6 @@ with view1:
                         <td >{formatted_fidelity_pvt}</td>              
                         <td style="color:red">0.25%</td>
                         <td>{formatted_fidelity_pvt}</td>
-                        <td style="color:red">{om_pvt}</td>
-                        <td>{formatted_om_pvt} </td>
                         <td style="color:red">0.25%</td>
                         <td>{formatted_fidelity_pvt}</td>
                         <td style="color:red">0.25%</td>
@@ -781,8 +772,6 @@ with view1:
                         <td style="color:red" >{loss_of_use}</td>
                         <td>{formatted_car_hire}</td>
                         <td style="color:red" >{loss_of_use}</td>
-                        <td>{formatted_car_hire}</td>
-                        <td style="color:red" >{lou}</td>
                         <td>{lou}</td>
                         <td style="color:red" >{loss_of_use}</td>
                         <td>{formatted_car_hire}</td>
@@ -805,8 +794,6 @@ with view1:
                         <td></td>
                         <td class='gross_premium'>{formatted_icea_gross_premium}</td>
                         <td></td>
-                        <td class='gross_premium'>{formatted_om_gross_premium}</td>
-                        <td></td>
                         <td class='gross_premium'>{formatted_ga_gross_premium}</td>
                         <td></td>
                         <td class='gross_premium'>{formatted_aig_gross_premium}</td>
@@ -826,8 +813,6 @@ with view1:
                         <td >{formatted_fidelity_levies}</td> <!-- Updated formatting for better readability -->
                         <td style="color:red">0.45%</td>
                         <td >{formatted_icea_levies}</td> <!-- Updated formatting for better readability -->
-                         <td style="color:red">0.45%</td>
-                        <td >{formatted_om_levies}</td>
                         <td style="color:red">0.45%</td>
                         <td >{formatted_ga_levies}</td>
                         <td style="color:red">0.45%</td>
@@ -850,8 +835,7 @@ with view1:
                         <td>{fee}</td>
                         <td></td>
                         <td>{fee}</td>
-                        <td></td>
-                        <td>{fee}</td>
+                      
                                                         
                     </tr>
                     
@@ -866,8 +850,6 @@ with view1:
                         <td class = 'bold' style="color:#152637">{formatted_fidelity_total}</td>
                         <td></td>
                         <td class = 'bold' style="color:#152637">{formatted_icea_total}</td>
-                        <td></td>
-                        <td class = 'bold' style="color:#152637">{formatted_om_total}</td>
                         <td></td>
                         <td class = 'bold' style="color:#152637">{formatted_ga_total}</td>
                         <td></td>
