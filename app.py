@@ -471,8 +471,8 @@ with view1:
                 aig_rate = 3
                 formatted_aig_premium = format_with_commas((value * (aig_rate/100) * (days/365)))
                 formatted_aig_gross_premium = format_with_commas((value * (aig_rate/100) * (days/365)) + (max(value * 0.25/100, 5000)))
-                formatted_aig_levies = format_with_commas(0.0045 * (((value * (aig_rate/100) * (days/365)) + (max(value * 0.25/100, 5000)))))
-                formatted_aig_total = format_with_commas(formatted_aig_premium + formatted_aig_levies)
+                formatted_aig_levies = format_with_commas(0.0045 * formatted_aig_gross_premium)
+                formatted_aig_total = (formatted_aig_gross_premium + formatted_aig_levies)
                 formatted_aig_car_hire = 0.00
             else:
                 if value < 1000001:
