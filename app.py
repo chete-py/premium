@@ -494,7 +494,7 @@ with view1:
                     new_aig_rate = 3
                     aig_premium = (value * (new_aig_rate/100) * (days/365), (100000 * (days/365))) +  (max(value * 0.25/100, 2500))
 
-                aig_gross_premium = (aig_premium + fidelity_pvt + fidelity_ex_prt)
+                aig_gross_premium = (aig_premium + fidelity_pvt)
                 aig_levies = aig_gross_premium * 0.0045
                 aig_total = ( aig_gross_premium + fee + aig_levies )
                 formatted_aig_premium = format_with_commas(aig_premium)
