@@ -476,15 +476,15 @@ with view1:
                 formatted_aig_car_hire = 'NA'
             else:
                 if value < 1000001:
-                    aig_rate = 6.3
+                    aig_rate = 6
                     aig_premium = max((value * (aig_rate/100) * (days/365)),(37500 * (days/365)))
                 elif value > 1000001 and value < 1500001:
-                    aig_rate = 5.1
-                    aig_premium = max(value * (aig_rate/100) * (days/365), (60000 * (days/365)))
+                    aig_rate = 5
+                    aig_premium = max(value * (aig_rate/100) * (days/365))
                 elif value > 1500000 and value < 2500001:
                     aig_rate = 4
                     aig_premium = max(value * (aig_rate/100) * (days/365), (75000 * (days/365)))
-                elif value > 2500001 and value < 5000000:
+                elif value > 2500001 and value < 3000000:
                     aig_rate = 3.5
                     aig_premium = max(value * (aig_rate/100) * (days/365), (100000 * (days/365)))
 
