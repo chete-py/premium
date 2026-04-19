@@ -467,28 +467,28 @@ with view1:
                 icea_rate = 3
                 icea_premium = max(value * (icea_rate/100) * (days/365), (450000 * (days/365)))
 
-            if value > 4999999:
-                aig_rate = 'Above 5M'
-                formatted_aig_gross_premium = 'NA'
-                formatted_aig_premium = 'NA'
-                formatted_aig_levies = 'NA'
-                formatted_aig_total = 'Request for Premier Product'
-                formatted_aig_car_hire = 'NA'
+            if value > 2999999:
+                aig_rate = 3
+                formatted_aig_gross_premium = format_with_commas((value * (aig_rate/100) * (days/365)) 
+                formatted_aig_premium = format_with_commas((value * (aig_rate/100) * (days/365)) + (max(value * 0.25/100, 5000)))
+                formatted_aig_levies = format_with_commas(0.0045 * (((value * (aig_rate/100) * (days/365)) + (max(value * 0.25/100, 5000)))))
+                formatted_aig_total = (formatted_aig_premium + formatted_aig_levies)
+                formatted_aig_car_hire = 'Consult handler'
             else:
                 if value < 1000001:
                     aig_rate = 6
                     aig_premium = max((value * (aig_rate/100) * (days/365)),(37500 * (days/365)))
                 elif value > 1000001 and value < 1500001:
                     aig_rate = 5
-                    aig_premium = max(value * (aig_rate/100) * (days/365))
+                    aig_premium = (value * (aig_rate/100) * (days/365))
                 elif value > 1500000 and value < 2500001:
                     aig_rate = 4
-                    aig_premium = max(value * (aig_rate/100) * (days/365), (75000 * (days/365)))
+                    aig_premium = (value * (aig_rate/100) * (days/365), (75000 * (days/365)))
                 elif value > 2500001 and value < 3000000:
                     aig_rate = 3.5
-                    aig_premium = max(value * (aig_rate/100) * (days/365), (100000 * (days/365)))
+                    aig_premium = (value * (aig_rate/100) * (days/365), (100000 * (days/365)))
 
-                aig_gross_premium = (aig_premium + fidelity_pvt + fidelity_ex_prt + 4000)
+                aig_gross_premium = (aig_premium + fidelity_pvt + fidelity_ex_prt)
                 aig_levies = aig_gross_premium * 0.0045
                 aig_total = ( aig_gross_premium + fee + aig_levies )
                 formatted_aig_premium = format_with_commas(aig_premium)
@@ -677,12 +677,16 @@ with view1:
                         <th colspan="2"><img src="https://th.bing.com/th/id/OIP.Jz5UcTVU1JbjzmCGb2nt8gAAAA?w=194&h=186&rs=1&pid=ImgDetMain" alt="ICEA Logo"></th>
                         <th colspan="2"><img src="https://th.bing.com/th/id/OIP.snnk8ltfoo-_qalEPNgqEQHaEK?w=920&h=518&rs=1&pid=ImgDetMain" alt="OM Logo"></th> 
                         <th colspan="2"><img src="https://th.bing.com/th/id/OIP.yI9_Wi3jP0NwLeYGgbFUhQHaEK?rs=1&pid=ImgDetMain" alt="GA Logo"></th> 
+                        <th colspan="2"><img src="https://th.bing.com/th/id/OIP.IJBSY54mBVEfqRY3oQCVMgHaHa?pid=ImgDet&w=207&h=207&c=7&dpr=1.5" alt="GA Logo"></th> 
+             
                        
                      </tr>
                     
                     <tr>
                         <th style="background-color: #17B169">{reg}</th>
                         <th style="background-color: #17B169">Value - KES</th>
+                        <th style="background-color: #17B169">Rate</th>
+                        <th style="background-color: #17B169">Premium</th>
                         <th style="background-color: #17B169">Rate</th>
                         <th style="background-color: #17B169">Premium</th>
                         <th style="background-color: #17B169">Rate</th>
@@ -713,6 +717,8 @@ with view1:
                         <td>{formatted_om_premium}</td>
                         <td style="color:red">{ga_rate}%</td>
                         <td>{formatted_ga_premium}</td>
+                        <td style="color:red">{aig_rate}%</td>
+                        <td>{formatted_aig_premium}</td>
                        
                                         
                     </tr>                     
@@ -732,6 +738,8 @@ with view1:
                         <td>{formatted_om_ex_prt}</td>
                         <td style="color:red">0.25%</td>
                         <td>{formatted_fidelity_ex_prt}</td>
+                        <td style="color:red">Inclusive</td>
+                        <td>0.00</td>
                       
                                                     
                     </tr>           
@@ -749,6 +757,8 @@ with view1:
                         <td>{formatted_fidelity_pvt}</td>
                         <td style="color:red">{om_pvt}</td>
                         <td>{formatted_om_pvt} </td>
+                        <td style="color:red">0.25%</td>
+                        <td>{formatted_fidelity_pvt}</td>
                         <td style="color:red">0.25%</td>
                         <td>{formatted_fidelity_pvt}</td>
                        
@@ -770,6 +780,8 @@ with view1:
                         <td>{lou}</td>
                         <td style="color:red" >{loss_of_use}</td>
                         <td>{formatted_car_hire}</td>
+                        <td style="color:red" >{loss_of_use}</td>
+                        <td>Consult handler</td>
                       
                       
                     </tr>      
@@ -790,6 +802,8 @@ with view1:
                         <td class='gross_premium'>{formatted_om_gross_premium}</td>
                         <td></td>
                         <td class='gross_premium'>{formatted_ga_gross_premium}</td>
+                        <td></td>
+                        <td class='gross_premium'>{formatted_aig_gross_premium}</td>
                       
                         
                 
@@ -810,12 +824,16 @@ with view1:
                         <td >{formatted_om_levies}</td>
                         <td style="color:red">0.45%</td>
                         <td >{formatted_ga_levies}</td>
+                        <td style="color:red">0.45%</td>
+                        <td >{formatted_aig_levies}</td>
                      
                     </tr>
                     
                     <tr>
                         <td>Policy Fee</td>
                         <td></td>
+                        <td></td>
+                        <td>{fee}</td>
                         <td></td>
                         <td>{fee}</td>
                         <td></td>
@@ -846,6 +864,8 @@ with view1:
                         <td class = 'bold' style="color:#152637">{formatted_om_total}</td>
                         <td></td>
                         <td class = 'bold' style="color:#152637">{formatted_ga_total}</td>
+                        <td></td>
+                        <td class = 'bold' style="color:#152637">{formatted_aig_total}</td>
 
                                                       
                     </tr>          
@@ -856,7 +876,7 @@ with view1:
                         <u><b>Important Notes</b></u><br>
                         Vehicles will only qualify for comprehensive cover where age is below 15 years. ( Year Of Manufacture north of 2010)<br>
                         It is advisable to have the vehicle valued. Kindly note that the above quote is subject to change as per valuation results.<br>
-                        Your applicable excess in the event of a material damage claim will be KES. {new_excess}<br>
+                        Your applicable excess in the event of a material damage claim will be KES. {new_excess} (<b>NCBAIG</b> Excess at KES. 20,000)<br>
                         This is a summarized comparative quote; kindly review your risk note once cover is placed; it contains detailed information on scope of cover.                                                   
                         </p>
                         </th>
