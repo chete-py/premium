@@ -682,7 +682,7 @@ with view1:
                         <th colspan="2"><img src="https://th.bing.com/th/id/OIP.pqmNPWTCP_Ef4Eqo_Vp5-wAAAA?w=400&h=400&rs=1&pid=ImgDetMain" alt="Fidelity Logo"></th>
                         <th colspan="2"><img src="https://th.bing.com/th/id/OIP.Jz5UcTVU1JbjzmCGb2nt8gAAAA?w=194&h=186&rs=1&pid=ImgDetMain" alt="ICEA Logo"></th>
                         <th colspan="2"><img src="https://th.bing.com/th/id/OIP.yI9_Wi3jP0NwLeYGgbFUhQHaEK?rs=1&pid=ImgDetMain" alt="GA Logo"></th> 
-                        <th colspan="2"><img src="https://sl.bing.net/gDmhxpT2AHA" alt="AIG Logo"></th> 
+                        <th colspan="2"><img src="https://www.bing.com/images/search?view=detailV2&ccid=IFmbzjao&id=E7236942245C3FA8C1ED6561AA9227F92FB0E710&thid=OIP.IFmbzjao1fU0JpaKV-FHIQHaEK&mediaurl=https%3A%2F%2Fwww.abojani.com%2Fwp-content%2Fuploads%2F2025%2F04%2FNCBA-Insurance-The-Dawn-of-a-New-Era-in-the-Insurance-Industry.gif&cdnurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.20599bce36a8d5f53426968a57e14721%3Frik%3DEOewL%252fknkqphZQ%26pid%3DImgRaw%26r%3D0&exph=438&expw=780&q=ncbaig&FORM=IRPRST&ck=FE538CBAD2E61275769B516A672C3248&selectedIndex=1&itb=0&cw=1111&ch=565&ajaxhist=0&ajaxserp=0" alt="AIG Logo"></th> 
              
                        
                      </tr>
