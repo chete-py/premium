@@ -8,7 +8,7 @@ import json
 import base64
 import re
     
-view1, view2, view3 = st.tabs(["Premium", "Renewal", "New Business"])
+view1, view2, view3 = st.tabs(["Premium", "Renewal", "Aviation"])
 
 with view1:
    
