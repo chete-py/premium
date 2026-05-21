@@ -1312,8 +1312,8 @@ with view1:
     
         if st.button("Calculate MC Quote"):
             
-            cannon_premium = max(value * (4.75/100), 40000)             
-            fidelity_premium = max(value * (4.5/100), 50000)
+            cannon_premium = max(value * (4.5/100), 40000)             
+            fidelity_premium = max(value * (4.8/100), 50000)
             icea_premium = max(value * (5/100), 40000)  
             icea_pvt = max(value * (0.35/100), 2500)
 
