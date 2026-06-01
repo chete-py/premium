@@ -681,7 +681,7 @@ with view1:
                         <th colspan="2"><img src="https://i.ytimg.com/vi/7BORiuBsmyo/maxresdefault.jpg" alt="APA Logo"></th>
                         <th colspan="2"><img src="https://th.bing.com/th/id/OIP.pqmNPWTCP_Ef4Eqo_Vp5-wAAAA?w=400&h=400&rs=1&pid=ImgDetMain" alt="Fidelity Logo"></th>
                         <th colspan="2"><img src="https://th.bing.com/th/id/OIP.Jz5UcTVU1JbjzmCGb2nt8gAAAA?w=194&h=186&rs=1&pid=ImgDetMain" alt="ICEA Logo"></th>
-                        <th colspan="2"><img src="https://th.bing.com/th/id/OIP.yI9_Wi3jP0NwLeYGgbFUhQHaEK?rs=1&pid=ImgDetMain" alt="GA Logo"></th> 
+                        <th colspan="2"><img src="https://tse3.mm.bing.net/th/id/OIP.KgIcxDUjv9Uf3w9gPYmJAgHaEK?cb=thfc1falcon&w=1080&h=608&rs=1&pid=ImgDetMain&o=7&rm=3" alt="GA Logo"></th> 
                         <th colspan="2"><img src="https://th.bing.com/th/id/OIP.AqCcq8bj35a3GLSBoCm_uAHaEK?w=260&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="AIG Logo"></th> 
              
                        
