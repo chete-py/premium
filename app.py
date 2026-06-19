@@ -491,7 +491,15 @@ with view1:
                     aig_premium = (value * (new_aig_rate/100) * (days/365)) +  (max(value * 0.25/100, 2500))
                 elif value > 2500001 and value < 3000000:
                     aig_rate = 3.25
-                    new_aig_rate = 3
+                    new_aig_rate = 3.5
+                    aig_premium = (value * (new_aig_rate/100) * (days/365)) +  (max(value * 0.25/100, 2500))
+                elif value > 3000001 and value < 5000000:
+                    aig_rate = 3.25
+                    new_aig_rate = 3.5
+                    aig_premium = (value * (new_aig_rate/100) * (days/365)) +  (max(value * 0.25/100, 2500))
+                 elif  < 5000000:
+                    aig_rate = 3.25
+                    new_aig_rate = 3.5
                     aig_premium = (value * (new_aig_rate/100) * (days/365)) +  (max(value * 0.25/100, 2500))
 
                 aig_gross_premium = (aig_premium + fidelity_pvt)
