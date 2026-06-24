@@ -726,7 +726,7 @@ with view1:
                         <td>{formatted_icea_premium}</td>                        
                         <td style="color:red">{ga_rate}%</td>
                         <td>{formatted_ga_premium}</td>
-                        <td style="color:red">{aig_rate}%</td>
+                        <td style="color:red">{new_aig_rate}%</td>
                         <td>{formatted_aig_premium}</td>
                        
                                         
