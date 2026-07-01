@@ -478,29 +478,29 @@ with view1:
                 formatted_aig_car_hire = 0.00
             else:
                 if value < 1000001:
-                    aig_rate = 6.25
-                    new_aig_rate = 6
-                    aig_premium = max((value * (new_aig_rate/100) * (days/365)),(37500 * (days/365))) +  (max(value * 0.25/100, 2500))
+                    aig_rate = 6
+                  
+                    aig_premium = max((value * (aig_rate/100) * (days/365)),(37500 * (days/365))) +  (max(value * 0.25/100, 2500))
                 elif value > 1000001 and value < 1500001:
-                    aig_rate = 5.25
-                    new_aig_rate = 5
-                    aig_premium = (value * (new_aig_rate/100) * (days/365)) +  (max(value * 0.25/100, 2500))
+                    aig_rate = 5
+                   
+                    aig_premium = (value * (aig_rate/100) * (days/365)) +  (max(value * 0.25/100, 2500))
                 elif value > 1500000 and value < 2500001:
                     aig_rate = 4.25
                     new_aig_rate = 4
-                    aig_premium = (value * (new_aig_rate/100) * (days/365)) +  (max(value * 0.25/100, 2500))
+                    aig_premium = (value * (aig_rate/100) * (days/365)) +  (max(value * 0.25/100, 2500))
                 elif value > 2500001 and value < 3000000:
-                    aig_rate = 3.25
-                    new_aig_rate = 3.5
-                    aig_premium = (value * (new_aig_rate/100) * (days/365)) +  (max(value * 0.25/100, 2500))
+                   
+                    aig_rate = 3.5
+                    aig_premium = (value * (aig_rate/100) * (days/365)) +  (max(value * 0.25/100, 2500))
                 elif value > 3000001 and value < 5000000:
-                    aig_rate = 3.25
-                    new_aig_rate = 3.5
-                    aig_premium = (value * (new_aig_rate/100) * (days/365)) +  (max(value * 0.25/100, 2500))
+                    aig_rate = 3.5
+                    
+                    aig_premium = (value * (aig_rate/100) * (days/365)) +  (max(value * 0.25/100, 2500))
                 elif value > 5000000:
+                   
                     aig_rate = 3.25
-                    new_aig_rate = 3.5
-                    aig_premium = (value * (new_aig_rate/100) * (days/365)) +  (max(value * 0.25/100, 2500))
+                    aig_premium = (value * (aig_rate/100) * (days/365)) +  (max(value * 0.25/100, 2500))
 
                 aig_gross_premium = (aig_premium + fidelity_pvt)
                 aig_levies = aig_gross_premium * 0.0045
@@ -726,7 +726,7 @@ with view1:
                         <td>{formatted_icea_premium}</td>                        
                         <td style="color:red">{ga_rate}%</td>
                         <td>{formatted_ga_premium}</td>
-                        <td style="color:red">{new_aig_rate}%</td>
+                        <td style="color:red">{aig_rate}%</td>
                         <td>{formatted_aig_premium}</td>
                        
                                         
