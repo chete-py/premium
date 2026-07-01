@@ -468,7 +468,7 @@ with view1:
                 icea_premium = max(value * (icea_rate/100) * (days/365), (450000 * (days/365)))
 
             if value > 5000000:
-                aig_rate = 3
+                aig_rate = 3.25
                 formatted_aig_premium = format_with_commas((value * (aig_rate/100) * (days/365)))
                 aig_gross_premium = ((value * (aig_rate/100) * (days/365)) + (max(value * 0.25/100, 5000)))
                 formatted_aig_gross_premium = format_with_commas((value * (aig_rate/100) * (days/365)) + (max(value * 0.25/100, 5000)))
