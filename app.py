@@ -489,10 +489,10 @@ with view1:
                     aig_rate = 4.25
                     new_aig_rate = 4
                     aig_premium = (value * (aig_rate/100) * (days/365))
-                elif value > 2500001 and value < 3000000:                   
+                elif value > 2500001 and value < 3000001:                   
                     aig_rate = 3.5
                     aig_premium = (value * (aig_rate/100) * (days/365)) 
-                elif value > 3000001 and value < 5000000:
+                elif value > 3000001 and value < 5000001:
                     aig_rate = 3.5                    
                     aig_premium = (value * (aig_rate/100) * (days/365))
                 elif value > 5000000:                   
