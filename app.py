@@ -437,7 +437,7 @@ with view1:
             elif value > 1499999 and value < 2500000:
                 fidelity_rate = 4.25
                 fidelity_premium = (value * (fidelity_rate/100) * (days/365))            
-            elif value > 2499999  and value < 3500000::
+            elif value > 2499999  and value < 3500000:
                 fidelity_rate = 3.5
                 fidelity_premium = (value * (fidelity_rate/100) * (days/365))
             elif value > 3499999:
