@@ -428,16 +428,19 @@ with view1:
 
 
             if value > 0 and value < 1000000:
-                fidelity_rate = 6                
+                fidelity_rate = 6.5               
                 fidelity_one = (value * (fidelity_rate/100) * (days/365))
-                fidelity_premium = max(fidelity_one, 37500)                 
+                fidelity_premium = max(fidelity_one, 42500)                 
             elif value > 999999 and value < 1500000:
-                fidelity_rate = 4.75
+                fidelity_rate = 5.25
                 fidelity_premium = (value * (fidelity_rate/100) * (days/365))
             elif value > 1499999 and value < 2500000:
-                fidelity_rate = 3.75
+                fidelity_rate = 4.25
                 fidelity_premium = (value * (fidelity_rate/100) * (days/365))            
-            elif value > 2499999:
+            elif value > 2499999  and value < 3500000::
+                fidelity_rate = 3.5
+                fidelity_premium = (value * (fidelity_rate/100) * (days/365))
+            elif value > 3499999:
                 fidelity_rate = 3
                 fidelity_premium = (value * (fidelity_rate/100) * (days/365))
 
