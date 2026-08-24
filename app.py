@@ -473,12 +473,12 @@ with view1:
             if value > 5000000:
                 aig_rate = 3.25
                 formatted_aig_premium = format_with_commas((value * (aig_rate/100) * (days/365)))
-                aig_gross_premium = ((value * (aig_rate/100) * (days/365)) + (max(value * 0.25/100, 5000)))
+                aig_gross_premium = ((value * (aig_rate/100) * (days/365)) + (max(value * 0.25/100, 5000)) + car_hire )
                 formatted_aig_gross_premium = format_with_commas((value * (aig_rate/100) * (days/365)) + (max(value * 0.25/100, 5000)))
                 aig_levies = (0.0045 * aig_gross_premium)
                 formatted_aig_levies = format_with_commas(0.0045 * aig_gross_premium)
                 formatted_aig_total = format_with_commas(aig_gross_premium + aig_levies)
-                formatted_aig_car_hire = 0.00
+               
             else:
                 if value < 1000001:
                     aig_rate = 6
@@ -502,7 +502,7 @@ with view1:
                     aig_rate = 3.25
                     aig_premium = (value * (aig_rate/100) * (days/365))
 
-                aig_gross_premium = (aig_premium + fidelity_pvt)
+                aig_gross_premium = (aig_premium + fidelity_pvt + car_hire)
                 aig_levies = aig_gross_premium * 0.0045
                 aig_total = ( aig_gross_premium + fee + aig_levies )
                 formatted_aig_premium = format_with_commas(aig_premium)
@@ -780,12 +780,12 @@ with view1:
                         <td style="color:red" >{loss_of_use}</td>
                         <td>{formatted_car_hire}</td>
                         <td style="color:red" >{loss_of_use}</td>
-                        <td>{lou}</td>
+                        <td>{formatted_car_hire}</td>
                         <td style="color:red" >{loss_of_use}</td>
                         <td>{formatted_car_hire}</td>
-                        <td style="color:red" >Excluded</td>
-                        <td>0.00</td>
-                      
+                        <td style="color:red" >{loss_of_use}</td>
+                        <td>{formatted_car_hire}</td>
+                                            
                       
                     </tr>      
                         
