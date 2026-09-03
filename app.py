@@ -279,7 +279,8 @@ with view1:
  
         if view == 'Comperative Quote':
             
-            reg = st.text_input('Enter Registration')            
+            reg = st.text_input('Enter Registration') 
+            model = st.selectbox("Choose Model", ["Probox, Succeed, Sienta, Noah & Voxy", "Mazda, Subaru, Audi, Volswagen", "Other model not specified above"])  
             value = int(st.number_input('Sum Insured')) 
             staff = st.selectbox("Prepared By:", ["Collins Chetekei", "Daniel Cheruiyot", "Patrick Kimani", "Ephantus Ngari", "Samuel Ndoto", "Charity Rono", "Monica Waruguru"])
             loss_of_use = st.selectbox("Choose Loss Of Use Amount charged", [3000, 5000, "Excluded"])
@@ -348,7 +349,7 @@ with view1:
                 excess = 100000
             new_excess = format_with_commas(excess)
 
-            if loss_of_use == 'Exluded':
+            if loss_of_use == 'Excluded':
                 car_hire += 0                
             elif loss_of_use == 3000:
                 car_hire += 3000
@@ -392,7 +393,7 @@ with view1:
 
             
             
-            if value < 600000:
+            if value < 500001:
                 apa_rate = 'Minimum 500K'
                 formatted_apa_gross_premium = 'NA'
                 formatted_apa_premium = 'NA'
@@ -511,48 +512,45 @@ with view1:
                 formatted_aig_total = format_with_commas(aig_total)
            
             
-            if value > 0 and value < 1000000:
-                ga_rate = 6
-                ga_premium = max((value * (ga_rate/100) * (days/365)),(37500 * (days/365)))
-            elif value > 999999 and value < 1500000:
-                ga_rate = 5
-                ga_premium = max(value * (ga_rate/100) * (days/365), (60000 * (days/365)))
-            elif value > 1499999 and value < 2500000:
-                ga_rate = 4
-                ga_premium = max(value * (ga_rate/100) * (days/365), (75000 * (days/365)))
-            elif value > 2499999 and value < 5000000:
-                ga_rate = 3.5
-                ga_premium = max(value * (ga_rate/100) * (days/365), (100000 * (days/365)))
-            elif value > 4999999:
-                ga_rate = 3
-                ga_premium = max(value * (ga_rate/100) * (days/365), (175000 * (days/365)))
+            if value < 600000:
+                sanlam_rate = 'Minimum 500K'
+                formatted_sanlam_gross_premium = 'NA'
+                formatted_sanlam_premium = 'NA'
+                formatted_sanlam_levies = 'NA'
+                formatted_sanlam_total = 'Consider TPO'
+                formatted_sanlam_car_hire = 'NA'
+            else:
+                if value > 499999 and value < 1000001 and model != "Probox, Succeed, Sienta, Noah & Voxy":
+                    sanlam_rate = 6
+                    sanlam_premium = max(value * (sanlam_rate/100) * (days/365), (500000 * (days/365)))
+                    sanlam_gross_premium = ( sanlam_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
+                elif value > 499999 and value < 1000001 and model == "Probox, Succeed, Sienta, Noah & Voxy":
+                    sanlam_rate = 7.5
+                    sanlam_premium = max(value * (sanlam_rate/100) * (days/365), (500000 * (days/365)))
+                    sanlam_gross_premium = ( sanlam_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
+                elif value > 1000000 and value < 1500001 and model != "Probox, Succeed, Sienta, Noah & Voxy":
+                    sanlam_rate = 5
+                    sanlam_premium = max(value * (sanlam_rate/100) * (days/365)) 
+                    sanlam_gross_premium = ( sanlam_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
+                elif value > 1000000 and value < 1500001 and model == "Probox, Succeed, Sienta, Noah & Voxy":
+                    sanlam_rate = 7.25
+                    sanlam_premium = max(value * (sanlam_rate/100) * (days/365))
+                    sanlam_gross_premium = ( sanlam_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
+                elif value > 1500000 and value < 2500001 and model != "Probox, Succeed, Sienta, Noah & Voxy":
+                    sanlam_rate = 4
+                    sanlam_premium = max(value * (sanlam_rate/100) * (days/365)) 
+                    sanlam_gross_premium = ( sanlam_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
+                elif value > 1500000 and value < 2500001 and model == "Probox, Succeed, Sienta, Noah & Voxy":
+                    sanlam_rate = 7
+                    sanlam_premium = max(value * (sanlam_rate/100) * (days/365)) 
+                    sanlam_gross_premium = ( sanlam_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
+                elif value > 2500000 and value < 15000001 and model != "Probox, Succeed, Sienta, Noah & Voxy":
+                    sanlam_rate = 3
+                    sanlam_premium = max(value * (sanlam_rate/100) * (days/365)) 
+                    sanlam_gross_premium = ( sanlam_premium + fidelity_pvt + car_hire)
+            
 
-              
-            if value > 0 and value < 1000001:
-                om_rate = 6
-                om_premium = max((value * (om_rate/100) * (days/365)),(37500 * (days/365)))
-                om_gross_premium = ( om_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
-            elif value > 1000001 and value < 1500001:
-                om_rate = 5
-                om_premium = max(value * (om_rate/100) * (days/365), (60000 * (days/365)))
-                om_gross_premium = ( om_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
-            elif value > 1500001 and value < 2500001:
-                om_rate = 4
-                om_premium = max(value * (om_rate/100) * (days/365), (75000 * (days/365)))
-                om_gross_premium = ( om_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
-            elif value > 2500000 and value < 3000001:
-                om_rate = 3.5
-                om_premium = max(value * (ga_rate/100) * (days/365), (100000 * (days/365)))
-                om_gross_premium = ( om_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
-            elif value > 3000001 and value < 5000001:
-                om_rate = 3.25
-                om_premium = (value * (om_rate/100) * (days/365))
-                om_gross_premium = ( om_premium + car_hire )
-            elif value > 5000001:
-                om_rate = 3
-                om_premium = (value * (om_rate/100) * (days/365))
-                om_gross_premium = ( om_premium + car_hire)
-               
+                 
           
         
             if st.button("Calculate"):                
@@ -566,14 +564,15 @@ with view1:
                 
                 fidelity_levies = fidelity_gross_premium * 0.0045
                 icea_levies = icea_gross_premium * 0.0045
-                ga_levies = ga_gross_premium * 0.0045
-                om_levies = om_gross_premium * 0.0045               
+                sanlam_levies = sanlam_gross_premium * 0.0045
+                om_levies = om_gross_premium * 0.0045 
+                
                
         
                 
                 fidelity_total = ( fidelity_gross_premium + fee + fidelity_levies )
                 icea_total = ( icea_gross_premium + fee + icea_levies )
-                ga_total = ( ga_gross_premium + fee + ga_levies )
+                sanlam_total = ( sanlam_gross_premium + fee + sanlam_levies )
                 om_total = ( om_gross_premium + fee + om_levies )
                 
 
@@ -586,7 +585,7 @@ with view1:
 
                 
                 formatted_icea_premium = format_with_commas(icea_premium)
-                formatted_ga_premium = format_with_commas(ga_premium)
+                formatted_ga_premium = format_with_commas(sanlam_premium)
                 formatted_om_premium = format_with_commas(om_premium)
                 formatted_fidelity_premium = format_with_commas(fidelity_premium)
                 
@@ -595,21 +594,21 @@ with view1:
 
                 
                 formatted_icea_gross_premium = format_with_commas(icea_gross_premium)
-                formatted_ga_gross_premium = format_with_commas(ga_gross_premium)
+                formatted_ga_gross_premium = format_with_commas(sanlam_gross_premium)
                 formatted_om_gross_premium = format_with_commas(om_gross_premium)
                 formatted_fidelity_gross_premium = format_with_commas(fidelity_gross_premium)
                
                
                 
                 formatted_icea_levies = format_with_commas(icea_levies)
-                formatted_ga_levies = format_with_commas(ga_levies)
+                formatted_ga_levies = format_with_commas(sanlam_levies)
                 formatted_om_levies = format_with_commas(om_levies)
                 formatted_fidelity_levies = format_with_commas(fidelity_levies)
                
                
                 
                 formatted_icea_total = format_with_commas(icea_total)
-                formatted_ga_total = format_with_commas(ga_total)
+                formatted_ga_total = format_with_commas(sanlam_total)
                 formatted_om_total = format_with_commas(om_total)
                 formatted_fidelity_total = format_with_commas(fidelity_total)          
                
@@ -689,7 +688,7 @@ with view1:
                         <th colspan="2"><img src="https://i.ytimg.com/vi/7BORiuBsmyo/maxresdefault.jpg" alt="APA Logo"></th>
                         <th colspan="2"><img src="data:image/webp;base64,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" alt="Fidelity Logo"></th>
                         <th colspan="2"><img src="https://th.bing.com/th/id/OIP.Jz5UcTVU1JbjzmCGb2nt8gAAAA?w=194&h=186&rs=1&pid=ImgDetMain" alt="ICEA Logo"></th>
-                        <th colspan="2"><img src="https://tse3.mm.bing.net/th/id/OIP.KgIcxDUjv9Uf3w9gPYmJAgHaEK?cb=thfc1falcon&w=1080&h=608&rs=1&pid=ImgDetMain&o=7&rm=3" alt="GA Logo"></th> 
+                        <th colspan="2"><img src="https://assets.bizclikmedia.net/1800/4b62d937c14f784b02135601753c6e36:eddda6b7d545abf352f98527bf821ea4/z.PNG" alt="Sanlam Logo"></th> 
                         <th colspan="2"><img src="https://th.bing.com/th/id/OIP.AqCcq8bj35a3GLSBoCm_uAHaEK?w=260&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="AIG Logo"></th> 
              
                        
@@ -724,8 +723,8 @@ with view1:
                         <td>{formatted_fidelity_premium}</td> 
                         <td style="color:red">{icea_rate}%</td>
                         <td>{formatted_icea_premium}</td>                        
-                        <td style="color:red">{ga_rate}%</td>
-                        <td>{formatted_ga_premium}</td>
+                        <td style="color:red">{sanlam_rate}%</td>
+                        <td>{formatted_sanlam_premium}</td>
                         <td style="color:red">{aig_rate}%</td>
                         <td>{formatted_aig_premium}</td>
                        
@@ -802,7 +801,7 @@ with view1:
                         <td></td>
                         <td class='gross_premium'>{formatted_icea_gross_premium}</td>
                         <td></td>
-                        <td class='gross_premium'>{formatted_ga_gross_premium}</td>
+                        <td class='gross_premium'>{formatted_sanlam_gross_premium}</td>
                         <td></td>
                         <td class='gross_premium'>{formatted_aig_gross_premium}</td>
                       
@@ -822,7 +821,7 @@ with view1:
                         <td style="color:red">0.45%</td>
                         <td >{formatted_icea_levies}</td> <!-- Updated formatting for better readability -->
                         <td style="color:red">0.45%</td>
-                        <td >{formatted_ga_levies}</td>
+                        <td >{formatted_sanlam_levies}</td>
                         <td style="color:red">0.45%</td>
                         <td >{formatted_aig_levies}</td>
                      
@@ -859,7 +858,7 @@ with view1:
                         <td></td>
                         <td class = 'bold' style="color:#152637">{formatted_icea_total}</td>
                         <td></td>
-                        <td class = 'bold' style="color:#152637">{formatted_ga_total}</td>
+                        <td class = 'bold' style="color:#152637">{formatted_sanlam_total}</td>
                         <td></td>
                         <td class = 'bold' style="color:#152637">{formatted_aig_total}</td>
 
