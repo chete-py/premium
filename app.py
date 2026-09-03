@@ -782,17 +782,17 @@ with view1:
                       <tr>
                         <td>Loading on shunned models</td>
                         <td></td>
-                        <td style="color:red">NA</td>
+                        <td style="color:red">Amount Charged</td>
                         <td >0.00</td>                       
-                        <td style="color:red">NA</td>  
+                        <td style="color:red">Amount Charged</td>  
                         <td >0.00</td>
-                        <td style="color:red">NA</td>
+                        <td style="color:red">Amount Charged</td>
                         <td >0.00</td>  
-                        <td style="color:red">Applicable</td>
+                        <td style="color:red">Amount Charged</td>
                         <td>{formatted_loading}</td>
-                        <td style="color:red">Inclusive</td>
+                        <td style="color:red">Amount Charged</td>
                         <td>0.00</td> 
-                        <td style="color:red">NA</td>
+                        <td style="color:red">Amount Charged</td>
                         <td>0.00</td>
                       
                                                     
@@ -939,7 +939,8 @@ with view1:
                         Vehicles will only qualify for comprehensive cover where age is below 15 years. ( Year Of Manufacture north of 2010)<br>
                         It is advisable to have the vehicle valued. Kindly note that the above quote is subject to change as per valuation results.<br>
                         Your applicable excess in the event of a material damage claim will be KES. {new_excess} (<b>NCBAIG</b> Excess at KES. 20,000)<br>
-                        This is a summarized comparative quote; kindly review your risk note once cover is placed; it contains detailed information on scope of cover.                                                   
+                        This is a summarized comparative quote; kindly review your risk note once cover is placed; it contains detailed information on scope of cover.<br>
+                        Note that ICEA Lion General Insurance Company charges a 30% loading on the following vehicle models Mazda, Subaru, Audi and Volswagen.
                         </p>
                         </th>
                     </tr>
