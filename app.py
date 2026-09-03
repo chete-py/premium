@@ -280,7 +280,7 @@ with view1:
         if view == 'Comperative Quote':
             
             reg = st.text_input('Enter Registration') 
-            model = st.selectbox("Choose Model", ["Probox, Succeed, Sienta, Noah & Voxy", "Mazda, Subaru, Audi, Volswagen", "Other model not specified above"])  
+            model = st.selectbox("Choose Model", ["Other model not specified Below", "Mazda, Subaru, Audi, Volswagen", "Probox, Succeed, Sienta, Noah & Voxy"])  
             value = int(st.number_input('Sum Insured')) 
             staff = st.selectbox("Prepared By:", ["Collins Chetekei", "Daniel Cheruiyot", "Patrick Kimani", "Ephantus Ngari", "Samuel Ndoto", "Charity Rono", "Monica Waruguru"])
             loss_of_use = st.selectbox("Choose Loss Of Use Amount charged", [3000, 5000, "Excluded"])
