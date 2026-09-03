@@ -449,27 +449,62 @@ with view1:
             fidelity_ex_prt = max(value * (0.25/100), 2500)
             
 
-            if value > 0 and value < 1000001:
-                icea_rate = 6
+            if value > 0 and value < 1000001 and model != "Mazda, Subaru, Audi, Volswagen":
+                icea_rate = 6.25
                 icea_premium = max((value * (icea_rate/100) * (days/365)),(37500 * (days/365)))
-            elif value > 1000000 and value < 1500001:
-                icea_rate = 5
-                icea_premium = max(value * (icea_rate/100) * (days/365), (60000 * (days/365)))
-            elif value > 1500000 and value < 2500001:
-                icea_rate = 4
+            elif value > 0 and value < 1000001 and model == "Mazda, Subaru, Audi, Volswagen":
+                icea_rate = 6.25
+                tent_icea_premium = max((value * (icea_rate/100) * (days/365)),(37500 * (days/365)))
+                loading = 1.3 * icea_premium
+                icea_premium = tent_icea_premium + loading
+            elif value > 1000000 and value < 1500001 and model != "Mazda, Subaru, Audi, Volswagen":
+                icea_rate = 5.25
+                icea_premium = max(value * (icea_rate/100) * (days/365), (60000 * (days/365)))               
+            elif value > 1000000 and value < 1500001 and model == "Mazda, Subaru, Audi, Volswagen":
+                icea_rate = 5.25
+                tent_icea_premium = max(value * (icea_rate/100) * (days/365), (60000 * (days/365)))
+                loading = 1.3 * icea_premium
+                icea_premium = tent_icea_premium + loading
+            elif value > 1500000 and value < 2500001 and model != "Mazda, Subaru, Audi, Volswagen":
+                icea_rate = 4.25
                 icea_premium = max(value * (icea_rate/100) * (days/365), (67500 * (days/365)))
-            elif value > 2500000 and value < 5000001:
-                icea_rate = 3
+            elif value > 1500000 and value < 2500001 and model == "Mazda, Subaru, Audi, Volswagen":
+                icea_rate = 4.25
+                tent_icea_premium = max(value * (icea_rate/100) * (days/365), (67500 * (days/365)))
+                loading = 1.3 * icea_premium
+                icea_premium = tent_icea_premium + loading
+            elif value > 2500000 and value < 5000001 and model != "Mazda, Subaru, Audi, Volswagen":
+                icea_rate = 3.25
                 icea_premium = max(value * (icea_rate/100) * (days/365), (75000 * (days/365)))
-            elif value > 5000000 and value < 10000001:
-                icea_rate = 2.75
-                icea_premium = max(value * (icea_rate/100) * (days/365), (137500 * (days/365)))
-            elif value > 10000001 and value < 15000001:
-                icea_rate = 2.5
-                icea_premium = max(value * (icea_rate/100) * (days/365), (250000 * (days/365)))
-            elif value > 15000000:
+            elif value > 2500000 and value < 5000001 and model == "Mazda, Subaru, Audi, Volswagen":
+                icea_rate = 3.25
+                tent_icea_premium = max(value * (icea_rate/100) * (days/365), (75000 * (days/365)))
+                loading = 1.3 * icea_premium
+                icea_premium = tent_icea_premium + loading
+            elif value > 5000000 and value < 10000001 and model != "Mazda, Subaru, Audi, Volswagen":
                 icea_rate = 3
+                icea_premium = max(value * (icea_rate/100) * (days/365), (137500 * (days/365)))
+            elif value > 5000000 and value < 10000001 and model == "Mazda, Subaru, Audi, Volswagen":
+                icea_rate = 3
+                tent_icea_premium = max(value * (icea_rate/100) * (days/365), (137500 * (days/365)))
+                loading = 1.3 * icea_premium
+                icea_premium = tent_icea_premium + loading
+            elif value > 10000001 and value < 15000001 and model != "Mazda, Subaru, Audi, Volswagen":
+                icea_rate = 2.75
+                icea_premium = max(value * (icea_rate/100) * (days/365), (250000 * (days/365)))
+            elif value > 10000001 and value < 15000001 and model == "Mazda, Subaru, Audi, Volswagen":
+                icea_rate = 2.75
+                tent_icea_premium = max(value * (icea_rate/100) * (days/365), (250000 * (days/365)))
+                loading = 1.3 * icea_premium
+                icea_premium = tent_icea_premium + loading
+            elif value > 15000000 and model != "Mazda, Subaru, Audi, Volswagen":
+                icea_rate = 3.25
                 icea_premium = max(value * (icea_rate/100) * (days/365), (450000 * (days/365)))
+            elif value > 15000000 and model == "Mazda, Subaru, Audi, Volswagen":
+                icea_rate = 3.25
+                tent_icea_premium = max(value * (icea_rate/100) * (days/365), (450000 * (days/365)))
+                loading = 1.3 * icea_premium
+                icea_premium = tent_icea_premium + loading
 
             if value > 5000000:
                 aig_rate = 3.25
@@ -486,8 +521,7 @@ with view1:
                   
                     aig_premium = max((value * (aig_rate/100) * (days/365)),(37500 * (days/365))) +  (max(value * 0.25/100, 2500))
                 elif value > 1000001 and value < 1500001:
-                    aig_rate = 5
-                   
+                    aig_rate = 5                   
                     aig_premium = (value * (aig_rate/100) * (days/365)) 
                 elif value > 1500000 and value < 2500001:
                     aig_rate = 4.25
@@ -581,6 +615,7 @@ with view1:
                 formatted_fidelity_pvt = format_with_commas(fidelity_pvt)
 
                 formatted_fidelity_ex_prt = format_with_commas(fidelity_ex_prt)
+                formatted_loading = format_with_commas(loading)
 
                 
                 formatted_icea_premium = format_with_commas(icea_premium)
@@ -728,7 +763,26 @@ with view1:
                         <td>{formatted_aig_premium}</td>
                        
                                         
-                    </tr>                     
+                    </tr>      
+
+                      <tr>
+                        <td>Loading on shunned models</td>
+                        <td></td>
+                        <td style="color:red">NA</td>
+                        <td >0.00</td>                       
+                        <td style="color:red">NA</td>  
+                        <td >0.00</td>
+                        <td style="color:red">NA</td>
+                        <td >0.00</td>              
+                        <td style="color:red">Inclusive</td>
+                        <td>0.00</td>                       
+                        <td style="color:red">Applicable</td>
+                        <td>{formatted_loading}</td>
+                        <td style="color:red">NA</td>
+                        <td>0.00</td>
+                      
+                                                    
+                    </tr>    
 
                     <tr>
                         <td>Excess Protector</td>
