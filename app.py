@@ -593,21 +593,21 @@ with view1:
 
                 
                 formatted_icea_gross_premium = format_with_commas(icea_gross_premium)
-                formatted_ga_gross_premium = format_with_commas(sanlam_gross_premium)
+                formatted_sanlam_gross_premium = format_with_commas(sanlam_gross_premium)
                 # formatted_om_gross_premium = format_with_commas(om_gross_premium)
                 formatted_fidelity_gross_premium = format_with_commas(fidelity_gross_premium)
                
                
                 
                 formatted_icea_levies = format_with_commas(icea_levies)
-                formatted_ga_levies = format_with_commas(sanlam_levies)
+                formatted_sanlam_levies = format_with_commas(sanlam_levies)
                 # formatted_om_levies = format_with_commas(om_levies)
                 formatted_fidelity_levies = format_with_commas(fidelity_levies)
                
                
                 
                 formatted_icea_total = format_with_commas(icea_total)
-                formatted_ga_total = format_with_commas(sanlam_total)
+                formatted_sanlam_total = format_with_commas(sanlam_total)
                 # formatted_om_total = format_with_commas(om_total)
                 formatted_fidelity_total = format_with_commas(fidelity_total)          
                
