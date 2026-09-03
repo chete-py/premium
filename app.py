@@ -558,8 +558,7 @@ with view1:
                 
                 fidelity_gross_premium = (fidelity_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
                 icea_gross_premium = ( icea_premium + fidelity_pvt + car_hire)
-                ga_gross_premium = ( ga_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
-               
+                              
         
                 
                 fidelity_levies = fidelity_gross_premium * 0.0045
