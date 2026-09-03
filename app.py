@@ -451,7 +451,9 @@ with view1:
 
             if value > 0 and value < 1000001 and model != "Mazda, Subaru, Audi, Volswagen":
                 icea_rate = 6.25
-                icea_premium = max((value * (icea_rate/100) * (days/365)),(37500 * (days/365)))
+                tent_icea_premium = max((value * (icea_rate/100) * (days/365)),(37500 * (days/365)))
+                loading = (0)                
+                icea_premium = tent_icea_premium + loading
             elif value > 0 and value < 1000001 and model == "Mazda, Subaru, Audi, Volswagen":
                 icea_rate = 6.25
                 tent_icea_premium = max((value * (icea_rate/100) * (days/365)),(37500 * (days/365)))
@@ -459,7 +461,9 @@ with view1:
                 icea_premium = tent_icea_premium + loading
             elif value > 1000000 and value < 1500001 and model != "Mazda, Subaru, Audi, Volswagen":
                 icea_rate = 5.25
-                icea_premium = max(value * (icea_rate/100) * (days/365), (60000 * (days/365)))               
+                tent_icea_premium = max(value * (icea_rate/100) * (days/365), (60000 * (days/365)))             
+                loading = (0)
+                icea_premium = tent_icea_premium + loading              
             elif value > 1000000 and value < 1500001 and model == "Mazda, Subaru, Audi, Volswagen":
                 icea_rate = 5.25
                 tent_icea_premium = max(value * (icea_rate/100) * (days/365), (60000 * (days/365)))             
@@ -467,7 +471,9 @@ with view1:
                 icea_premium = tent_icea_premium + loading
             elif value > 1500000 and value < 2500001 and model != "Mazda, Subaru, Audi, Volswagen":
                 icea_rate = 4.25
-                icea_premium = max(value * (icea_rate/100) * (days/365), (67500 * (days/365)))
+                tent_icea_premium = max(value * (icea_rate/100) * (days/365), (67500 * (days/365)))
+                loading = (0)
+                icea_premium = tent_icea_premium + loading
             elif value > 1500000 and value < 2500001 and model == "Mazda, Subaru, Audi, Volswagen":
                 icea_rate = 4.25
                 tent_icea_premium = max(value * (icea_rate/100) * (days/365), (67500 * (days/365)))
@@ -475,7 +481,9 @@ with view1:
                 icea_premium = tent_icea_premium + loading
             elif value > 2500000 and value < 5000001 and model != "Mazda, Subaru, Audi, Volswagen":
                 icea_rate = 3.25
-                icea_premium = max(value * (icea_rate/100) * (days/365), (75000 * (days/365)))
+                tent_icea_premium = max(value * (icea_rate/100) * (days/365), (75000 * (days/365)))
+                loading = (0)
+                icea_premium = tent_icea_premium + loading
             elif value > 2500000 and value < 5000001 and model == "Mazda, Subaru, Audi, Volswagen":
                 icea_rate = 3.25
                 tent_icea_premium = max(value * (icea_rate/100) * (days/365), (75000 * (days/365)))
@@ -483,7 +491,9 @@ with view1:
                 icea_premium = tent_icea_premium + loading
             elif value > 5000000 and value < 10000001 and model != "Mazda, Subaru, Audi, Volswagen":
                 icea_rate = 3
-                icea_premium = max(value * (icea_rate/100) * (days/365), (137500 * (days/365)))
+                tent_icea_premium = max(value * (icea_rate/100) * (days/365), (137500 * (days/365)))                
+                loading = (0)
+                icea_premium = tent_icea_premium + loading
             elif value > 5000000 and value < 10000001 and model == "Mazda, Subaru, Audi, Volswagen":
                 icea_rate = 3
                 tent_icea_premium = max(value * (icea_rate/100) * (days/365), (137500 * (days/365)))                
@@ -491,7 +501,9 @@ with view1:
                 icea_premium = tent_icea_premium + loading
             elif value > 10000001 and value < 15000001 and model != "Mazda, Subaru, Audi, Volswagen":
                 icea_rate = 2.75
-                icea_premium = max(value * (icea_rate/100) * (days/365), (250000 * (days/365)))
+                tent_icea_premium = max(value * (icea_rate/100) * (days/365), (250000 * (days/365)))               
+                loading = (0)
+                icea_premium = tent_icea_premium + loading
             elif value > 10000001 and value < 15000001 and model == "Mazda, Subaru, Audi, Volswagen":
                 icea_rate = 2.75
                 tent_icea_premium = max(value * (icea_rate/100) * (days/365), (250000 * (days/365)))               
@@ -499,7 +511,9 @@ with view1:
                 icea_premium = tent_icea_premium + loading
             elif value > 15000000 and model != "Mazda, Subaru, Audi, Volswagen":
                 icea_rate = 3.25
-                icea_premium = max(value * (icea_rate/100) * (days/365), (450000 * (days/365)))
+                tent_icea_premium = max(value * (icea_rate/100) * (days/365), (450000 * (days/365)))                
+                loading = (0)
+                icea_premium = tent_icea_premium + loading
             elif value > 15000000 and model == "Mazda, Subaru, Audi, Volswagen":
                 icea_rate = 3.25
                 tent_icea_premium = max(value * (icea_rate/100) * (days/365), (450000 * (days/365)))                
