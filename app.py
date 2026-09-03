@@ -471,7 +471,7 @@ with view1:
             elif value > 1500000 and value < 2500001 and model == "Mazda, Subaru, Audi, Volswagen":
                 icea_rate = 4.25
                 tent_icea_premium = max(value * (icea_rate/100) * (days/365), (67500 * (days/365)))
-                loading = 1.3 * icea_premium
+                loading = (1.3 * tent_icea_premium)
                 icea_premium = tent_icea_premium + loading
             elif value > 2500000 and value < 5000001 and model != "Mazda, Subaru, Audi, Volswagen":
                 icea_rate = 3.25
