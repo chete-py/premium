@@ -632,7 +632,7 @@ with view1:
                 formatted_loading = format_with_commas(loading)
 
                 
-                formatted_icea_premium = format_with_commas(icea_premium)
+                formatted_icea_premium = format_with_commas(tent_icea_premium)
                 formatted_sanlam_premium = format_with_commas(sanlam_premium)
                 # formatted_om_premium = format_with_commas(om_premium)
                 formatted_fidelity_premium = format_with_commas(fidelity_premium)
