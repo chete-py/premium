@@ -773,11 +773,11 @@ with view1:
                         <td style="color:red">NA</td>  
                         <td >0.00</td>
                         <td style="color:red">NA</td>
-                        <td >0.00</td>              
-                        <td style="color:red">Inclusive</td>
-                        <td>0.00</td>                       
+                        <td >0.00</td>  
                         <td style="color:red">Applicable</td>
                         <td>{formatted_loading}</td>
+                        <td style="color:red">Inclusive</td>
+                        <td>0.00</td> 
                         <td style="color:red">NA</td>
                         <td>0.00</td>
                       
