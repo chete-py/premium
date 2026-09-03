@@ -564,7 +564,7 @@ with view1:
                 fidelity_levies = fidelity_gross_premium * 0.0045
                 icea_levies = icea_gross_premium * 0.0045
                 sanlam_levies = sanlam_gross_premium * 0.0045
-                om_levies = om_gross_premium * 0.0045 
+                # om_levies = om_gross_premium * 0.0045 
                 
                
         
@@ -572,7 +572,7 @@ with view1:
                 fidelity_total = ( fidelity_gross_premium + fee + fidelity_levies )
                 icea_total = ( icea_gross_premium + fee + icea_levies )
                 sanlam_total = ( sanlam_gross_premium + fee + sanlam_levies )
-                om_total = ( om_gross_premium + fee + om_levies )
+                # om_total = ( om_gross_premium + fee + om_levies )
                 
 
                 
@@ -585,7 +585,7 @@ with view1:
                 
                 formatted_icea_premium = format_with_commas(icea_premium)
                 formatted_ga_premium = format_with_commas(sanlam_premium)
-                formatted_om_premium = format_with_commas(om_premium)
+                # formatted_om_premium = format_with_commas(om_premium)
                 formatted_fidelity_premium = format_with_commas(fidelity_premium)
                 
                
@@ -594,21 +594,21 @@ with view1:
                 
                 formatted_icea_gross_premium = format_with_commas(icea_gross_premium)
                 formatted_ga_gross_premium = format_with_commas(sanlam_gross_premium)
-                formatted_om_gross_premium = format_with_commas(om_gross_premium)
+                # formatted_om_gross_premium = format_with_commas(om_gross_premium)
                 formatted_fidelity_gross_premium = format_with_commas(fidelity_gross_premium)
                
                
                 
                 formatted_icea_levies = format_with_commas(icea_levies)
                 formatted_ga_levies = format_with_commas(sanlam_levies)
-                formatted_om_levies = format_with_commas(om_levies)
+                # formatted_om_levies = format_with_commas(om_levies)
                 formatted_fidelity_levies = format_with_commas(fidelity_levies)
                
                
                 
                 formatted_icea_total = format_with_commas(icea_total)
                 formatted_ga_total = format_with_commas(sanlam_total)
-                formatted_om_total = format_with_commas(om_total)
+                # formatted_om_total = format_with_commas(om_total)
                 formatted_fidelity_total = format_with_commas(fidelity_total)          
                
 
