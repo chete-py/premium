@@ -530,23 +530,23 @@ with view1:
                     sanlam_gross_premium = ( sanlam_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
                 elif value > 1000000 and value < 1500001 and model != "Probox, Succeed, Sienta, Noah & Voxy":
                     sanlam_rate = 5
-                    sanlam_premium = max(value * (sanlam_rate/100) * (days/365)) 
+                    sanlam_premium = (value * (sanlam_rate/100) * (days/365)) 
                     sanlam_gross_premium = ( sanlam_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
                 elif value > 1000000 and value < 1500001 and model == "Probox, Succeed, Sienta, Noah & Voxy":
                     sanlam_rate = 7.25
-                    sanlam_premium = max(value * (sanlam_rate/100) * (days/365))
+                    sanlam_premium = (value * (sanlam_rate/100) * (days/365))
                     sanlam_gross_premium = ( sanlam_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
                 elif value > 1500000 and value < 2500001 and model != "Probox, Succeed, Sienta, Noah & Voxy":
                     sanlam_rate = 4
-                    sanlam_premium = max(value * (sanlam_rate/100) * (days/365)) 
+                    sanlam_premium = (value * (sanlam_rate/100) * (days/365)) 
                     sanlam_gross_premium = ( sanlam_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
                 elif value > 1500000 and value < 2500001 and model == "Probox, Succeed, Sienta, Noah & Voxy":
                     sanlam_rate = 7
-                    sanlam_premium = max(value * (sanlam_rate/100) * (days/365)) 
+                    sanlam_premium = (value * (sanlam_rate/100) * (days/365)) 
                     sanlam_gross_premium = ( sanlam_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
                 elif value > 2500000 and value < 15000001 and model != "Probox, Succeed, Sienta, Noah & Voxy":
                     sanlam_rate = 3
-                    sanlam_premium = max(value * (sanlam_rate/100) * (days/365)) 
+                    sanlam_premium = (value * (sanlam_rate/100) * (days/365)) 
                     sanlam_gross_premium = ( sanlam_premium + fidelity_pvt + car_hire)
             
 
