@@ -723,8 +723,8 @@ with view1:
 
                     In line with your instructions, we are pleased to confirm that we have approached insurers best suited to your needs and secured the most competitive terms, with the widest scope of coverage available.<br>
 
-                    <p><u><b>Cover summary</b></u><br>
-                    Comprehensive Covers accidental loss or damage to insured motor vehicles and/or death, bodily injury or loss  or damage to property of third parties arising out of use of motor vehicles owned and/or operated by the insured/authorized driver. </p>
+                    <u><b>Cover summary</b></u><br>
+                    Comprehensive Covers accidental loss or damage to insured motor vehicles and/or death, bodily injury or loss  or damage to property of third parties arising out of use of motor vehicles owned and/or operated by the insured/authorized driver. <br>
 
                     Please find below a comparative quotation for your review and consideration.
                 </p>
@@ -948,7 +948,7 @@ with view1:
 
                 <br>
 
-                <p><u><b>Benefit Summary</b></u></p>
+                <u><b>Benefit Summary</b></u>
 
                 <p>
                 1. Death or Bodily Injury to any Third Party - As per statute (KES. 3,000,000).<br>
@@ -975,7 +975,7 @@ with view1:
 
             
 
-                <p><u><b>Policy Excess</b></u> - <i>Excess is the portion of a claim borne by the insured(policy holder)</i></p>
+                <u><b>Policy Excess</b></u> - <i>Excess is the portion of a claim borne by the insured(policy holder)</i>
 
                 <p>
 
@@ -1005,8 +1005,7 @@ with view1:
                 <b>Date:</b>{long_date}
                 </p>
 
-                <br>
-
+                
                 <p>
                 <i>Powered by Streamlit - follow me on github @ <b>chete-py</b> to see my other projects  &#128522;</i>
                 </p>
