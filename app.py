@@ -950,7 +950,7 @@ with view1:
 
                 <u><b>Benefit Summary</b></u>
 
-                <p>
+                <br>
                 1. Death or Bodily Injury to any Third Party - As per statute (KES. 3,000,000).<br>
 
                 2. Third Party Property Damage - Up to KES. 20,000,000/-.<br>
@@ -971,13 +971,13 @@ with view1:
 
                 10. Valuation - Free                 
                 
-                </p>
+                <br>
 
             
 
                 <u><b>Policy Excess</b></u> - <i>Excess is the portion of a claim borne by the insured(policy holder)</i>
 
-                <p>
+                <br>
 
                 1. Accidental Material Damage - 2.5% of vehicle value. (Minimum: KES. 20,000/- Maximum: KES. 100,000/-)<br>
 
@@ -995,17 +995,14 @@ with view1:
 
                 8. Loss of Use (if applicable) - Time excess of 3 days
 
-                </p>
-
+                
                 <br>
 
-                <p>
+                
                 <b>Prepared By:</b> {staff}<br>
                 <b>Phone:</b>{phone}<br>
                 <b>Date:</b>{long_date}
-                </p>
-
-                
+                                
                 <p>
                 <i>Powered by Streamlit - follow me on github @ <b>chete-py</b> to see my other projects  &#128522;</i>
                 </p>
