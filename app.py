@@ -1005,9 +1005,9 @@ with view1:
                 <b>Phone:</b>{phone}<br>
                 <b>Date:</b>{long_date}
                                 
-                <p>
-                <i>Powered by Streamlit - follow me on github @ <b>chete-py</b> to see my other projects  &#128522;</i>
-                </p>
+                <br>
+                <i>Powered by Python - Streamlit; follow me on github @ <b>chete-py</b> to see my other projects  &#128522;</i>
+                
 
                 
                 </div>
