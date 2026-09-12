@@ -1008,7 +1008,7 @@ with view1:
                 <br>
 
                 <p>
-                Powered by Streamlit - follow me on github @ <i>chete-py</i> to see my other projects
+                <i>Powered by Streamlit - follow me on github @ <b>chete-py</b> to see my other projects</i>
                 </p>
 
                 
