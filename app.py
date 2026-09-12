@@ -972,6 +972,7 @@ with view1:
                 10. Valuation - Free                 
                 
                 <br>
+                <br>
 
             
 
@@ -996,6 +997,7 @@ with view1:
                 8. Loss of Use (if applicable) - Time excess of 3 days
 
                 
+                <br>
                 <br>
 
                 
