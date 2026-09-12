@@ -1005,6 +1005,12 @@ with view1:
                 <b>Date:</b>{long_date}
                 </p>
 
+                <br>
+
+                <p>
+                Powered by Streamlit - follow me on github @ <i>chete-py</i> to see my other projects
+                </p>
+
                 
                 </div>
                 </body>                    
