@@ -574,7 +574,7 @@ with view1:
                     sanlam_gross_premium = ( sanlam_premium + fidelity_pvt  + car_hire)
                 elif value > 499999 and value < 1000001 and model == "Probox, Succeed, Sienta, Noah & Voxy":
                     sanlam_rate = 7.75
-                    sanlam_premium = max(value * (sanlam_rate/100) * (days/365), (500000 * (days/365)))
+                    sanlam_premium = max(value * (sanlam_rate/100) * (days/365), (50000 * (days/365)))
                     sanlam_gross_premium = ( sanlam_premium + fidelity_pvt + car_hire)
                 elif value > 1000000 and value < 1500001 and model != "Probox, Succeed, Sienta, Noah & Voxy":
                     sanlam_rate = 5.25
