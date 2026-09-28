@@ -808,7 +808,7 @@ with view1:
                         <td style="color:red">0.25%</td>
                         <td >{formatted_fidelity_ex_prt}</td>              
                         <td style="color:red">Inclusive</td>
-                        <td>0.00</td>                       
+                        <td>{formatted_fidelity_ex_prt}</td>                       
                         <td style="color:red">Inclusive</td>
                         <td>0.00</td>
                         <td style="color:red">Inclusive</td>
