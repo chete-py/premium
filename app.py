@@ -560,7 +560,7 @@ with view1:
                 formatted_aig_total = format_with_commas(aig_total)
            
             
-            if value < 600000:
+            if value < 500000:
                 sanlam_rate = 'Minimum 500K'
                 formatted_sanlam_gross_premium = 'NA'
                 formatted_sanlam_premium = 'NA'
