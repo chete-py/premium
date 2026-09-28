@@ -605,7 +605,7 @@ with view1:
                               
                 
                 fidelity_gross_premium = (fidelity_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
-                icea_gross_premium = ( icea_premium + fidelity_pvt + car_hire)
+                icea_gross_premium = ( icea_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
                               
         
                 
