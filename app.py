@@ -640,7 +640,7 @@ with view1:
                 formatted_icea_premium = format_with_commas(tent_icea_premium)
                 formatted_sanlam_premium = format_with_commas(sanlam_premium)
                 # formatted_om_premium = format_with_commas(om_premium)
-                formatted_fidelity_premium = format_with_commas(fidelity_premium)
+                formatted_britam_premium = format_with_commas(britam_premium)
                 
                
                 formatted_car_hire = format_with_commas(car_hire)
