@@ -447,6 +447,10 @@ with view1:
 
             fidelity_pvt = max(value * (0.25/100), 2500)
             fidelity_ex_prt = max(value * (0.25/100), 2500)
+
+             if value > 0:
+                britam_rate = 3.5             
+                britam_premium = max(value * (briatm_rate/100) * (days/365), 42500) 
             
 
             if value > 0 and value < 1000001 and model != "Mazda, Subaru, Audi, Volswagen":
@@ -606,10 +610,11 @@ with view1:
                 
                 fidelity_gross_premium = (fidelity_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
                 icea_gross_premium = ( icea_premium + fidelity_pvt + fidelity_ex_prt + car_hire)
+                britam_gross_premium = (britam_premium + car_hire)
                               
         
                 
-                fidelity_levies = fidelity_gross_premium * 0.0045
+                britam_levies = britam_gross_premium * 0.0045
                 icea_levies = icea_gross_premium * 0.0045
                 sanlam_levies = sanlam_gross_premium * 0.0045
                 # om_levies = om_gross_premium * 0.0045 
@@ -617,7 +622,7 @@ with view1:
                
         
                 
-                fidelity_total = ( fidelity_gross_premium + fee + fidelity_levies )
+                britam_total = ( britam_gross_premium + fee + britam_levies )
                 icea_total = ( icea_gross_premium + fee + icea_levies )
                 sanlam_total = ( sanlam_gross_premium + fee + sanlam_levies )
                 # om_total = ( om_gross_premium + fee + om_levies )
@@ -644,21 +649,21 @@ with view1:
                 formatted_icea_gross_premium = format_with_commas(icea_gross_premium)
                 formatted_sanlam_gross_premium = format_with_commas(sanlam_gross_premium)
                 # formatted_om_gross_premium = format_with_commas(om_gross_premium)
-                formatted_fidelity_gross_premium = format_with_commas(fidelity_gross_premium)
+                formatted_britam_gross_premium = format_with_commas(fidelity_britam_premium)
                
                
                 
                 formatted_icea_levies = format_with_commas(icea_levies)
                 formatted_sanlam_levies = format_with_commas(sanlam_levies)
                 # formatted_om_levies = format_with_commas(om_levies)
-                formatted_fidelity_levies = format_with_commas(fidelity_levies)
+                formatted_britam_levies = format_with_commas(britam_levies)
                
                
                 
                 formatted_icea_total = format_with_commas(icea_total)
                 formatted_sanlam_total = format_with_commas(sanlam_total)
                 # formatted_om_total = format_with_commas(om_total)
-                formatted_fidelity_total = format_with_commas(fidelity_total)          
+                formatted_britam_total = format_with_commas(britam_total)          
                
 
                    # Create an HTML report
@@ -734,7 +739,7 @@ with view1:
                         <th colspan="2">MOTOR PRIVATE COMPREHENSIVE</th>
                         <th colspan="2"><img src="https://th.bing.com/th/id/OIP.FKycthqs_eBeEyXkHC5blAHaHa?rs=1&pid=ImgDetMain" alt="Cannon Logo"></th>                       
                         <th colspan="2"><img src="https://i.ytimg.com/vi/7BORiuBsmyo/maxresdefault.jpg" alt="APA Logo"></th>
-                        <th colspan="2"><img src="data:image/webp;base64,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" alt="Fidelity Logo"></th>
+                        <th colspan="2"><img src="https://images.seeklogo.com/logo-png/55/1/britam-insurance-uganda-limited-logo-png_seeklogo-555169.png" alt="Britam Logo"></th>
                         <th colspan="2"><img src="https://th.bing.com/th/id/OIP.Jz5UcTVU1JbjzmCGb2nt8gAAAA?w=194&h=186&rs=1&pid=ImgDetMain" alt="ICEA Logo"></th>
                         <th colspan="2"><img src="https://assets.bizclikmedia.net/1800/4b62d937c14f784b02135601753c6e36:eddda6b7d545abf352f98527bf821ea4/z.PNG" alt="Sanlam Logo"></th> 
                         <th colspan="2"><img src="https://th.bing.com/th/id/OIP.AqCcq8bj35a3GLSBoCm_uAHaEK?w=260&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="AIG Logo"></th> 
@@ -767,8 +772,8 @@ with view1:
                         <td>{formatted_cannon_premium}</td>
                         <td style="color:red">{apa_rate}</td>
                         <td>{formatted_apa_premium}</td> 
-                        <td style="color:red">{fidelity_rate}%</td>
-                        <td>{formatted_fidelity_premium}</td> 
+                        <td style="color:red">{britam_rate}%</td>
+                        <td>{formatted_britam_premium}</td> 
                         <td style="color:red">{icea_rate}%</td>
                         <td>{formatted_icea_premium}</td>                        
                         <td style="color:red">{sanlam_rate}%</td>
@@ -805,8 +810,8 @@ with view1:
                         <td >0.00</td>                       
                         <td style="color:red">Inclusive</td>  
                         <td >0.00</td>
-                        <td style="color:red">0.25%</td>
-                        <td >{formatted_fidelity_ex_prt}</td>              
+                        <td style="color:red">Inclusive</td>
+                        <td >0.00}</td>              
                         <td style="color:red">Inclusive</td>
                         <td>{formatted_fidelity_ex_prt}</td>                       
                         <td style="color:red">Inclusive</td>
@@ -824,8 +829,8 @@ with view1:
                         <td >0.00</td>                       
                         <td style="color:red">Inclusive</td>  
                         <td >0.00</td>
-                        <td style="color:red">0.25%</td>
-                        <td >{formatted_fidelity_pvt}</td>              
+                        <td style="color:red">Inclusive</td>
+                        <td >0.00</td>              
                         <td style="color:red">0.25%</td>
                         <td>{formatted_fidelity_pvt}</td>
                         <td style="color:red">0.25%</td>
@@ -864,7 +869,7 @@ with view1:
                         <td></td>
                         <td class='gross_premium'>{formatted_apa_gross_premium}</td> 
                         <td></td>
-                        <td class='gross_premium'>{formatted_fidelity_gross_premium}</td> 
+                        <td class='gross_premium'>{formatted_britam_gross_premium}</td> 
                         <td></td>
                         <td class='gross_premium'>{formatted_icea_gross_premium}</td>
                         <td></td>
@@ -884,7 +889,7 @@ with view1:
                         <td style="color:red">0.45%</td>
                         <td >{formatted_apa_levies}</td> <!-- Updated formatting for better readability -->
                         <td style="color:red">0.45%</td>
-                        <td >{formatted_fidelity_levies}</td> <!-- Updated formatting for better readability -->
+                        <td >{formatted_britam_levies}</td> <!-- Updated formatting for better readability -->
                         <td style="color:red">0.45%</td>
                         <td >{formatted_icea_levies}</td> <!-- Updated formatting for better readability -->
                         <td style="color:red">0.45%</td>
@@ -921,7 +926,7 @@ with view1:
                         <td></td>
                         <td class = 'bold' style="color:#152637">{formatted_apa_total}</td>
                         <td></td>
-                        <td class = 'bold' style="color:#152637">{formatted_fidelity_total}</td>
+                        <td class = 'bold' style="color:#152637">{formatted_britam_total}</td>
                         <td></td>
                         <td class = 'bold' style="color:#152637">{formatted_icea_total}</td>
                         <td></td>
