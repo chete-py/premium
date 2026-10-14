@@ -649,7 +649,7 @@ with view1:
                 formatted_icea_gross_premium = format_with_commas(icea_gross_premium)
                 formatted_sanlam_gross_premium = format_with_commas(sanlam_gross_premium)
                 # formatted_om_gross_premium = format_with_commas(om_gross_premium)
-                formatted_britam_gross_premium = format_with_commas(fidelity_britam_premium)
+                formatted_britam_gross_premium = format_with_commas(britam_gross_premium)
                
                
                 
