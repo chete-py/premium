@@ -282,7 +282,7 @@ with view1:
             reg = st.text_input('Enter Registration') 
             model = st.selectbox("Choose Model", ["Other model not specified Below", "Mazda, Subaru, Audi, Volswagen", "Probox, Succeed, Sienta, Noah & Voxy"])  
             value = int(st.number_input('Sum Insured')) 
-            staff = st.selectbox("Prepared By:", ["Collins Chetekei", "Daniel Cheruiyot", "Patrick Kimani", "Ephantus Ngari", "Samuel Ndoto", "Charity Rono", "Monica Waruguru"])
+            staff = st.selectbox("Prepared By:", ["Collins Chetekei", "Daniel Cheruiyot", "Patrick Kimani", "Ephantus Ngari", "Samuel Ndoto", "Charity Rono", "Joan Nyaga"])
             loss_of_use = st.selectbox("Choose Loss Of Use Amount charged", [3000, 5000, "Excluded"])
             windscreen = int(st.number_input('Windscreen Amount Above Free Limit'))
             span = st.selectbox("Choose Length of cover", ["Annual Cover", "Pro-Rated Cover"])
