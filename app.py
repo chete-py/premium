@@ -448,10 +448,12 @@ with view1:
             fidelity_pvt = max(value * (0.25/100), 2500)
             fidelity_ex_prt = max(value * (0.25/100), 2500)
 
-            if value > 0:
+            if value > 2500000:
+                britam_rate = 3             
+                britam_premium = max(value * (britam_rate/100) * (days/365), 42500) 
+            elif value < 2500001:
                 britam_rate = 3.5             
                 britam_premium = max(value * (britam_rate/100) * (days/365), 42500) 
-            
 
             if value > 0 and value < 1000001 and model != "Mazda, Subaru, Audi, Volswagen":
                 icea_rate = 6.25
