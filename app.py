@@ -282,7 +282,7 @@ with view1:
             reg = st.text_input('Enter Registration') 
             model = st.selectbox("Choose Model", ["Other model not specified Below", "Mazda, Subaru, Audi, Volswagen", "Probox, Succeed, Sienta, Noah & Voxy"])  
             value = int(st.number_input('Sum Insured')) 
-            staff = st.selectbox("Prepared By:", ["Collins Chetekei", "Daniel Cheruiyot", "Patrick Kimani", "Ephantus Ngari", "Samuel Ndoto", "Charity Rono", "Joan Nyaga"])
+            staff = st.selectbox("Prepared By:", ["Collins Chetekei", "Daniel Cheruiyot", "Patrick Kimani", "Ephantus Ngari", "Samuel Ndoto", "Charity Rono", "Joan Nyaga", "Kigen Chebochok"])
             loss_of_use = st.selectbox("Choose Loss Of Use Amount charged", [3000, 5000, "Excluded"])
             windscreen = int(st.number_input('Windscreen Amount Above Free Limit'))
             span = st.selectbox("Choose Length of cover", ["Annual Cover", "Pro-Rated Cover"])
@@ -314,6 +314,8 @@ with view1:
                 phone = "0793 269 588"
             elif staff == "Joan Nyaga":
                 phone = "0725824113"
+            elif staff == "Kigen Chebochok":
+                phone = "0718 384 231"            
                 
 
             if value > 3000000:
