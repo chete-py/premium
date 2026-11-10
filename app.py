@@ -19,7 +19,7 @@ with view1:
         if view == 'Renewal':
                         
             reg = st.text_input('Enter Registration')
-            underwriter = st.selectbox("Choose Underwriter", ["APA INSURANCE", "FIDELITY INSURANCE", "CANNON GENERAL INSURANCE", "GA INSURANCE", "ICEA LION INSURANCE"])
+            underwriter = st.selectbox("Choose Underwriter", ["APA INSURANCE", "FIDELITY INSURANCE", "CANNON GENERAL INSURANCE", "BRITAM INSURANCE", "ICEA LION INSURANCE"])
             if underwriter == "CANNON GENERAL INSURANCE":
                 scheme =  st.selectbox("Choose EABL/VIVO/INDIVIDUAL", ["EABL", "VIVO", "INDIVIDUAL"])
             elif underwriter == "FIDELITY INSURANCE":
